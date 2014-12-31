@@ -55,3 +55,5 @@ templates["post_page"] = "new_post_page";
 templates["postTitle"] = "newPostTitle";
 templates["postAuthor"] = "newPostAuthor";
 templates["postInfo"] = "newPostInfo";
+
+primaryNav = ['adminMenu'];
