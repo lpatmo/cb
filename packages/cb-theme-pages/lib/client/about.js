@@ -49,3 +49,5 @@ getCategoryUrl = function(slug){
 };
 
 templates["postDomain"] = "newPostDomain";
+templates["postUpvote"] = "newPostUpvote";
+
