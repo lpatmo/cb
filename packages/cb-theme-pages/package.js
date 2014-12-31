@@ -31,6 +31,7 @@ Package.onUse(function (api) {
     'lib/client/templates/new_post_info.html',
     'lib/client/templates/new_post_info.js',
     'lib/client/templates/new_post_author.html',
+    'lib/client/templates/new_submit_button.html',
     'lib/client/about.js'
   ], ['client']);
 
