@@ -52,7 +52,6 @@ tsega:bootstrap3-datetimepicker@3.1.3_1
 
 # Telescope Packages (Required)
 
-telescope-base
 telescope-lib
 telescope-i18n
 
@@ -77,4 +76,6 @@ telescope-singleday
 telescope-invites
 
 # Custom Packages
-
+cb-theme-pages
+cb-theme
+telescope-base
