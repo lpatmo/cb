@@ -69,7 +69,7 @@
 
   // Post Schema
   "createdAt": "Created At",
-  "postedAt": "Posted At",
+  "postedAt": "Hangout Time Scheduled For",
   "url": "Hangout Location URL",  
   "title": "Title of Study Session",
   "body": "What are you going to cover? What are your learning goals?",
@@ -123,9 +123,9 @@
 
   // Post submit & edit
   "created": "Created",
-  "title": "What date and time is the hangout scheduled for? What's the topic? (e.g. Wednesday, 1/1 @ 1-2pm EST - Eloquent Javascript Chapter 7)",
+  "title": "When is the hangout scheduled for? What's the topic? (e.g. Thursday, 1/1 @ 1-2pm EST - Eloquent Javascript Chapter 7)",
   "suggest_title": "Suggest title",
-  "url": "HANGOUT URL (leave blank if you do not know)",
+  "url": "GOOGLE HANGOUT URL (leave blank if you do not know)",
   "short_url": "Short URL",
   "body": "What are the prerequisites for joining this hangout? What do you hope to master? Share links if applicable.",
   "category": "Category",

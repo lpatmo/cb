@@ -23,8 +23,6 @@ heroModules.push({
  				 template: 'heroPage'
 });
 
-primaryNav.push('aboutLink');
-primaryNav.pop('Categories');
 
 
 Meteor.startup(function () {
@@ -56,4 +54,8 @@ templates["postTitle"] = "newPostTitle";
 templates["postAuthor"] = "newPostAuthor";
 templates["postInfo"] = "newPostInfo";
 templates["submitButton"] = "newSubmitButton";
-primaryNav = ['adminMenu'];
+primaryNav.push('aboutLink');
+var i = primaryNav.indexOf("categoriesMenu");
+if(i != -1) {
+	primaryNav.splice(i, 1);
+}
