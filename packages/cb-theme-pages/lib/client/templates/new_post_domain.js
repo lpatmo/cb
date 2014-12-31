@@ -2,6 +2,7 @@ Template[getTemplate('newPostDomain')].helpers({
   domain: function(){
     var a = document.createElement('a');
     a.href = this.url;
+    console.log('hi')
     //return a.hostname;
     return a
   }
@@ -9,7 +10,7 @@ Template[getTemplate('newPostDomain')].helpers({
 
 Template[getTemplate('newPostDomain')].events({
 	'click .hangout-button': function(e, instance){
-    var post = this;
+    //var post = this;
 	    if(!Meteor.user()){
 	      e.preventDefault();
 	      Router.go('atSignIn');
