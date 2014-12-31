@@ -159,8 +159,8 @@
   "inactive": "inactive",
   "comment": "comment",
   "comments": "comments",
-  "point": "point",
-  "points": "points",
+  "point": "participant",
+  "points": "participants",
 
   //User /client/views/users/account/user_account.html
   "please_complete_your_profile_below_before_continuing": "Please complete your profile below before continuing.",
