@@ -1,0 +1,10 @@
+<template name="newPostInfo">
+  <div class="post-meta-item">
+    <span class="points">{{baseScore}}</span>
+    <span class="unit">{{pointsUnitDisplayText}}</span>
+    {{#if postedAt}}<span class="post-time">{{timeAgo postedAt}}</span>{{/if}}
+    {{#if can_edit}}
+      | <a href="{{pathFor route='post_edit' _id=_id}}" class="edit-link goto-edit">{{_ "edit"}}</a>
+    {{/if}}
+  </div>
+</template>

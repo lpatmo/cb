@@ -48,6 +48,8 @@ getCategoryUrl = function(slug){
   return getSiteUrl()+'category/'+slug;
 };
 
+/*Template Overrides*/
 templates["postDomain"] = "newPostDomain";
 templates["postUpvote"] = "newPostUpvote";
-
+templates["postInfo"] = "newPostInfo";
+templates["post_page"] = "new_post_page";

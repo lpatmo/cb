@@ -1,0 +1,25 @@
+<template name="new_post_page">
+  <div class="single-post grid">
+    <div class="posts">
+      {{> UI.dynamic template=post_item}}
+    </div>
+   
+    {{#if body}}
+      {{> UI.dynamic template=post_body}}
+    {{/if}}
+
+    {{#if membersList}}
+     <div class="grid-module members">
+      <h3>Members</h3>
+      <ul>
+        {{#each membersList}}
+          <li><a href="/users/{{slug}}" class="member-name">{{profile.name}} {{> avatar userId=this shape="circle"}}</a></li> 
+        {{/each}}
+      </ul>
+     </div>
+    {{/if}}
+
+    {{> UI.dynamic template=comment_form}}
+    {{> UI.dynamic template=comment_list}}
+  </div>
+</template>

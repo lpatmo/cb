@@ -24,6 +24,8 @@ Package.onUse(function (api) {
       'lib/client/templates/new_post_domain.js',
       'lib/client/templates/new_post_upvote.html',
       'lib/client/templates/new_post_upvote.js',
+      'lib/client/templates/new_post_page.html',
+      'lib/client/templates/new_post_page.js',
     'lib/client/about.js'
   ], ['client']);
 
