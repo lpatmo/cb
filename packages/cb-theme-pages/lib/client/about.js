@@ -51,6 +51,7 @@ getCategoryUrl = function(slug){
 /*Template Overrides*/
 templates["postDomain"] = "newPostDomain";
 templates["postUpvote"] = "newPostUpvote";
-templates["postInfo"] = "newPostInfo";
 templates["post_page"] = "new_post_page";
 templates["postTitle"] = "newPostTitle";
+templates["postAuthor"] = "newPostAuthor";
+templates["postInfo"] = "newPostInfo";

@@ -28,6 +28,9 @@ Package.onUse(function (api) {
       'lib/client/templates/new_post_page.js',
         'lib/client/templates/new_post_title.html',
       'lib/client/templates/new_post_title.js',
+         'lib/client/templates/new_post_info.html',
+      'lib/client/templates/new_post_info.js',
+      'lib/client/templates/new_post_author.html',
     'lib/client/about.js'
   ], ['client']);
 
