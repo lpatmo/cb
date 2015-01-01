@@ -127,7 +127,7 @@
   "suggest_title": "Suggest title",
   "url": "GOOGLE HANGOUT URL (leave blank if you do not know)",
   "short_url": "Short URL",
-  "body": "What are the prerequisites for joining this hangout? What do you hope to master? Share links if applicable.",
+  "body": "What link(s) are you using to screen share, and what do you hope to master? What are the prerequisites for joining this hangout?",
   "category": "Category",
   "inactive_": "Inactive?",
   "sticky_": "Sticky?",
