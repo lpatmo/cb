@@ -33,7 +33,9 @@ ul.hero-menu {
 }
 
 
-a.hangout-button { background: #1ca060; padding: 5px 10px; color: white;}
+a.hangout-button { background: rgba(28,160,96, 0.8); padding: 5px 15px; color: white;}
+a.hangout-button:hover { background: rgba(28,160,96, 1.0); }
+
 div.inner-wrapper { background: #eee; }
 
 .members ul li { display: inline;
@@ -50,10 +52,9 @@ body {background: url(//codebuddies.org/images/city.jpg) no-repeat center center
 span.message-upvote { color: #DD3416; }
 span.message-joined { color: rgba(122,192,228,0.8);}
 
-.footer a {background: dodgerblue; padding: 10px; color: white;}
+.footer a {background: dodgerblue; padding: 5px; color: white;}
 .footer a:hover {background: rgba(30,144,255, 0.8);}
 
-.btn {background: dodgerblue !important;}
 
 form {
 	label.control-label { font-size: 1.2em; width: 100%;}
