@@ -58,7 +58,7 @@ span.message-joined { color: rgba(122,192,228,0.8);}
 
 form {
 	label.control-label { font-size: 1.2em; width: 100%;}
-	div.controls { margin-left: 0 !important;}
+	.form-group div.controls { margin-left: 0 !important; clear: both;}
 }
 
 a#submit.top-submit {text-transform: uppercase; font-weight: bold !important;}
