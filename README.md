@@ -11,6 +11,7 @@ The goal of this platform is to help users schedule google hangouts more easily 
 4. Un-hide "upcoming scheduled" posts.
 5. Un-hide datepicker for non-admin users.
 
+
 ###Open Issues
 2. See the hangout link only if you join a group. (PENDING - not important)
 3. Update the form with a "resources" URL.
