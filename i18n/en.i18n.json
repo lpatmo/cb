@@ -123,11 +123,11 @@
 
   // Post submit & edit
   "created": "Created",
-  "title": "When is the hangout scheduled for? What's the topic? (e.g. Thursday, 1/1 @ 1-2pm EST - Eloquent Javascript Chapter 7)",
+  "title": "[TIME AND TOPIC] (e.g. Thursday, 1/1 @ 1-2pm EST - Eloquent Javascript Chapter 7). Make sure you write a topic, but put down TBD if you are unsure of the time.",
   "suggest_title": "Suggest title",
   "url": "GOOGLE HANGOUT URL (leave blank if you do not know)",
   "short_url": "Short URL",
-  "body": "What link(s) are you using to screen share, and what do you hope to master? What are the prerequisites for joining this hangout?",
+  "body": "[DESCRIPTION] What link(s) are you using to screen share, and what do you hope to master together by the end of the session? What are the prerequisites for joining this hangout?",
   "category": "Category",
   "inactive_": "Inactive?",
   "sticky_": "Sticky?",

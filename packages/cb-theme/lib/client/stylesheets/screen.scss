@@ -63,17 +63,19 @@ form {
 
 a#submit.top-submit {text-transform: uppercase; font-weight: bold !important;}
 
-.header .logo a {font-size: .85em;}
+.header  {
+	.logo a {font-size: .85em;}
+	a.view.dropdown-top-level:first-of-type {
+		color: inherit;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 7em;
+		display: block;
+		top: 7px;
+		position: relative;
+}
+}
 
-/*Potential fix for people with lengthy first or last names
-a.view.dropdown-top-level {
-	color: inherit;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	width: 7em;
-	display: block;
-	top: 6px;
-	position: relative;
-}*/
+
 
