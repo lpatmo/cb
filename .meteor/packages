@@ -9,7 +9,6 @@ standard-app-packages
 backbone
 accounts-base
 accounts-password
-accounts-twitter
 spiderable
 email
 accounts-facebook
