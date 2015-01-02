@@ -123,7 +123,7 @@
 
   // Post submit & edit
   "created": "Created",
-  "title": "[TIME AND TOPIC] (e.g. Thursday, 1/1 @ 1-2pm EST - Eloquent Javascript Chapter 7). Make sure you write a topic, but put down TBD if you are unsure of the time.",
+  "title": "[TIME AND TOPIC] (e.g. Thursday, 1/1 @ 1-2pm EST - Eloquent Javascript Chapter 7). Make sure you write a topic; put down TBD if you are unsure of the meeting time.",
   "suggest_title": "Suggest title",
   "url": "GOOGLE HANGOUT URL (leave blank if you do not know)",
   "short_url": "Short URL",
