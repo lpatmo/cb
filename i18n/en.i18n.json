@@ -193,7 +193,7 @@
   "reset_password": "Reset Password",
   "password_reset_link_sent": "Password reset link sent!",
   "name": "Name",
-  "posts": "Hangouts",
+  "posts": "Study Sessions I Proposed:",
   "comments_": "Comments",
   "karma": "Karma",
   "is_invited": "Is Invited?",
@@ -270,7 +270,7 @@
   "bio": "I am learning these languages/frameworks:",
   "github": "GitHub",
   "site": "Site",
-  "upvoted_posts": "Other Hangouts Subscribed To:",
+  "upvoted_posts": "Study Sessions I'm Following:",
   "downvoted_posts": "I left:",
   "mark_as_read": "Mark as read",
 
