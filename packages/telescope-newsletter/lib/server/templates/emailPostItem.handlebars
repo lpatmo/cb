@@ -10,8 +10,9 @@
 </span>
 
 <div class="post-meta">
-    <a class="post-domain" href="">{{postPageLink}}</a>
-    | 
+    {{#if domain}}
+   <a class="post-domain" href="">{{domain}}</a>     | 
+  {{/if}}
   <span class="post-submitted">Study session proposed by <a href="{{profileUrl}}" class="comment-link" target="_blank">{{authorName}}</a></span>
   |
   <a href="{{postPageLink}}" class="comment-link" target="_blank">{{commentCount}} Comments</a>
