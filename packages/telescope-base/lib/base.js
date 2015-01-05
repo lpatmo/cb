@@ -35,12 +35,35 @@ STATUS_REJECTED=3;
 
 
 // array containing nav items; initialize with views menu and admin menu
-//primaryNav = ['viewsMenu', 'adminMenu'];
-primaryNav = ['adminMenu'];
-secondaryNav = ['userMenu', 'notificationsMenu', 'submitButton'];
+primaryNav = [
+  {
+    template: 'viewsMenu',
+    order: 10
+  },
+  {
+    template: 'adminMenu',
+    order: 20
+  }
+];
+
+secondaryNav = [
+  {
+    template: 'userMenu', 
+    order: 10
+  },
+  {
+    template:'notificationsMenu',
+    order: 20
+  },
+  {
+    template: 'submitButton',
+    order: 30
+  }
+];
+>>>>>>> b75355d89db85712188d92bd3f7ce28b10ec9b31
 
 // array containing items in the admin menu
-adminNav = [
+adminMenu = [
   {
     route: 'posts_pending',
     label: 'Pending',
@@ -60,16 +83,11 @@ adminNav = [
     route: 'settings',
     label: 'Settings',
     description: 'telescope_settings_panel'
-  },
-  {
-    route: 'toolbox',
-    label: 'Toolbox',
-    description: 'various_utilities'
   }
 ];
 
 // array containing items in the views menu
-viewNav = [
+viewsMenu = [
   {
     route: 'posts_top',
     label: 'top',
@@ -224,15 +242,13 @@ postMeta = [
 ]
 // ------------------------------ Callbacks ------------------------------ //
 
-postSubmitRenderedCallbacks = [];
 postSubmitClientCallbacks = [];
 postSubmitMethodCallbacks = [];
-postAfterSubmitMethodCallbacks = [];
+postAfterSubmitMethodCallbacks = []; // runs on server only in a timeout
 
-postEditRenderedCallbacks = [];
-postEditClientCallbacks = [];
-postEditMethodCallbacks = []; // not used yet
-postAfterEditMethodCallbacks = []; // not used yet
+postEditClientCallbacks = []; // loops over post object
+postEditMethodCallbacks = []; // loops over modifier (i.e. "{$set: {foo: bar}}") object
+postAfterEditMethodCallbacks = []; // loops over modifier object
 
 commentSubmitRenderedCallbacks = [];
 commentSubmitClientCallbacks = [];

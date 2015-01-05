@@ -15,6 +15,7 @@ accounts-facebook
 service-configuration
 accounts-ui
 reactive-var
+http
 
 # Atmosphere Packages
 
@@ -24,13 +25,12 @@ meteorhacks:fast-render
 meteorhacks:subs-manager
 meteorhacks:npm
 
-aldeed:autoform@4.0.0-rc1
+aldeed:autoform
 aldeed:collection2
 aldeed:simple-schema
 
 mrt:jquery-hotkeys
 mrt:cookies
-mrt:moment
 mrt:mailchimp
 
 ccan:cssreset # CSS reset (Must come before any other css)
@@ -48,6 +48,12 @@ jparker:gravatar
 tap:i18n
 useraccounts:unstyled@1.4.0
 tsega:bootstrap3-datetimepicker@3.1.3_1
+momentjs:moment
+
+# Testing
+
+# sanjo:jasmine
+# velocity:html-reporter
 
 # Telescope Packages (Required)
 
@@ -73,6 +79,9 @@ telescope-kadira
 telescope-notifications
 telescope-singleday
 telescope-invites
+telescope-post-by-feed
+telescope-releases
+telescope-getting-started
 
 # Custom Packages
 cb-theme-pages
