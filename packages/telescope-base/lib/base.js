@@ -60,7 +60,6 @@ secondaryNav = [
     order: 30
   }
 ];
->>>>>>> b75355d89db85712188d92bd3f7ce28b10ec9b31
 
 // array containing items in the admin menu
 adminMenu = [
