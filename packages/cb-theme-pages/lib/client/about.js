@@ -6,7 +6,7 @@ Meteor.startup(function() {
 		});
 	});
 	Template[getTemplate('heroPage')].helpers({
-		isHomePage: function() {
+		showTabs: function() {
 			var r = Router.current().location.get().path;
 			console.log(r);
 			if ( r == '/' || r.indexOf("category") > -1) {
