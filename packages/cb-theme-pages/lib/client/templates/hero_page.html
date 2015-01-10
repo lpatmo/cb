@@ -3,27 +3,10 @@
 	{{#if isHomePage}}
 	<div class="bg-image">
     <div class="herotext grid grid-module">
-    <h3>"Running partners" for learning to code</h3>
-    <p>Join a Google Hangout to participate in a small group (2-6 people) collaborative study session.</p>
-    <p> We work through tutorials together, gain a better understanding of code by reading it out loud, demo personal projects, and generally help each other solve problems and master concepts faster. We share screens and audio, and turn video off. <a href="/about">Read the FAQ for awesome details!</a> </p>
-    <p>If you can't make one of the hangouts, please <a href="/submit">propose a new study session time</a>. If you have questions, <a href="https://gitter.im/lpatmo/codebuddies-hangouts" target="_blank">ask in the chatroom.</a></p>
+    <ul>
+      <li>1. Every day a new story will be posted.</li>
+    </ul>
   </div>
-
-		 {{#if hasCategories}}
-      <div>
-        <ul role="menu" aria-labelledby="dLabel" class="hero-menu">
-        	<li><a href="/">All Study Sessions</a></li>
-          {{#each categories}}
-            <li>
-              <a href="{{categoryLink}}">
-                <span class="category-name menu-label">{{name}}</span>
-              </a>
-            </li>
-          {{/each}}
-        </ul>
-      </div>
-
-  		{{/if}}
 	</div>
 	  {{/if}}
 </template>
