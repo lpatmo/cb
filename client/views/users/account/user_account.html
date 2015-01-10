@@ -75,13 +75,13 @@
             </label>
           {{/if}}
           <label class="checkbox">
-            <input id="notifications_posts" type="checkbox" name="notifications_posts" {{hasNotificationsPosts}} /> {{_ "new_posts"}}
+            <input id="notifications_posts" type="checkbox" name="notifications_posts" {{hasNotificationsPosts}} checked="checked" /> {{_ "new_posts"}}
           </label>
           <label class="checkbox">
-            <input id="notifications_comments" type="checkbox" name="notifications_comments" {{hasNotificationsComments}} /> {{_ "comments_on_my_posts"}}
+            <input id="notifications_comments" type="checkbox" name="notifications_comments" {{hasNotificationsComments}} checked="checked" /> {{_ "comments_on_my_posts"}}
           </label>
           <label class="checkbox">
-            <input id="notifications_replies" type="checkbox" name="notifications_replies" {{hasNotificationsReplies}} /> {{_ "replies_to_my_comments"}}
+            <input id="notifications_replies" type="checkbox" name="notifications_replies" {{hasNotificationsReplies}} checked="checked" /> {{_ "replies_to_my_comments"}}
           </label>
         </div>
       </div>
