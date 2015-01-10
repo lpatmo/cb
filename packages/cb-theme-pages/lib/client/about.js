@@ -54,7 +54,7 @@ templates["postTitle"] = "newPostTitle";
 templates["postAuthor"] = "newPostAuthor";
 templates["postInfo"] = "newPostInfo";
 templates["submitButton"] = "newSubmitButton";
-primaryNav.push('aboutLink');
+primaryNav.push({template: 'aboutLink'});
 var i = primaryNav.indexOf("viewsMenu");
 if(i != -1) {
 	primaryNav.splice(i, 1);
