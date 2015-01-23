@@ -79,7 +79,10 @@ a#submit.top-submit {text-transform: uppercase; font-weight: bold !important;}
 }
 
 span.upvote-link { width: 130px; text-align: center;}
+/*Always Show*/
+.post .post-share {display: block !important;}
 
 /*Hide*/
 .categories-menu, .views-menu { display: none;}
+.post-discuss {display: none;}
 
