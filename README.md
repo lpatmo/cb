@@ -45,4 +45,3 @@ Below is the list of priority issues that we have. If you're interested in takin
 25. It might be potentially confusing to someone what the difference between joining a study group and joining a hangout is. Suggestion: use a different word from "join" - like "subscribe to study group" / "launch hangout" or something like that. (Alan)
 23. Speaking of the homepage tabs, I would find some way to make them more prominent (maybe bigger) and maybe continue them across all the other pages that have lists of hangouts. I was caught off guard when they went away after I clicked on some of the "View" options.
 24. When you click on View and select one of the options under it, it would be nice to have some kind of title at the top of the page that indicates which view you're currently looking at. It's always good to help the user orient themselves within the context of the larger site.~~
-

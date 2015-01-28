@@ -1,6 +1,7 @@
 {
   "thumbnail": "Thanks!",
   "thumbnailUrl": "Thanks!",
+  "regenerate_thumbnail": "Regenerate Thumbnail",
   "clear_thumbnail": "Clear Thumbnail",
   "please_fill_in_embedly_key": "Your proposal will appear on the home page immediately. After you submit a proposal, you can always go back and edit the text. If you need styling, note that all text boxes accept markdown."
 }

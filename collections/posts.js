@@ -3,10 +3,6 @@
 // ----------------------------------------- Schema ----------------------------------------- //
 // ------------------------------------------------------------------------------------------- //
 
-SimpleSchema.extendOptions({
-  editable: Match.Optional(Boolean) // editable: true means the field can be edited by the document's owner
-});
-
 postSchemaObject = {
   _id: {
     type: String,
@@ -32,7 +28,6 @@ postSchemaObject = {
   },
   url: {
     type: String,
-    label: "URL",
     optional: true,
     autoform: {
       editable: true,
@@ -42,8 +37,6 @@ postSchemaObject = {
   title: {
     type: String,
     optional: false,
-    label: "Title",
-    editable: true,
     autoform: {
       editable: true
     }
@@ -51,7 +44,6 @@ postSchemaObject = {
   body: {
     type: String,
     optional: true,
-    editable: true,
     autoform: {
       editable: true,
       rows: 5
@@ -150,7 +142,7 @@ postSchemaObject = {
       // only provide a default value
       // 1) this is an insert operation
       // 2) status field is not set in the document being inserted
-      var user = Meteor.users.findOne(this.userId);  
+      var user = Meteor.users.findOne(this.userId);
       if (this.isInsert && !this.isSet)
         return getDefaultPostStatus(user);
     },
@@ -207,23 +199,9 @@ _.each(addToPostSchema, function(item){
 
 Posts = new Meteor.Collection("posts");
 
-PostSchema = new SimpleSchema(postSchemaObject);
+postSchema = new SimpleSchema(postSchemaObject);
 
-Posts.attachSchema(PostSchema);
-
-// Posts.deny({
-//   update: function(userId, post, fieldNames) {
-//     if(isAdminById(userId))
-//       return false;
-//     // deny the update if it contains something other than the following fields
-//     return (_.without(fieldNames, 'title', 'url', 'body', 'shortUrl', 'shortTitle', 'categories').length > 0);
-//   }
-// });
-
-// Posts.allow({
-//   update: canEditById,
-//   remove: canEditById
-// });
+Posts.attachSchema(postSchema);
 
 // ------------------------------------------------------------------------------------------- //
 // ----------------------------------------- Helpers ----------------------------------------- //
@@ -307,7 +285,6 @@ Posts.before.insert(function (userId, doc) {
 Posts.before.update(function (userId, doc, fieldNames, modifier, options) {
   // if body is being modified, update htmlBody too
   if (Meteor.isServer && modifier.$set && modifier.$set.body) {
-    modifier.$set = modifier.$set || {};
     modifier.$set.htmlBody = sanitize(marked(modifier.$set.body));
   }
 });
@@ -320,7 +297,7 @@ postAfterSubmitMethodCallbacks.push(function (post) {
   // increment posts count
   Meteor.users.update({_id: userId}, {$inc: {postCount: 1}});
   upvoteItem(Posts, post, postAuthor);
-  
+
   return post;
 
 });
@@ -419,13 +396,13 @@ Meteor.methods({
     // ------------------------------ Checks ------------------------------ //
 
     // check that user can post
-    if (!user || !canPost(user))
+    if (!user || !can.post(user))
       throw new Meteor.Error(601, i18n.t('you_need_to_login_or_be_invited_to_post_new_stories'));
 
     // --------------------------- Rate Limiting -------------------------- //
 
     if(!hasAdminRights){
-    
+
       var timeSinceLastPost=timeSinceLast(user, Posts),
         numberOfPostsInPast24Hours=numberOfItemsInPast24Hours(user, Posts),
         postInterval = Math.abs(parseInt(getSetting('postInterval', 30))),
@@ -438,7 +415,7 @@ Meteor.methods({
       // check that the user doesn't post more than Y posts per day
       if(numberOfPostsInPast24Hours > maxPostsPer24Hours)
         throw new Meteor.Error(605, i18n.t('sorry_you_cannot_submit_more_than')+maxPostsPer24Hours+i18n.t('posts_per_day'));
-    
+
     }
 
     // ------------------------------ Properties ------------------------------ //
@@ -449,12 +426,15 @@ Meteor.methods({
     // userId
     // sticky (default to false)
 
-    // if user is not admin, clear restricted properties
+    // if user is not admin, go over each schema property and clear it if it's not editable
     if (!hasAdminRights) {
-      delete post.status;
-      delete post.postedAt;
-      delete post.userId;
-      delete post.sticky;
+      _.keys(post).forEach(function (propertyName) {
+        var property = postSchemaObject[propertyName];
+        if (!property || !property.autoform || !property.autoform.editable) {
+          console.log("// Disallowed property detected: "+propertyName+" (nice try!)");
+          delete post[propertyName]
+        }
+      });
     }
 
     // if no post status has been set, set it now
@@ -466,7 +446,7 @@ Meteor.methods({
     if (!post.userId) {
       post.userId = user._id
     }
-   
+
     return submitPost(post);
   },
 
@@ -477,7 +457,7 @@ Meteor.methods({
     // ------------------------------ Checks ------------------------------ //
 
     // check that user can edit
-    if (!user || !canEdit(user, Posts.findOne(postId)))
+    if (!user || !can.edit(user, Posts.findOne(postId)))
       throw new Meteor.Error(601, i18n.t('sorry_you_cannot_edit_this_post'));
 
     // ------------------------------ Callbacks ------------------------------ //
@@ -521,8 +501,19 @@ Meteor.methods({
       // unless post is already scheduled and has a postedAt date, set its postedAt date to now
       if (!post.postedAt)
         set.postedAt = new Date();
-      
+
       var result = Posts.update(post._id, {$set: set}, {validate: false});
+
+      // --------------------- Server-Side Async Callbacks --------------------- //
+      if (Meteor.isServer) {
+        Meteor.defer(function () { // use defer to avoid holding up client
+          // run all post submit server callbacks on post object successively
+          post = postApproveCallbacks.reduce(function(result, currentFunction) {
+              return currentFunction(result);
+          }, post);
+        });
+      }
+
     }else{
       flashMessage('You need to be an admin to do that.', "error");
     }
@@ -568,12 +559,12 @@ Meteor.methods({
     // NOTE: actually, keep comments after all
 
     var post = Posts.findOne({_id: postId});
-    
-    if(!Meteor.userId() || !canEditById(Meteor.userId(), post)) throw new Meteor.Error(606, 'You need permission to edit or delete a post');
-    
+
+    if(!Meteor.userId() || !can.editById(Meteor.userId(), post)) throw new Meteor.Error(606, 'You need permission to edit or delete a post');
+
     // decrement post count
     Meteor.users.update({_id: post.userId}, {$inc: {postCount: -1}});
-    
+
     // delete post
     Posts.remove(postId);
   }

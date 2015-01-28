@@ -14,7 +14,7 @@ Meteor.startup(function () {
 Meteor.methods({
   removeMigration: function (name) {
     if (isAdmin(Meteor.user())) {
-      console.log('// removing migration: '+name)
+      console.log('// removing migration: ' + name);
       Migrations.remove({name: name});
     }
   }
@@ -32,7 +32,7 @@ var runMigration = function (migrationName) {
     }else{
       // do nothing
       // console.log('Migration "'+migrationName+'" already exists, doing nothing.')
-      return
+      return;
     }
   }
 
@@ -203,7 +203,7 @@ var migrationsList = {
   },
   commentsSubmittedToCreatedAt: function () {
     var i = 0;
-    Comments.find().forEach(function (comment) {
+    Comments.find({createdAt: {$exists: false}}).forEach(function (comment) {
       i++;
       console.log("Comment: "+comment._id);
       Comments.update(comment._id, { $rename: { 'submitted': 'createdAt'}}, {multi: true, validate: false});
@@ -272,7 +272,7 @@ var migrationsList = {
   },
   parentToParentCommentId: function () {
     var i = 0;
-    Comments.find({parentCommentId: {$exists : false}}).forEach(function (comment) {
+    Comments.find({parent: {$exists: true}, parentCommentId: {$exists : false}}).forEach(function (comment) {
       i++;
       console.log("Comment: "+comment._id);
       Comments.update(comment._id, { $set: { 'parentCommentId': comment.parent}}, {multi: true, validate: false});

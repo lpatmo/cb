@@ -31,7 +31,6 @@ aldeed:simple-schema
 
 mrt:jquery-hotkeys
 mrt:cookies
-mrt:mailchimp
 
 ccan:cssreset # CSS reset (Must come before any other css)
 cmather:handlebars-server
@@ -82,6 +81,7 @@ telescope-invites
 telescope-post-by-feed
 telescope-releases
 telescope-getting-started
+telescope-subscribe-to-posts
 
 # Custom Packages
 cb-theme-pages

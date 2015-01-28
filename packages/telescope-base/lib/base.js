@@ -48,7 +48,7 @@ primaryNav = [
 
 secondaryNav = [
   {
-    template: 'userMenu', 
+    template: 'userMenu',
     order: 10
   },
   {
@@ -142,7 +142,7 @@ viewParameters.pending = function (terms) {
   return {
     find: {
       status: 1
-    }, 
+    },
     options: {sort: {createdAt: -1}},
     showFuture: true
   };
@@ -185,14 +185,20 @@ heroModules = [];
 
 footerModules = [];
 
+threadModules = [];
+
 postModules = [
   {
-    template: 'postUpvote',
+    template: 'postRank',
     order: 1
   },
   {
-    template: 'postContent', 
-    order: 5
+    template: 'postUpvote',
+    order: 10
+  },
+  {
+    template: 'postContent',
+    order: 20
   },
   {
     template: 'postAvatars',
@@ -216,7 +222,7 @@ postHeading = [
     order: 10
   },
   {
-    template: 'postDomain', 
+    template: 'postDomain',
     order: 20
   }
 ];
@@ -235,11 +241,13 @@ postMeta = [
     order: 30
   },
   {
-    template: 'postAdmin', 
+    template: 'postAdmin',
     order: 50
   }
 ]
 // ------------------------------ Callbacks ------------------------------ //
+
+postClassCallbacks = [];
 
 postSubmitClientCallbacks = [];
 postSubmitMethodCallbacks = [];
@@ -249,12 +257,16 @@ postEditClientCallbacks = []; // loops over post object
 postEditMethodCallbacks = []; // loops over modifier (i.e. "{$set: {foo: bar}}") object
 postAfterEditMethodCallbacks = []; // loops over modifier object
 
+postApproveCallbacks = [];
+
+commentClassCallbacks = [];
+
 commentSubmitRenderedCallbacks = [];
 commentSubmitClientCallbacks = [];
 commentSubmitMethodCallbacks = [];
 commentAfterSubmitMethodCallbacks = [];
 
-commentEditRenderedCallbacks = []; 
+commentEditRenderedCallbacks = [];
 commentEditClientCallbacks = [];
 commentEditMethodCallbacks = []; // not used yet
 commentAfterEditMethodCallbacks = []; // not used yet
@@ -263,6 +275,9 @@ userEditRenderedCallbacks = [];
 userEditClientCallbacks = [];
 userCreatedCallbacks = [];
 userProfileCompleteChecks = [];
+
+upvoteCallbacks = [];
+downvoteCallbacks = [];
 
 // ------------------------------------- User Profiles -------------------------------- //
 
@@ -278,13 +293,13 @@ userProfileDisplay = [
   {
     template: 'userUpvotedPosts',
     order: 3
-  },  
+  },
   {
-    template: 'userDownvotedPosts', 
+    template: 'userDownvotedPosts',
     order: 5
-  },  
+  },
   {
-    template: 'userComments', 
+    template: 'userComments',
     order: 5
   }
 ];

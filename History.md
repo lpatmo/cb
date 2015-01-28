@@ -1,3 +1,35 @@
+## v0.14.0 “GridScope”
+
+* Adeed Grid Layout option.
+* Cleaned up vote click handling functions and added tests (thanks @anthonymayer!).
+* Added `threadModules` zone.
+* Added `upvoteCallbacks` and `downvoteCallbacks` callback arrays.
+* Fix “post awaiting moderation” message bug.
+* You can now subscribe to comment threads (thanks @delgermurun!).
+* Added `postApproveCallbacks` callback array.
+* Added notifications for pending and approved posts, for admins and end users.
+* Renaming "digest" view to "singleday".
+* Make sure only valid properties can be added to posts and comments.
+* Added newsletter time setting (thanks @anthonymayer!).
+* Change "sign up" to "register" (thanks @Kikobeats!).
+
+## v0.13.0 “ComponentScope”
+
+* Tweaked comments layout in Hubbble theme.
+* Added Bulgarian translation (thanks @toome123!).
+* Cleaned up permission functions (thanks @anthonymayer!).
+* Various fixes (thanks @comerc and @Kikobeats!).
+* Stopped synced-cron message logging.
+* Limit all posts lists to 200 posts.
+* Refactored posts lists to use the template-level subscription pattern when appropriate.
+* Refactored `single day` and `daily` packages.
+* Footer field now accepts Markdown instead of HTML.
+* Feeds can now be assigned to a user.
+* Various CSS tweaks.
+* Fixing newsletter issue.
+* Post rank now has its own module.
+* Changed how field label i18n works. 
+
 ## v0.12.0 “DummyScope”
 
 **Important: existing newsletters and feeds need to be manually enabled in the Settings panel** 
