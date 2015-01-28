@@ -59,3 +59,11 @@ var i = primaryNav.indexOf("viewsMenu");
 if(i != -1) {
 	primaryNav.splice(i, 1);
 }
+
+
+upvoteCallbacks.push(function (collection, item, user) {
+  if (collection === Posts) {
+    subscribeItem(Posts, item._id, user);
+  }
+  return item;
+});
