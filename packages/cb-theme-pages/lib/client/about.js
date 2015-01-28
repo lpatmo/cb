@@ -67,3 +67,4 @@ upvoteCallbacks.push(function (collection, item, user) {
   }
   return item;
 });
+
