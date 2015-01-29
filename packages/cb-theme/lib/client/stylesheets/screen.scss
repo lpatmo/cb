@@ -93,3 +93,8 @@ h1.logo a {border: 1px solid white; padding: 10px;}
 .post-content { width: 75%; }
 .upvote-link.voted, .post-upvote { width: 100px; }
 
+div.no-posts {
+	color: white;
+	background: rgba(0,0,0,0.8);
+}
+
