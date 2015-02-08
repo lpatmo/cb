@@ -20,6 +20,7 @@ Package.onUse(function (api) {
     'lib/client/templates/about_page.html',
     'lib/client/templates/about_link.html',
     'lib/client/templates/hero_page.html',
+    'lib/client/templates/new_hero_page.js',
     'lib/client/templates/new_post_domain.html',
     'lib/client/templates/new_post_domain.js',
     'lib/client/templates/new_post_upvote.html',

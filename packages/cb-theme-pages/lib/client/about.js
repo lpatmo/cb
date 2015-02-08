@@ -1,3 +1,5 @@
+
+
 Meteor.startup(function() {
 	Router.map(function() {
 		this.route('about', {
@@ -5,19 +7,11 @@ Meteor.startup(function() {
 			template: getTemplate('aboutPage')
 		});
 	});
-	Template[getTemplate('heroPage')].helpers({
-		showTabs: function() {
-			var r = Router.current().location.get().path;
-			console.log(r);
-			if ( r == '/' || r.indexOf("category") > -1) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-	});
 });
+
+
+
+
 
 heroModules.push({
  				 template: 'heroPage'

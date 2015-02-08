@@ -9,6 +9,12 @@ Below is the list of priority issues that we have. If you're interested in takin
 
 1. Study session proposers can click a button to send a message to everyone who RSVPed to the hangout. Start by returning a list of e-mails of attendees that only the hangout proposer and admins can see. DISCUSS HERE: https://github.com/lpatmo/cb/issues/22
 2. Differentiate between "previous hangouts" and "upcoming hangouts." DISCUSS HERE:  https://github.com/lpatmo/cb/issues/17
+3. Add support for select option for hangout rooms in form
+4. Redesign home page so there's not so much text, and put up a NUMBER: "165 running partners for learning code..."
+5. Re-think RSVP button
+6. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions
+
+
 
 ###Non-priority issues (for now):
 3. Re-write forms to add a datepicker, and re-order hangouts using this new view. Bonus: have the date/time show up separately based on this datepicker time instead of putting it in the title. DISCUSS HERE: https://github.com/lpatmo/cb/issues/4
