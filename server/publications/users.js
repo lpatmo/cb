@@ -21,6 +21,12 @@ Meteor.publish('allUsersAdmin', function() {
 });
 
 //Publish count of all users
-Meteor.publish('userCount', function() {
-  return Meteor.users.find().count();
-});
+// Meteor.publish('getUserCount', function() {
+//   return Meteor.users.find().count();
+// });
+
+// Meteor.methods({
+//   getUserCount: function() {
+//     return Meteor.users.find().count();
+//   }
+// });

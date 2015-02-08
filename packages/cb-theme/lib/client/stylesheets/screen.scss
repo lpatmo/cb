@@ -41,7 +41,7 @@ a.hangout-button:hover { background: rgba(28,160,96, 1.0); }
 .message-upvote {	-moz-box-shadow:    3px 3px 3px #ccc;
     -webkit-box-shadow: 3px 3px 3px #ccc;
     box-shadow:         3px 3px 3px #ccc;
-    	padding: 5px; 	background: #DD3416; 
+    	padding: 5px; 	background: dodgerblue; 
  
 	color: #fff;}
 
@@ -97,7 +97,6 @@ a#submit.top-submit {text-transform: uppercase; font-weight: bold !important;}
 .categories-menu, .views-menu { display: none;}
 .post-discuss {display: none;}
 
-h1.logo a {border: 1px solid white; padding: 10px;}
 
 .more-button span { background: dodgerblue; color: white; padding: 10px;}
 
@@ -114,4 +113,4 @@ div.no-posts {
 .category-silent-hangout.example { color: #444444;}
 .category-silent-hangout.example:hover { color: #fff;}
 
-
+.share-options { z-index: 99999; width: 35px; padding: 0px; top: 2px; position: relative;}

@@ -36,4 +36,8 @@ Package.onUse(function (api) {
     'lib/client/about.js'
   ], ['client']);
 
+  api.add_files([
+    'lib/server/usercount.js'
+    ], ['server']);
+
 });

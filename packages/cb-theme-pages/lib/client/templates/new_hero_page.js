@@ -1,10 +1,4 @@
-  Template[getTemplate('heroPage')].rendered = function () {
-    Meteor.call('userCount', function (result) {
-      Session.set('userCount', result);
-    });
-  };
-
-  Template[getTemplate('heroPage')].helpers({
+Template[getTemplate('heroPage')].helpers({
 		showTabs: function() {
 			var r = Router.current().location.get().path;
 			console.log(r);
@@ -15,10 +9,16 @@
 			}
 		}, 
     userCount: function() {
-      var userCount = Session.get('userCount');
-      console.log(userCount);
-      return userCount;
+      var totalUsers = Session.get('userCount');
+      console.log(totalUsers);
+      return totalUsers;
     }
 	});
+
+Template[getTemplate('heroPage')].rendered = function () {
+    Meteor.call('getUserCount', function (err, result) {
+      Session.set('userCount', result);
+    });
+  };
 
 
