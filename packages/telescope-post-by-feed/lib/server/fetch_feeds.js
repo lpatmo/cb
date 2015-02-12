@@ -11,13 +11,19 @@ var handleFeed = function(error, feed) {
 
   var feedItems = _.first(feed.items, 20); // limit feed to 20 items just in case
   var userId = this._parser._options.userId;
-
+  var feedId = this._parser._options.feedId;
+  var categories = this._parser._options.categories;
+ 
   clog('// Parsing RSS feed: '+ feed.title)
 
   var newItemsCount = 0;
 
   feedItems.forEach(function(item, index, array) {
-    
+
+    // if item has no id, use the URL to give it one
+    if (!item.id)
+      item.id = item.link;
+
     // check if post already exists
     if (!!Posts.findOne({feedItemId: item.id})) {
       // clog('// Feed item already imported')
@@ -27,9 +33,10 @@ var handleFeed = function(error, feed) {
       var post = {
         title: he.decode(item.title),
         url: item.link,
-        feedId: feed.id,
+        feedId: feedId,
         feedItemId: item.id,
-        userId: userId
+        userId: userId,
+        categories:categories
       }
 
       if (item.description)
@@ -67,12 +74,14 @@ fetchFeeds = function() {
 
     // if feed doesn't specify a user, default to admin
     var userId = !!feed.userId ? feed.userId : getFirstAdminUser()._id;
-
+    var categories =feed.categories;
+    var feedId = feed._id;
+    
     try {
 
       content = HTTP.get(feed.url).content;
       var feedHandler = new htmlParser.FeedHandler(handleFeed);
-      var parser = new htmlParser.Parser(feedHandler, {xmlMode: true, userId: userId});
+      var parser = new htmlParser.Parser(feedHandler, {xmlMode: true, userId: userId, categories:categories, feedId:feedId});
       parser.write(content);
       parser.end();
 

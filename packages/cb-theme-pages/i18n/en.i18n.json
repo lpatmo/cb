@@ -1,4 +1,6 @@
-{
+TAPi18n.loadTranslations({
+    { 
+      en: {
   //Navigation
   "menu": "Menu",
   "view": "View",
@@ -298,3 +300,5 @@
   "telescope_settings_panel": "Telescope settings panel.",
   "various_utilities": "Various utilities."
 }
+  }
+    });
