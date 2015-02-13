@@ -7,6 +7,10 @@ Template[getTemplate('newPostUpvote')].helpers({
   oneBasedRank: function(){
     if(typeof this.rank !== 'undefined')
       return this.rank + 1;
+  },
+  notExpiredEvent: function () {
+    var notExpired = (this.postedAt > Date.now()) ? true : false;
+    return notExpired;
   }
 });
 
