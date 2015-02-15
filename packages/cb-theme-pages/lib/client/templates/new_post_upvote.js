@@ -9,7 +9,7 @@ Template[getTemplate('newPostUpvote')].helpers({
       return this.rank + 1;
   },
   notExpiredEvent: function () {
-    var notExpired = (this.postedAt > Date.now()) ? true : false;
+    var notExpired = (this.scheduledFor > Date.now()) ? true : false;
     return notExpired;
   }
 });
