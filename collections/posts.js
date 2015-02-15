@@ -30,8 +30,17 @@ postSchemaObject = {
     type: String,
     optional: true,
     autoform: {
-      editable: true,
-      type: "bootstrap-url"
+      options: [
+        {label: "Show and Tell Hangout", value: "http://codebuddies.org/meteor-hangout2"},
+        {label: "HTML/CSS Hangout", value: "http://codebuddies.org/htmlcss-hangout"},
+        {label: "Python Hangout", value: "http://codebuddies.org/python-hangout"},
+        {label: "Javascript Hangout", value: "http://codebuddies.org/javascript-hangout"},
+        {label: "MeteorJS Hangout", value: "http://codebuddies.org/meteor-hangout"},
+        {label: "Django Hangout", value: "http://codebuddies.org/flask-hangout"},
+        {label: "Ruby on Rails Hangout", value: "http://codebuddies.org/rubyonrails-hangout"},
+        {label: "Problem Solving Hangout", value: "http://codebuddies.org/problemsolving-hangout"},
+        {label: "Git Hangout", value: "http://codebuddies.org/git-hangout"}
+      ]
     }
   },
   title: {
