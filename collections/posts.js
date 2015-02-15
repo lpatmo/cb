@@ -31,13 +31,14 @@ postSchemaObject = {
     optional: true,
     autoform: {
       options: [
-        {label: "Show and Tell Hangout", value: "http://codebuddies.org/meteor-hangout2"},
+        {label: "Show and Tell Hangout", value: "http://codebuddies.org/demo-hangout"},
         {label: "HTML/CSS Hangout", value: "http://codebuddies.org/htmlcss-hangout"},
         {label: "Python Hangout", value: "http://codebuddies.org/python-hangout"},
         {label: "Javascript Hangout", value: "http://codebuddies.org/javascript-hangout"},
         {label: "MeteorJS Hangout", value: "http://codebuddies.org/meteor-hangout"},
-        {label: "Django Hangout", value: "http://codebuddies.org/flask-hangout"},
-        {label: "Ruby on Rails Hangout", value: "http://codebuddies.org/rubyonrails-hangout"},
+        {label: "Flask Hangout", value: "http://codebuddies.org/flask-hangout"},
+        {label: "Django Hangout", value: "http://codebuddies.org/django-hangout"},
+        {label: "Ruby on Rails Hangout", value: "http://codebuddies.org/rails-hangout"},
         {label: "Problem Solving Hangout", value: "http://codebuddies.org/problemsolving-hangout"},
         {label: "Git Hangout", value: "http://codebuddies.org/git-hangout"}
       ]
