@@ -26,6 +26,14 @@ postSchemaObject = {
       type: "bootstrap-datetimepicker"
     }
   },
+  scheduledFor: {
+    type: Date,
+    optional: true,
+    autoform: {
+      editable: true,
+      type: "bootstrap-datetimepicker"
+    }
+  },
   url: {
     type: String,
     optional: true,
@@ -270,7 +278,7 @@ checkForPostsWithSameUrl = function (url, currentUser) {
   var sixMonthsAgo = moment().subtract(6, 'months').toDate();
   var postWithSameLink = Posts.findOne({url: url, postedAt: {$gte: sixMonthsAgo}});
 
-/*Do not give error if same link was posted*/ 
+/*Do not give error if same link was posted*/
  // if(typeof postWithSameLink !== 'undefined'){
    // upvoteItem(Posts, postWithSameLink, currentUser);
     // note: error.details returns undefined on the client, so add post ID to reason
@@ -567,7 +575,7 @@ Meteor.methods({
       Posts.update(postId, { $inc: { viewCount: 1 }});
     }
   },
-  
+
   deletePostById: function(postId) {
     // remove post comments
     // if(!this.isSimulation) {
