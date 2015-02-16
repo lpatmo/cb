@@ -1,5 +1,5 @@
 viewParameters.recentlyScheduled = function () {
   return {
-    options: {sort: {lastCommentedAt: -1}}
+    options: {sort: {scheduledFor: -1}}
   };
 }
