@@ -21,6 +21,7 @@ boilerplate-generator@1.0.2
 callback-hook@1.0.2
 cb-theme@0.1.0
 cb-theme-pages@0.1.0
+cb-theme-recently-scheduled@0.0.0
 ccan:cssreset@1.0.0
 cfs:http-methods@0.0.27
 check@1.0.4
