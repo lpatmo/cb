@@ -5,6 +5,11 @@ Template[getTemplate('newPostDomain')].helpers({
     console.log('hi')
     //return a.hostname;
     return a
+  },
+  notExpiredEvent: function () {
+    var notExpired = (this.scheduledFor > Date.now()-86400000) ? true : false;
+    /*Not expired as long as it was scheduled for within the last 24 hours*/
+    return notExpired;
   }
 });
 

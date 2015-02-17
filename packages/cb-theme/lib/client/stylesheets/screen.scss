@@ -113,6 +113,14 @@ div.no-posts {
 .category-silent-hangout.example { color: #444444;}
 .category-silent-hangout.example:hover { color: #fff;}
 
-.share-options { z-index: 99999; width: 35px; padding: 0px; top: 2px; position: relative;}
+.share-options { display: block !important; z-index: 99999; width: 35px; padding: 0px; top: 2px; position: relative;  }
 
 span.user-count {color: yellow;}
+
+
+// see css.js when "buttonColor" setting is white they glyphicon inherits that style making it invisible
+.glyphicon {
+	color: lightblue;
+}
+
+.scheduled-for { color: dodgerblue;}

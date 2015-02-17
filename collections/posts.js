@@ -26,12 +26,30 @@ postSchemaObject = {
       type: "bootstrap-datetimepicker"
     }
   },
+  scheduledFor: {
+    type: Date,
+    optional: true,
+    autoform: {
+      editable: true,
+      type: "bootstrap-datetimepicker"
+    }
+  },
   url: {
     type: String,
     optional: true,
     autoform: {
-      editable: true,
-      type: "bootstrap-url"
+      options: [
+        {label: "Show and Tell Hangout", value: "http://codebuddies.org/demo-hangout"},
+        {label: "HTML/CSS Hangout", value: "http://codebuddies.org/htmlcss-hangout"},
+        {label: "Python Hangout", value: "http://codebuddies.org/python-hangout"},
+        {label: "Javascript Hangout", value: "http://codebuddies.org/javascript-hangout"},
+        {label: "MeteorJS Hangout", value: "http://codebuddies.org/meteor-hangout"},
+        {label: "Flask Hangout", value: "http://codebuddies.org/flask-hangout"},
+        {label: "Django Hangout", value: "http://codebuddies.org/django-hangout"},
+        {label: "Ruby on Rails Hangout", value: "http://codebuddies.org/rails-hangout"},
+        {label: "Problem Solving Hangout", value: "http://codebuddies.org/problemsolving-hangout"},
+        {label: "Git Hangout", value: "http://codebuddies.org/git-hangout"}
+      ]
     }
   },
   title: {
@@ -260,7 +278,7 @@ checkForPostsWithSameUrl = function (url, currentUser) {
   var sixMonthsAgo = moment().subtract(6, 'months').toDate();
   var postWithSameLink = Posts.findOne({url: url, postedAt: {$gte: sixMonthsAgo}});
 
-/*Do not give error if same link was posted*/ 
+/*Do not give error if same link was posted*/
  // if(typeof postWithSameLink !== 'undefined'){
    // upvoteItem(Posts, postWithSameLink, currentUser);
     // note: error.details returns undefined on the client, so add post ID to reason
@@ -557,7 +575,7 @@ Meteor.methods({
       Posts.update(postId, { $inc: { viewCount: 1 }});
     }
   },
-  
+
   deletePostById: function(postId) {
     // remove post comments
     // if(!this.isSimulation) {

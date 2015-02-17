@@ -64,3 +64,4 @@ upvoteCallbacks.push(function (collection, item, user) {
 
 console.log(upvoteCallbacks);
 
+
