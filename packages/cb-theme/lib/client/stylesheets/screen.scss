@@ -133,8 +133,11 @@ form div.controls {
 }
 
 /*Category tag colors*/
-.hero-menu .post-category { background: rgba(30,144,255,0.85); color: #fff !important; font-size: 1.2em;}
-.hero-menu .post-category:hover { background: #DD3416; color: #fff;}
+.hero-menu {
+	.post-category { background: rgba(30,144,255,0.85); color: #fff !important; font-size: 1.2em;}
+	.post-category:hover { background: #DD3416; color: #fff;}
+}
+.post-category { padding: 3px 5px;}
 
 /*Hide ranking*/
 .post-rank {display: none;}
