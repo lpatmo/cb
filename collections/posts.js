@@ -38,6 +38,7 @@ postSchemaObject = {
     type: String,
     optional: true,
     autoform: {
+      editable: true,
       options: [
         {label: "Show and Tell Hangout", value: "http://codebuddies.org/demo-hangout"},
         {label: "HTML/CSS Hangout", value: "http://codebuddies.org/htmlcss-hangout"},
