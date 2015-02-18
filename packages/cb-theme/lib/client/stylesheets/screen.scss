@@ -16,13 +16,13 @@ p {
 }
 
 ul.hero-menu {
-	margin-bottom: 0;
+	margin-bottom: 10px;
 	line-height: 0;
 	li {
-		display: inline;
-		margin: 0px 2px;
+		line-height: 1.5;
+		display: inline-block;
+		margin: 2px;
 		a:hover { color: white; background: rgba(30,144,255, 0.8);}
-		a {  background: dodgerblue; color: #fff;  padding: 5px 7px; font-size: 1.4em;}
 	}
 }
 
@@ -115,7 +115,7 @@ div.no-posts {
 
 .share-options { display: block; width: 35px; padding: 0px; top: 2px; position: relative;  }
 
-span.user-count {color: yellow;}
+span.user-count {color: yellow; line-height: .1; font-size: 2.5em;}
 
 
 // see css.js when "buttonColor" setting is white they glyphicon inherits that style making it invisible
@@ -129,3 +129,9 @@ form div.controls {
 	input[name="scheduledFor"], input[name="scheduledEnd"] { width: 166px; }
 }
 
+/*Category tag colors*/
+.hero-menu .post-category { background: rgba(30,144,255,0.85); color: #fff !important; font-size: 1.2em;}
+.hero-menu .post-category:hover { background: #DD3416; color: #fff;}
+
+/*Hide ranking*/
+.post-rank {display: none;}

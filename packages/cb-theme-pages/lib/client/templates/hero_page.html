@@ -14,11 +14,11 @@
 		 {{#if hasCategories}}
       <div>
         <ul role="menu" aria-labelledby="dLabel" class="hero-menu">
-        	<li><a href="/" id="tab-all">All</a></li>
+        	<li><a href="/" class="post-category" id="tab-all">All study group categories</a></li>
           {{#each categories}}
             <li>
-              <a href="{{categoryLink}}">
-                <span class="category-name menu-label">{{name}}</span>
+              <a href="{{categoryLink}}" class="post-category">
+                {{name}}
               </a>
             </li>
           {{/each}}
