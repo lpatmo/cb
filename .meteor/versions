@@ -85,6 +85,7 @@ mongo@1.0.11
 mongo-livedata@1.0.7
 mrt:cookies@0.3.0
 mrt:jquery-hotkeys@0.0.1
+mrt:mediaqueries@0.1.2
 mrt:moment@2.8.1
 mrt:moment-timezone@0.2.1
 npm-bcrypt@0.7.7

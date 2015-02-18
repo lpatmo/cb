@@ -124,3 +124,8 @@ span.user-count {color: yellow;}
 }
 
 .scheduled-for { color: dodgerblue;}
+
+@media screen and (max-width: 600px) {
+	
+	body { background: pink; }
+}
