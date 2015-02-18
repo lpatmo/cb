@@ -34,6 +34,14 @@ postSchemaObject = {
       type: "bootstrap-datetimepicker"
     }
   },
+  scheduledEnd: {
+    type: Date,
+    optional: true,
+    autoform: {
+      editable: true,
+      type: "bootstrap-datetimepicker"
+    }
+  },
   url: {
     type: String,
     optional: true,

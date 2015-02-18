@@ -69,7 +69,7 @@
 
   // Post Schema
   "createdAt": "Created At",
-  "postedAt": "Hangout Time Scheduled For",
+  "postedAt": "Posted At",
   "url": "Hangout Location URL",  
   "title": "Title of Study Session",
   "body": "What are you going to cover? What are your learning goals?",
@@ -126,8 +126,9 @@
 
   // Post submit & edit
   "created": "Created",
-  "title": "[TOPIC] (e.g. Eloquent Javascript Chapter 7)",
-  "scheduledFor": "What time does the study session start? (Leave blank if you haven't decided yet.)",
+  "title": "STUDY SESSION TOPIC:",
+  "scheduledFor": "Start time",
+  "scheduledEnd": "End time",
   "suggest_title": "Suggest title",
   "url": "Google Hangout Room",
   "short_url": "Short URL",
