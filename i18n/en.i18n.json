@@ -126,8 +126,8 @@
 
   // Post submit & edit
   "created": "Created",
-  "title": "[TOPIC] (e.g. Thursday, 1/1 @ 1-2pm EST - Eloquent Javascript Chapter 7). Make sure you write a topic; put down TBD if you are unsure of the meeting time.",
-  "scheduledFor": "What time does the study session start?",
+  "title": "[TOPIC] (e.g. Eloquent Javascript Chapter 7)",
+  "scheduledFor": "What time does the study session start? (Leave blank if you haven't decided yet.)",
   "suggest_title": "Suggest title",
   "url": "Google Hangout Room",
   "short_url": "Short URL",
