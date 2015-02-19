@@ -6,25 +6,25 @@ The goal of this platform is to help users schedule google hangouts more easily 
 
 ###Priority Issues
 Below is the list of priority issues that we have. If you're interested in taking a look at one of these as an open-source contributor, leave a message on the issue link! Or leave a note in the [chatroom](https://gitter.im/lpatmo/codebuddies-meteor) if you have questions.
-
-1. Study session proposers can click a button to send a message to everyone who RSVPed to the hangout. Start by returning a list of e-mails of attendees that only the hangout proposer and admins can see. DISCUSS HERE: https://github.com/lpatmo/cb/issues/22
-2. Differentiate between "previous hangouts" and "upcoming hangouts." DISCUSS HERE:  https://github.com/lpatmo/cb/issues/17
-3. Add support for select option for hangout rooms in form
-4. Redesign home page so there's not so much text, and put up a NUMBER: "165 running partners for learning code..."
-5. Re-think RSVP button
-6. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions
+1. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously.
+2. Create a "leaders" page that features a leaderboard of the top hangout organizers.
 
 
 
 ###Non-priority issues (for now):
-3. Re-write forms to add a datepicker, and re-order hangouts using this new view. Bonus: have the date/time show up separately based on this datepicker time instead of putting it in the title. DISCUSS HERE: https://github.com/lpatmo/cb/issues/4
-4. Add a class "active" to the menu tab label when the users is on that tab's page. DISCUSS HERE: https://github.com/lpatmo/cb/issues/21
-5. BONUS: Allow users to award each other karma points for being helpful during hangouts. :) Also, create a page with a leaderboard of users listing karma points. DISCUSS HERE: https://github.com/lpatmo/cb/issues/25
-6. See the hangout link only if you RSVP to the hangout. BONUS: Automate the hangout links. Maybe use an alternative to Google Hangouts? DISCUSS HERE: https://github.com/lpatmo/cb/issues/27
+1. Add a class "active" to the menu tab label when the users is on that tab's page. DISCUSS HERE: https://github.com/lpatmo/cb/issues/21
+2. BONUS: Allow users to award each other karma points for being helpful during hangouts. :) Also, create a page with a leaderboard of users listing karma points. DISCUSS HERE: https://github.com/lpatmo/cb/issues/25
+3. Maybe use an alternative to Google Hangouts? DISCUSS HERE: https://github.com/lpatmo/cb/issues/27
 
 
 ###Closed Issues
 ~~
+3. Add support for select option for hangout rooms in form (DONE!)
+2. Differentiate between "previous hangouts" and "upcoming hangouts." DISCUSS HERE:  https://github.com/lpatmo/cb/issues/17 (DONE!)
+4. Redesign home page so there's not so much text, and put up a NUMBER: "165 running partners for learning code..." (DONE!)
+5. Re-think RSVP button 
+3. Re-write forms to add a datepicker, and re-order hangouts using this new view. Bonus: have the date/time show up separately based on this datepicker time instead of putting it in the title. DISCUSS HERE: https://github.com/lpatmo/cb/issues/4 (DONE!)
+1. Study session proposers can click a button to send a message to everyone who RSVPed to the hangout. Start by returning a list of e-mails of attendees that only the hangout proposer and admins can see. DISCUSS HERE: https://github.com/lpatmo/cb/issues/22
 16. Question: migrating the DB from meteor.com to compose.io -- is it possible? UPDATE: Not an issue anymore.
 13. Prettify the hero blurb on the home page (add a background image, etc.) DONE!
 18. Question: is it possible to allow an admin to add other "moderators" for that post -- so that multiple people can edit a single post? Have to figure out logic. UPDATE: This is coming up as a future TelescopeJS feature.
