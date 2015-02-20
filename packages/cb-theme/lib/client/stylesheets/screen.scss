@@ -156,4 +156,8 @@ form div.controls {
 /*Hide ranking*/
 .post-rank {display: none;}
 
+/*Subscriptions*/
+.post-subscribe.module.grid-block { background: rgba(28,160,96,0.7); padding: 10px !important; &:hover { background: rgba(28,160,96,0.9); } }
+a.subscribe-link, a.unsubscribe-link { color: white; font-size: 1.5em; margin: 0 auto; display: block; text-align: center;}
+
 
