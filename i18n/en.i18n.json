@@ -126,13 +126,13 @@
 
   // Post submit & edit
   "created": "Created",
-  "title": "STUDY SESSION TOPIC:",
+  "title": "STUDY SESSION TOPIC",
   "scheduledFor": "Start time",
   "scheduledEnd": "End time",
   "suggest_title": "Suggest title",
   "url": "Google Hangout Room",
   "short_url": "Short URL",
-  "body": "[DESCRIPTION] What link(s) are you using to screen share, and what do you hope to master together by the end of the session? What are the prerequisites for joining this hangout?",
+  "body": "[DESCRIPTION] What do you hope to cover or master? Are there any prerequisites you require of participants? Is this a \"silent hangout\"?",
   "category": "Category",
   "inactive_": "Inactive?",
   "sticky_": "Sticky?",

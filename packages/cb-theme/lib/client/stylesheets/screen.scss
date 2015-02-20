@@ -34,6 +34,18 @@ ul.hero-menu {
 	h3 { font-size: 1.4rem;}
 }
 
+.hero-tabs .submit { 
+	display: block;
+	padding: 10px;
+	text-align: center;
+	background: rgba(28,160,96,0.8);
+	border-radius: 3px;
+	text-transform: uppercase;
+	width: 100%;
+	font-size: 1.5em;
+	&:hover { background: rgba(28,160,96,0.9); }
+}
+
 
 a.hangout-button { background: rgba(28,160,96, 0.8); padding: 5px 15px; color: white; text-transform: uppercase;}
 a.hangout-button:hover { background: rgba(28,160,96, 1.0); }
@@ -74,7 +86,7 @@ form {
 	.form-group div.controls { margin-left: 0 !important; clear: both;}
 }
 
-a#submit.top-submit {text-transform: uppercase; font-weight: bold !important;}
+a#submit.top-submit {text-transform: uppercase; font-weight: bold !important; background: #1ca060;}
 
 .header  {
 	background: rgba(0,0,0,0.8);
@@ -137,9 +149,11 @@ form div.controls {
 /*Category tag colors*/
 .hero-menu {
 	.post-category { background: rgba(30,144,255,0.85); color: #fff !important; font-size: 1.2em;}
-	.post-category:hover { background: #DD3416; color: #fff;}
+	.post-category:hover { background: #1ca060; color: #fff;}
 }
 .post-category { padding: 3px 5px;}
 
 /*Hide ranking*/
 .post-rank {display: none;}
+
+

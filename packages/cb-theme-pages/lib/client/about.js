@@ -48,11 +48,12 @@ templates["postTitle"] = "newPostTitle";
 templates["postAuthor"] = "newPostAuthor";
 templates["postInfo"] = "newPostInfo";
 templates["submitButton"] = "newSubmitButton";
-primaryNav.push({template: 'aboutLink'});
+
 var i = primaryNav.indexOf("viewsMenu");
 if(i != -1) {
 	primaryNav.splice(i, 1);
 }
+
 
 
 upvoteCallbacks.push(function (collection, item, user) {
@@ -62,6 +63,8 @@ upvoteCallbacks.push(function (collection, item, user) {
   return item;
 });
 
-console.log(upvoteCallbacks);
+//console.log(upvoteCallbacks);
+
+primaryNav.push({template: 'aboutLink'});
 
 

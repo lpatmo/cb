@@ -13,8 +13,8 @@ Template[getTemplate('new_post_page')].helpers({
   },
   membersList: function() {
     users = Meteor.users.find({_id: {$in: this.upvoters}});
-    console.log(this.upvoters);
-    console.log(this.upvotes);
+    //console.log(this.upvoters);
+    //console.log(this.upvotes);
     return users;
      // return Meteor.users.find({_id: {$in: this.upvoters}});
   }

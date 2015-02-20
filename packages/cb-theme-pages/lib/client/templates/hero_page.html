@@ -11,9 +11,9 @@
     </p>
     <p>CodeBuddies is free, a safe space, makes learning to code <em>much</em> more fun, and is <a href="http://github.com/lpatmo/cb" target="_blank">open-sourced</a>. People of all skill levels join, and <strong class="highlight">ANYONE can schedule a study session</strong> ("silent" or otherwise) on any tutoral or topic. <a href="/about">Read the FAQ</a> for more information, and ask other questions <a href="https://gitter.im/lpatmo/codebuddies-hangouts" target="_blank">in the chatroom.</a></p>
   </div>
-<p><a href="/submit" class="submit btn header-submodule btn-primary top-submit button">SCHEDULE A REMOTE STUDY SESSION</a></p>
+
 		 {{#if hasCategories}}
-      <div>
+      <div class="hero-tabs">
         <ul role="menu" aria-labelledby="dLabel" class="hero-menu">
         	<li><a href="/" class="post-category" id="tab-all">All study group categories</a></li>
           {{#each categories}}
@@ -24,9 +24,11 @@
             </li>
           {{/each}}
         </ul>
-      </div>
 
+        <p><a href="/submit" class="submit">Schedule a virtual study session</a></p>
+      </div>
   		{{/if}}
+  
 	</div>
 	  {{/if}}
 </template>
