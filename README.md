@@ -12,6 +12,8 @@ Below is the list of priority issues that we have. If you're interested in takin
 
 3. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links.
 
+4. Give titles to each category. Maybe recognize it inside the "Schedule a {{category}} study session" button.
+
 
 ###Non-priority issues (for now):
 1. Add a class "active" to the menu tab label when the users is on that tab's page. DISCUSS HERE: https://github.com/lpatmo/cb/issues/21
