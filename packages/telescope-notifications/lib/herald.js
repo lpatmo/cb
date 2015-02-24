@@ -51,7 +51,7 @@ Herald.addCourier('newPost', {
     email: {
       emailRunner: function (user) {
         var p = getPostProperties(this.data);
-        var subject = p.postTitle + ', a new hangout, has been proposed';
+        var subject = p.postTitle + ', a new study hangout, has been proposed';
         var html = buildEmailTemplate(getEmailTemplate('emailNewPost')(p));
         sendEmail(getEmail(user), subject, html);
       }
