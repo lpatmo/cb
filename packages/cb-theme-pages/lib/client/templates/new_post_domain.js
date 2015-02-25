@@ -10,6 +10,10 @@ Template[getTemplate('newPostDomain')].helpers({
     var notExpired = (this.scheduledFor > Date.now()-86400000) ? true : false;
     /*Not expired as long as it was scheduled for within the last 24 hours*/
     return notExpired;
+  },
+  inProgress: function() {
+    var inProgress = (Date.now() > this.scheduledFor && Date.now() < this.scheduledEnd) ? true : false;
+    return inProgress;
   }
 });
 

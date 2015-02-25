@@ -1,13 +1,28 @@
 <template name="newPostTitle">
 	<a href="/posts/{{_id}}" class="post-title">
-		{{# if formattedHangoutDate }}
-			{{#if notExpiredEvent}}
-			<span class="scheduled-for">Starting {{formattedHangoutDate}}{{# if endHangoutDate }}-{{ endHangoutDate }}{{/if}}
-				</span> -
-			{{ else }}
-			<span class="scheduled-for-completed">Mastered {{formattedHangoutDate}}</span> -
-			{{/if}}
-		{{/if}} 
+			{{#if endHangoutDate }}
+				{{# if upcomingEvent}}
+	                  <span class="scheduled-for">Starting {{formattedHangoutDate}}-{{#if endHangoutDate }}{{endHangoutDate }} {{/if}}</span> |
+				{{/if}}
+				{{#if inProgress}}
+				<span class="in-progress"><i class="fa fa-clock"></i>in progress - join now until {{endHangoutDate}}</span> |
+				{{/if}}
+				{{# if completedEvent}}
+	                  <span class="scheduled-for-completed">Mastered {{formattedHangoutDate}}</span> |
+				{{/if}}
+			{{else}}
+				{{# if upcomingEvent}}
+	                  <span class="scheduled-for">Starting {{formattedHangoutDate}}-{{#if endHangoutDate }}{{endHangoutDate }} {{/if}}</span> |
+				{{/if}}
+				{{#if probablyNotExpired}}
+				<span class="in-progress">in progress (no end time set)</span> |
+				{{else}}
+					 <span class="scheduled-for-completed">Mastered {{masteredDate}}</span> |
+				{{/if}}
+				
 
-		{{title}}  </a>
+			{{/if}}
+			
+
+		 {{title}}  </a>
 </template>

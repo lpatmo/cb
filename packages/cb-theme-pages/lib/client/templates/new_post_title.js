@@ -8,10 +8,14 @@ Template[getTemplate('newPostTitle')].helpers({
   formattedHangoutDate: function() {
     if (this.scheduledFor) {
       // Don't bother to show time for past hangouts. Cuz who cares yo.
-      return (this.scheduledFor > Date.now()) ? moment(this.scheduledFor).format('dddd, MMMM Do YYYY @ h:mma') :
-                                                moment(this.scheduledFor).fromNow();
+      return moment(this.scheduledFor).format('dddd, MMMM Do YYYY @ h:mma'); 
     } else {
       return '';
+    }
+  },
+  masteredDate: function() {
+    if (this.scheduledFor) {
+      return moment(this.scheduledFor).fromNow();
     }
   },
   endHangoutDate: function() {
@@ -23,9 +27,22 @@ Template[getTemplate('newPostTitle')].helpers({
       return '';
     }
   },
-  notExpiredEvent: function () {
-    var notExpired = (this.scheduledFor > Date.now()-86400000) ? true : false;
-    /*Not expired as long as it was scheduled for within the last 24 hours*/
-    return notExpired;
+  upcomingEvent: function () {
+    var upcomingEvent = (this.scheduledFor > Date.now()) ? true : false;
+    return upcomingEvent;
+  },
+  inProgress: function() {
+    var inProgress = (Date.now() > this.scheduledFor && Date.now() < this.scheduledEnd) ? true : false;
+    return inProgress;
+  },
+  completedEvent: function() {
+      var completedEvent = (Date.now() > this.scheduledEnd) ? true : false;
+      return completedEvent;
+  },
+  probablyNotExpired: function() {
+      /*If user did not set an end time, hangout probably has not expired after 12 hours*/
+      var probablyNotExpired = (Date.now()-43200000 < this.scheduledFor)  ? true: false;
+      return probablyNotExpired;
+
   }
 });

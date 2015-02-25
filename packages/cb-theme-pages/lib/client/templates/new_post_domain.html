@@ -1,10 +1,11 @@
 <template name="newPostDomain">
-{{#if notExpiredEvent}} <!--Hangouts are one-time events -->
+{{#if notExpiredEvent }}  <!--Hangouts are one-time events -->
   {{#if isLoggedIn }}
   	{{#if url}}<br /><span class="post-domain hello"><a href="{{domain}}" target="_blank" class="hangout-button">Launch hangout</a></span>
    	{{/if}}
   {{else}}
   <br /><span class="post-domain"><a href="#" class="hangout-button">Launch hangout</a></span>
   {{/if}}
-{{/if}}
+{{/if}} 
+
  </template>
