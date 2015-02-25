@@ -1,5 +1,6 @@
 <template name="newPostTitle">
 	<a href="/posts/{{_id}}" class="post-title">
+		{{# if formattedHangoutDate}}
 			{{#if endHangoutDate }}
 				{{# if upcomingEvent}}
 	                  <span class="scheduled-for">Starting {{formattedHangoutDate}}-{{#if endHangoutDate }}{{endHangoutDate }} {{/if}}</span> |
@@ -21,6 +22,7 @@
 				{{/if}}
 				
 
+			{{/if}}
 			{{/if}}
 			
 
