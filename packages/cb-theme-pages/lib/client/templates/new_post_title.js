@@ -8,7 +8,7 @@ Template[getTemplate('newPostTitle')].helpers({
   formattedHangoutDate: function() {
     if (this.scheduledFor) {
       // Don't bother to show time for past hangouts. Cuz who cares yo.
-      return moment(this.scheduledFor).format('dddd, MMMM Do YYYY @ h:mma'); 
+      return moment(this.scheduledFor).format('dddd, MMMM Do @ h:mma'); 
     } else {
       return '';
     }
@@ -23,9 +23,7 @@ Template[getTemplate('newPostTitle')].helpers({
       // Time for when the hangout ends.
       return (this.scheduledEnd > Date.now()) ? moment(this.scheduledEnd).format('h:mma') :
                                                 ''
-    } else {
-      return '';
-    }
+    } 
   },
   upcomingEvent: function () {
     var upcomingEvent = (this.scheduledFor > Date.now()) ? true : false;
@@ -41,7 +39,7 @@ Template[getTemplate('newPostTitle')].helpers({
   },
   probablyNotExpired: function() {
       /*If user did not set an end time, hangout probably has not expired after 12 hours*/
-      var probablyNotExpired = (Date.now()-43200000 < this.scheduledFor)  ? true: false;
+      var probablyNotExpired = (Date.now()-7200000 < this.scheduledFor)  ? true: false;
       return probablyNotExpired;
 
   }
