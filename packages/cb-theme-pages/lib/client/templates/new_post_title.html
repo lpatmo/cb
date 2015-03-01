@@ -15,6 +15,9 @@
 				{{# if upcomingEvent}}
 	                  <span class="scheduled-for">Starting {{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span> -
 				{{/if}}
+				{{# if probablyNotExpired}}
+					Started {{formattedHangoutDate}} (No End Time Set) -
+				{{/if}}
 
 				{{# if completedEvent}}
 					 <span class="scheduled-for-completed">Mastered {{masteredDate}}</span> -

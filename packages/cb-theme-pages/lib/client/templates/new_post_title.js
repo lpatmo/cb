@@ -41,8 +41,12 @@ Template[getTemplate('newPostTitle')].helpers({
   },
   probablyNotExpired: function() {
       /*If user did not set an end time, hangout probably has not expired after 2 hours*/
-      var probablyNotExpired = (Date.now()-7200000 > this.scheduledFor)  ? true: false;
+      if (!this.scheduledEnd) {
+      var probablyNotExpired = (Date.now() > this.scheduledFor || Date.now() < this.scheduledFor + 7200000)  ? true: false;
       return probablyNotExpired;
+      }
+      
+
 
   }
 });
