@@ -3,7 +3,7 @@
 		{{# if formattedHangoutDate}}
 			{{#if endHangoutDate }}
 				{{# if upcomingEvent}}
-	                  <span class="scheduled-for">Starting {{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span> -
+	                  <span class="scheduled-for">Upcoming {{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span> -
 				{{/if}}
 				{{#if inProgress}}
 				<span class="in-progress"><i class="fa fa-clock"></i>in progress - join now until {{endHangoutDate}}</span> -
@@ -13,10 +13,10 @@
 				{{/if}}
 			{{else}}
 				{{# if upcomingEvent}}
-	                  <span class="scheduled-for">Starting {{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span> -
+	                  <span class="scheduled-for">Upcoming {{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span> -
 				{{/if}}
 				{{# if probablyNotExpired}}
-					Started {{formattedHangoutDate}} (No End Time Set) -
+					<span class="scheduled-for">Started {{formattedHangoutDate}} (No End Time Set) -</span>
 				{{/if}}
 
 				{{# if completedEvent}}
