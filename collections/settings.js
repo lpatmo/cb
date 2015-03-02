@@ -173,6 +173,13 @@ settingsSchemaObject = {
       group: 'logo'
     }
   },
+  faviconUrl: {
+    type: String,
+    optional: true,
+    autoform: {
+      group: 'logo'
+    }
+  },
   language: {
     type: String,
     defaultValue: 'en',
@@ -228,12 +235,27 @@ settingsSchemaObject = {
       // type: 'color'
     }
   },
+  fontUrl: {
+    type: String,
+    optional: true,
+    autoform: {
+      group: 'fonts',
+      instructions: '@import URL (e.g. https://fonts.googleapis.com/css?family=Source+Sans+Pro)'
+    }
+  },
+  fontFamily: {
+    type: String,
+    optional: true,
+    autoform: {
+      group: 'fonts',
+      instructions: 'font-family (e.g. "Source Sans Pro", sans-serif)'
+    }
+  },
   headerTextColor: {
     type: String,
     optional: true,
     autoform: {
-      group: 'colors',
-      // type: 'color'
+      group: 'colors'
     }
   },
   twitterAccount: {
@@ -309,6 +331,30 @@ settingsSchemaObject = {
       group: 'debug',
       instructions: 'Enable debug mode for more details console logs'
     }
+  },
+  authMethods: {
+    type: [String],
+    optional: true,
+    autoform: {
+      group: 'auth',
+      editable: true,
+      noselect: true,
+      options: [
+        {
+          value: 'email',
+          label: 'Email/Password'
+        },
+        {
+          value: 'twitter',
+          label: 'Twitter'
+        },
+        {
+          value: 'facebook',
+          label: 'Facebook'
+        }
+      ],
+      instructions: 'Authentication methods (default to email only)'
+    }    
   }
 };
 
