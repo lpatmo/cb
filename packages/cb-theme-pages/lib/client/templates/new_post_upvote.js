@@ -8,8 +8,12 @@ Template[getTemplate('newPostUpvote')].helpers({
     if(typeof this.rank !== 'undefined')
       return this.rank + 1;
   },
-  notExpiredEvent: function () {
-    var notExpired = (this.scheduledFor > Date.now()) ? true : false;
+  notExpiredEvent: function () {  
+    if (this.scheduledEnd) {
+      var notExpired = (this.scheduledEnd > Date.now()) ? true : false;
+    } else {
+      var notExpired = true;
+    }
     return notExpired;
   }
 });
