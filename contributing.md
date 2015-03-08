@@ -27,13 +27,14 @@ Go to https://www.nitrous.io/ (You can log in using your github account!)
 6. After a minute or so, your box will be ready. You'll then see a box information page. Click on the IDE button to get started.
 
 7. This is what you'll see after you click on the IDE button:
-
+![Installfest - nitrous screenshot 1](http://codebuddies.org/images/installfest-nitrous1.png)
 
 8. Now it's time to fork the repo!
 
 9. Go to https://github.com/lpatmo/cb
 10. Click on the "fork" button.
 11. Copy and paste the URL of the github and git clone your fork of the repo. 
+![Installfest - nitrous screenshot 2](http://codebuddies.org/images/installfest-nitrous2.png)
 
 12. Now you can start up the app! ```cd``` into your cb repo and type ```meteor``` into your command line.
 
