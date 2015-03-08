@@ -128,8 +128,8 @@ Check to see if it worked:
 ##Credits
 Thanks to the following people for contributing to this document:
 
-1. [@wuworkshop](https://github.com/sgtphips) (Linux Setup Instructions, and kudos for proposing the idea for a contributing.md document!)
+1. [@wuworkshop](https://github.com/wuworkshop) (Linux Setup Instructions, and kudos for proposing the idea for a contributing.md document!)
 2. [@sgtphips](https://github.com/sgtphips) (Mac OS X Setup Instructions)
-3. [@anonRegions](https://github.com/sgtphips) and [@lpatmo](https://github.com/lpatmo)  (Nitrous.io Setup Instructions) 
+3. [@anonRegions](https://github.com/anonRegions) and [@lpatmo](https://github.com/lpatmo)  (Nitrous.io Setup Instructions) 
 
 
