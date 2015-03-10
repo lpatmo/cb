@@ -54,6 +54,9 @@ a.hangout-button {
 	-moz-box-shadow:    3px 3px 3px #ccc;
     -webkit-box-shadow: 3px 3px 3px #ccc;
     box-shadow:         3px 3px 3px #ccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 a.hangout-button:hover { background: rgba(28,160,96, 1.0); }
 
@@ -69,7 +72,7 @@ span.message-upvote {
 	font-weight: 700;
 }
 
-.button:hover { border: none; box-shadow: none; position: relative; top: 1px; left: -1px;}
+.button:hover, a.hangout-button:hover { border: none; box-shadow: none; position: relative; top: 1px; left: -1px;}
 .message-upvote { width: 100px; margin: 0 auto;}
 
 div.inner-wrapper { background: #eee; }
@@ -84,7 +87,7 @@ div.inner-wrapper { background: #eee; }
 
 
 div.inner-wrapper {background: none; }
-body {background: url(//codebuddies.org/images/city.jpg) no-repeat center center fixed; background-size: cover; }
+body {background: url(//codebuddies.org/images/nightsky.jpg) no-repeat center center fixed; background-size: cover; }
 
 
 span.message-joined { color: rgba(122,192,228,0.8);}
@@ -98,7 +101,7 @@ form {
 	.form-group div.controls { margin-left: 0 !important; clear: both;}
 }
 
-a#submit.top-submit {text-transform: uppercase; font-weight: bold !important; background: #1ca060;}
+a#submit.top-submit {text-transform: uppercase; font-weight: bold !important; background: #1ca060; display: none;}
 
 .header  {
 	background: rgba(0,0,0,0.8);
@@ -107,8 +110,6 @@ a#submit.top-submit {text-transform: uppercase; font-weight: bold !important; ba
 		color: inherit;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		overflow: hidden;
-		width: 7em;
 		display: block;
 		top: 7px;
 		position: relative;
