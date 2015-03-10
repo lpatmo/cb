@@ -2,12 +2,19 @@
   <div class="post-rank"><span>{{oneBasedRank}}</span></div>
   {{#if upvoted}}
     <span class="upvote-link voted action">
-      <span class="message-joined">&#10004;</span>
+      <!--<span class="message-joined">&#10004;</span>-->
+      {{#if notExpiredEvent }}  <!--Hangouts are one-time events -->
+    {{#if url}}
+      <span class="post-domain hello"><a href="{{domain}}" target="_blank" class="hangout-button">Launch hangout</a></span>
+    {{else}}
+        <span>No hangout room selected</span>
+    {{/if}}
+    {{/if}} 
     </span>
   {{else}}
     {{#if notExpiredEvent }}
       <a class="upvote-link not-voted action" href="#">
-        <span class="message-upvote button">RSVP</span>
+        <span class="message-upvote button">I want to join</span>
         <!--<i class="icon-up action-icon"></i>-->
         <span class="action-label">{{_ "upvote_"}}</span>
       </a>

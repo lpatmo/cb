@@ -15,13 +15,18 @@ Template[getTemplate('newPostUpvote')].helpers({
       var notExpired = true;
     }
     return notExpired;
+  },
+  domain: function(){
+    var a = document.createElement('a');
+    a.href = this.url;
+    //return a.hostname;
+    return a
   }
 });
 
 Template[getTemplate('newPostUpvote')].events({
   'click .upvote-link': function(e, instance){
     var post = this;
-    e.preventDefault();
     if(!Meteor.user()){
       Router.go('atSignIn');
       flashMessage(i18n.t("please_log_in_first"), "info");

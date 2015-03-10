@@ -47,18 +47,30 @@ ul.hero-menu {
 }
 
 
-a.hangout-button { background: rgba(28,160,96, 0.8); padding: 5px 15px; color: white; text-transform: uppercase;}
-a.hangout-button:hover { background: rgba(28,160,96, 1.0); }
-
-.message-upvote {	-moz-box-shadow:    3px 3px 3px #ccc;
+a.hangout-button { 
+	background: rgba(28,160,96, 0.8); 
+	padding: 5px 15px; color: white; 
+	text-transform: uppercase; 
+	-moz-box-shadow:    3px 3px 3px #ccc;
     -webkit-box-shadow: 3px 3px 3px #ccc;
     box-shadow:         3px 3px 3px #ccc;
-    	padding: 5px; 	background: dodgerblue; 
- 
-	color: #fff;}
+}
+a.hangout-button:hover { background: rgba(28,160,96, 1.0); }
+
+span.message-upvote {	
+	-moz-box-shadow:    3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow:         3px 3px 3px #ccc;
+    padding: 5px 15px; 	
+    background: dodgerblue; 
+	color: #fff;
+	text-transform: uppercase;
+	width: 148px;
+	font-weight: 700;
+}
 
 .button:hover { border: none; box-shadow: none; position: relative; top: 1px; left: -1px;}
-.message-upvote { width: 60px; margin: 0 auto;}
+.message-upvote { width: 100px; margin: 0 auto;}
 
 div.inner-wrapper { background: #eee; }
 
@@ -116,7 +128,7 @@ a#submit.top-submit {text-transform: uppercase; font-weight: bold !important; ba
 .more-button span { background: dodgerblue; color: white; padding: 10px;}
 
 .post-content { width: 75%; }
-.upvote-link.voted, .post-upvote { width: 100px; }
+.upvote-link.voted, .post-upvote { width: 180px; }
 
 div.no-posts {
 	color: white;
