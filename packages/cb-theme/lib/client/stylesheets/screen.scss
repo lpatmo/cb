@@ -27,7 +27,7 @@ ul.hero-menu {
 }
 
 .herotext { 
-	margin-bottom: 15px; background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.8);
 	h3, p {color: white;}
 	a { color: dodgerblue;}
 	font-size: 1.1rem;
@@ -122,7 +122,7 @@ a#submit.top-submit {text-transform: uppercase; font-weight: bold !important; ba
 .post .post-share {display: block !important;}
 
 /*Hide*/
-.categories-menu, .views-menu { display: none;}
+.views-menu { display: none;}
 .post-discuss {display: none;}
 
 

@@ -49,10 +49,10 @@ templates["postAuthor"] = "newPostAuthor";
 templates["postInfo"] = "newPostInfo";
 templates["submitButton"] = "newSubmitButton";
 
-var i = primaryNav.indexOf("viewsMenu");
-if(i != -1) {
-	primaryNav.splice(i, 1);
-}
+// var i = primaryNav.indexOf("viewsMenu");
+// if(i != -1) {
+// 	primaryNav.splice(i, 1);
+// }
 
 
 
