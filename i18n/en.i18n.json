@@ -110,6 +110,7 @@
   "edit": "Edit",
   "reply": "Reply",
   "no_comments": "No comments.",
+  "please_sign_in_to_reply": "Please sign in to reply",
 
   //Errors
   "you_are_already_logged_in": "You are already logged in",
@@ -264,8 +265,6 @@
   "please_fill_in_a_title": "Please fill in a title",
   "seconds_before_posting_again": " seconds before posting again",
   "upvoted": "Upvoted",
-  "posted_date": "Posted Date",
-  "posted_time": "Posted Time",
   "posted_date": "Posted Date",
   "posted_time": "Posted Time",
   "profile": "Profile",

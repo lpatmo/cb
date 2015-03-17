@@ -1,3 +1,14 @@
+## v0.14.3 “TableScope”
+
+* Implemented Reactive Table for the Users dashboard (thanks @jshimko!).
+* Upgraded Herald package (thanks @kestanous!).
+* Upgraded Avatar package (thanks @bengott!).
+* Upgraded Autoform package.
+* Added Greek translation (thanks @portokallidis!).
+* Improved Spanish translation (thanks @brayancruces!).
+* Added new callbacks for upvoting and downvoting (thanks @Baxter900 !).
+* OP comments now get the `author-comment` CSS class.
+
 ## v0.14.2 “FaviconScope”
 
 * Added settings for auth methods.
