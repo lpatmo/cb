@@ -67,4 +67,7 @@ upvoteCallbacks.push(function (collection, item, user) {
 
 primaryNav.push({template: 'aboutLink'});
 
+// Replace the words "silent hangout" with icons
+
+
 
