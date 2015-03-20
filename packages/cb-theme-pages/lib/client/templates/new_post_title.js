@@ -14,8 +14,8 @@ Template[getTemplate('newPostTitle')].helpers({
     }
   },
   masteredDate: function() {
-    if (this.scheduledFor) {
-      return moment(this.scheduledFor).fromNow();
+    if (this.scheduledEnd) {
+      return moment(this.scheduledEnd).fromNow();
     }
   },
   endHangoutDate: function() {
