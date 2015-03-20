@@ -354,7 +354,7 @@ submitPost = function (post) {
 
   // ------------------------------ Properties ------------------------------ //
 
-  defaultProperties = {
+  var defaultProperties = {
     createdAt: new Date(),
     author: getDisplayNameById(userId),
     upvotes: 0,
