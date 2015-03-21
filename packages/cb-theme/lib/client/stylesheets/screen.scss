@@ -1,3 +1,7 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+h2 { font-size: 2.5em;}
 h3 { margin: 10px 0; color: #4e555d; font-weight: light;}
 ol {padding-left: 5%; list-style-type: decimal; margin: 10px 0;}
 p { 
@@ -111,8 +115,6 @@ a#submit.top-submit {text-transform: uppercase; font-weight: bold !important; ba
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		display: block;
-		top: 7px;
-		position: relative;
 }
 }
 
@@ -174,5 +176,32 @@ form div.controls {
 /*Subscriptions*/
 .post-subscribe.module.grid-block { background: rgba(28,160,96,0.7); padding: 10px !important; &:hover { background: rgba(28,160,96,0.9); } }
 a.subscribe-link, a.unsubscribe-link { color: white; font-size: 1.5em; margin: 0 auto; display: block; text-align: center;}
+
+.header .nav>li:last-child .header-submodule { margin-right: 20px; }
+
+/*Leaderboard*/
+.template-leaderboard, .template-aboutPage {
+  .content-wrapper {
+    max-width: 95%;
+    padding: 20px 35px 45px 35px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background: rgba(255,255,255,1.0);
+    border-radius: 1px;
+    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, .15);
+ }
+ th { text-align: left;}
+ .grid, .grid-module { background: none; max-width: none;} //overrides for the FAQ page
+}
+
+/*Forms*/
+input, textarea { 
+	@include box-shadow(0, 1px, 0px, 0px, rgba(0,0,0,0.2));
+	@include rounded(3px);
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+
 
 

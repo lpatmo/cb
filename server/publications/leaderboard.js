@@ -2,11 +2,6 @@
 // Limit, filter, and sort handled by reactive-table.
 // https://github.com/aslagle/reactive-table#server-side-pagination-and-filtering-beta
 
-ReactiveTable.publish("all-users", function() {
-  if(isAdminById(this.userId)){
+ReactiveTable.publish("leaderboard", function() {
     return Meteor.users;
-  } else {
-    return [];
-  }
 });
-

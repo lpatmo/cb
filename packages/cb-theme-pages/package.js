@@ -33,6 +33,9 @@ Package.onUse(function (api) {
     'lib/client/templates/new_post_info.js',
     'lib/client/templates/new_post_author.html',
     'lib/client/templates/new_submit_button.html',
+    'lib/client/templates/leaderboard.html',
+    'lib/client/templates/leaderboard.js',
+    'lib/client/templates/leaderboard_link.html',
     'lib/client/about.js'
   ], ['client']);
 
