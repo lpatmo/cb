@@ -116,7 +116,8 @@ viewParameters.baseParameters = {
     status: STATUS_APPROVED
   },
   options: {
-    limit: 10
+    limit: 10,
+    sort: {sticky: -1, scheduledFor: -1}
   }
 };
 
@@ -128,7 +129,7 @@ viewParameters.top = function (terms) {
 
 viewParameters.new = function (terms) {
   return {
-    options: {sort: {sticky: -1, postedAt: -1}}
+    options: {sort: {sticky: -1, scheduledFor: -1}}
   };
 }
 
@@ -150,15 +151,15 @@ viewParameters.pending = function (terms) {
 
 viewParameters.scheduled = function (terms) {
   return {
-    find: {postedAt: {$gte: new Date()}},
-    options: {sort: {postedAt: -1}}
+    find: {scheduledFor: {$gte: new Date()}},
+    options: {sort: {scheduledFor: -1}}
   };
 }
 
 viewParameters.userPosts = function (terms) {
   return {
     find: {userId: terms.userId},
-    options: {limit: 5, sort: {postedAt: -1}}
+    options: {limit: 5, sort: {scheduledFor: -1}}
   };
 }
 
@@ -167,17 +168,17 @@ viewParameters.userUpvotedPosts = function (terms) {
   var postsIds = _.pluck(user.votes.upvotedPosts, "itemId");
   return {
     find: {_id: {$in: postsIds}, userId: {$ne: terms.userId}}, // exclude own posts
-    options: {limit: 5, sort: {postedAt: -1}}
+    options: {limit: 5, sort: {scheduledFor: -1}}
   };
 }
 
 viewParameters.userDownvotedPosts = function (terms) {
   var user = Meteor.users.findOne(terms.userId);
   var postsIds = _.pluck(user.votes.downvotedPosts, "itemId");
-  // TODO: sort based on votedAt timestamp and not postedAt, if possible
+  // TODO: sort based on votedAt timestamp and not scheduledFor, if possible
   return {
     find: {_id: {$in: postsIds}},
-    options: {limit: 5, sort: {postedAt: -1}}
+    options: {limit: 5, sort: {scheduledFor: -1}}
   };
 }
 
