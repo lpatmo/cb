@@ -3,6 +3,7 @@
 
 h2 { font-size: 2.5em;}
 h3 { margin: 10px 0; color: #4e555d; font-weight: light;}
+h3#blurb { color: white; text-align: center; font-weight: 200; color: yellow;}
 ol {padding-left: 5%; list-style-type: decimal; margin: 10px 0;}
 p { 
 	margin: 10px auto;
@@ -47,6 +48,7 @@ ul.hero-menu {
 	text-transform: uppercase;
 	width: 100%;
 	font-size: 1.5em;
+	font-weight: 200;
 	&:hover { background: rgba(28,160,96,0.9); }
 }
 
@@ -148,7 +150,7 @@ span.silent-icons { position: relative; top: 6px;}
 
 .share-options { display: block; width: 35px; padding: 0px; top: 2px; position: relative;  }
 
-span.user-count {color: yellow; line-height: .1; font-size: 2.5em;}
+span.user-count a {color: dodgerblue; line-height: 1; font-size: 2.5em;}
 .highlight { color: yellow;}
 
 // see css.js when "buttonColor" setting is white they glyphicon inherits that style making it invisible
