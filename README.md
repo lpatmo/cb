@@ -9,6 +9,7 @@ Below is the list of priority issues that we have. If you're interested in takin
 1. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously.
 
 2. Create a "leaders" page that features a leaderboard of the top hangout organizers.
+UPDATE: created -- [http://hangouts.codebuddies.org/leaders](http://hangouts.codebuddies.org/leaders)
 
 3. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links.
 
