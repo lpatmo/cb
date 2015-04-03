@@ -6,7 +6,8 @@ The goal of this platform is to help users schedule google hangouts more easily 
 
 ###Priority Issues
 Below is the list of priority issues that we have. If you're interested in taking a look at one of these as an open-source contributor, leave a message on the issue link! Or leave a note in the [chatroom](https://gitter.im/lpatmo/codebuddies-meteor) if you have questions.
-1. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously.
+
+1. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously. [https://github.com/lpatmo/cb/issues/49](https://github.com/lpatmo/cb/issues/49)
 
 2. Create a "leaders" page that features a leaderboard of the top hangout organizers.
 
