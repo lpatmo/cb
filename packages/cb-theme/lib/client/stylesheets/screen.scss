@@ -1,13 +1,30 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
+h1.logo.header-module { font-size: 2em; text-align: center;}
 h2 { font-size: 2.5em;}
 h3 { margin: 10px 0; color: #4e555d; font-weight: light;}
-h3#blurb { color: white; text-align: center; font-weight: 200; color: yellow;}
+h3#blurb { color: white; text-align: center; font-weight: 200; color: #fff;}
 ol {padding-left: 5%; list-style-type: decimal; margin: 10px 0;}
 p { 
 	margin: 10px auto;
 	line-height: 1.1;
+}
+
+%regular-button { 
+	-moz-box-shadow:    3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow:         3px 3px 3px #ccc;
+    padding: 5px 15px; 	
+    background: dodgerblue; 
+	color: #fff;
+	text-transform: uppercase;
+	width: 148px;
+	font-weight: 700;
+}
+
+.post-list-title { 
+	color: #fff;	
 }
 .post-heading { 
 	a.post-title:link, a.post-title:visited {
@@ -19,6 +36,11 @@ p {
 		color: #4e555d;
 	}
 }
+
+.post .post-share { 
+	height: 30px;
+}
+
 
 ul.hero-menu {
 	margin-bottom: 10px;
@@ -39,16 +61,17 @@ ul.hero-menu {
 	h3 { font-size: 1.4rem;}
 }
 
-.hero-tabs .submit { 
-	display: block;
+.hero-tabs .schedule { 
+	display: inline-block;
 	padding: 10px;
 	text-align: center;
 	background: rgba(28,160,96,0.8);
 	border-radius: 3px;
 	text-transform: uppercase;
-	width: 100%;
+	width: auto;
 	font-size: 1.5em;
 	font-weight: 200;
+	color: #fff;
 	&:hover { background: rgba(28,160,96,0.9); }
 }
 
@@ -66,6 +89,7 @@ a.hangout-button {
 }
 a.hangout-button:hover { background: rgba(28,160,96, 1.0); }
 
+.post-upvote .upvote-link.voted { text-align: center;}
 span.message-upvote {	
 	-moz-box-shadow:    3px 3px 3px #ccc;
     -webkit-box-shadow: 3px 3px 3px #ccc;
@@ -166,6 +190,7 @@ form div.controls {
 }
 
 /*Category tag colors*/
+h2.category-title.post-list-title { margin-top: 20px; text-transform: uppercase;}
 .hero-menu {
 	.post-category { background: rgba(30,144,255,0.85); color: #fff !important; font-size: 1.2em;}
 	.post-category:hover { background: #1ca060; color: #fff;}
@@ -176,7 +201,7 @@ form div.controls {
 .post-rank {display: none;}
 
 /*Subscriptions*/
-.post-subscribe.module.grid-block { background: rgba(28,160,96,0.7); padding: 10px !important; &:hover { background: rgba(28,160,96,0.9); } }
+.post-subscribe.module.grid-block { background: dodgerblue; padding: 10px !important; &:hover { background: rgba(28,160,96,0.9); } }
 a.subscribe-link, a.unsubscribe-link { color: white; font-size: 1.5em; margin: 0 auto; display: block; text-align: center;}
 
 .header .nav>li:last-child .header-submodule { margin-right: 20px; }
@@ -204,6 +229,24 @@ input, textarea {
 	padding: 5px;
 }
 
-
+/*Sidebar*/
+.side-nav .header .header-submodule { 
+	text-transform: uppercase; margin-bottom: 5px;
+	a.nav-button { 
+		background: rgba(255,255,255,0.1);
+		padding: 5px;
+		width: 100%;
+		display: block;
+		margin-bottom: 3px;
+		text-align: center;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+	}
+	a.nav-button.schedule { 
+		background: dodgerblue;
+	}
+}
+.menu-item:hover {background: rgba(255,255,255,0.2);}
 
 

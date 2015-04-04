@@ -4,7 +4,7 @@
     <span class="unit">{{pointsUnitDisplayText}}</span>
     <!--{{#if postedAt}}<span class="post-time">{{timeAgo postedAt}}</span>{{/if}}-->
     {{#if canEdit this}}
-      | <a href="{{pathFor route='post_edit' _id=_id}}" class="edit-link goto-edit">{{_ "edit"}}</a> |
+      | <a href="{{pathFor route='post_edit' _id=_id}}" class="edit-link goto-edit"><i class="icon fa fa-edit icon-share" aria-hidden=""></i> {{_ "edit"}}</a>
     {{/if}} 
     <span class="viewsCount">| {{_ "views"}}: {{viewCount}} |</span>
   </div>
