@@ -27,10 +27,7 @@ Template[getTemplate('newPostUpvote')].helpers({
 Template[getTemplate('newPostUpvote')].events({
   'click .upvote-link': function(e, instance){
     var post = this;
-    if(!Meteor.user()){
-      Router.go('atSignIn');
-      flashMessage(i18n.t("please_log_in_first"), "info");
-    }
+
     Meteor.call('upvotePost', post, function(error, result){
       trackEvent("post upvoted", {'_id': post._id});
     });

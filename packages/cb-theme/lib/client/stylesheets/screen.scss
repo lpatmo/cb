@@ -265,8 +265,8 @@ a.account-link {
 /*FIREWORK ANIMATED GIF*/
 .firework > div { 
 	background-image: url('//codebuddies.org/images/stars.gif');
-	.hangout-button { box-shadow: none;}
-	a.post-title, .icon-share { color: #fff !important;}
+	.hangout-button, .message-upvote { box-shadow: none;}
+	a.post-title, .icon-share { color: #fff !important; font-weight: 600;}
 }
 
 /*Override for sidebar category height*/
