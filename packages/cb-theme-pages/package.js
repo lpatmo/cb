@@ -13,10 +13,12 @@ Package.onUse(function (api) {
   ], ['client', 'server']);
 
   api.use([
-    'templating'
+    'templating',
+    'reactive-var'
   ], ['client']);
 
   api.add_files([
+    'lib/client/helpers.js',
     'lib/client/templates/about_page.html',
     'lib/client/templates/about_link.html',
     'lib/client/templates/hero_page.html',
@@ -33,6 +35,8 @@ Package.onUse(function (api) {
     'lib/client/templates/new_post_info.js',
     'lib/client/templates/new_post_author.html',
     'lib/client/templates/new_submit_button.html',
+    'lib/client/templates/posts_list.html',
+    'lib/client/templates/posts_list.js',
     'lib/client/templates/leaderboard.html',
     'lib/client/templates/leaderboard.js',
     'lib/client/templates/leaderboard_link.html',
