@@ -32,8 +32,7 @@ Template[getTemplate('newPostTitle')].helpers({
     return upcomingEvent;
   },
   inProgress: function() {
-    var inProgress = (Date.now() > this.scheduledFor && Date.now() < this.scheduledEnd) ? true : false;
-    return inProgress;
+    return inProgress(this);
   },
   completedEvent: function() {
       var completedEvent = (Date.now() > this.scheduledEnd) ? true : false;
