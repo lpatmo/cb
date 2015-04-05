@@ -51,6 +51,10 @@ Template[getTemplate('layout')].rendered = function(){
   link.href = getSetting('faviconUrl', '/img/favicon.ico');
   document.getElementsByTagName('head')[0].appendChild(link);
 
+  //animated gif and silent icons
+  $('a.category-silent-hangout').after('<span class="silent-icons"> <img src="http://codebuddies.org/images/icon-video-off.png" alt="turn off video" width="25" height="25"> <img src="http://codebuddies.org/images/icon-mute.png" alt="turn off microphone" width="25" height="25"></span>'); 
+  $('.in-progress').closest('.post').addClass('firework');
+
 };
 
 Template[getTemplate('layout')].events({

@@ -19,6 +19,5 @@ Template[getTemplate('heroPage')].rendered = function () {
     Meteor.call('getUserCount', function (err, result) {
       Session.set('userCount', result);
     });
-    $('a.category-silent-hangout').after('<span class="silent-icons"> <img src="http://codebuddies.org/images/icon-video-off.png" alt="turn off video" width="25" height="25"> <img src="http://codebuddies.org/images/icon-mute.png" alt="turn off microphone" width="25" height="25"></span>'); 
  };
 

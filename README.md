@@ -9,9 +9,12 @@ Below is the list of priority issues that we have. If you're interested in takin
 
 1. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously. [https://github.com/lpatmo/cb/issues/49](https://github.com/lpatmo/cb/issues/49)
 
-2. Lift up all the "in progress" events.
+2. Lift up all the "in progress" events. [https://github.com/lpatmo/cb/issues/52](https://github.com/lpatmo/cb/issues/52)
 
-3. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links.
+3. E-mail participants who RSVPed to a particular hangout a reminder 2 (?) hours before the start of the virtual meetup.
+
+4. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links.
+
 
 
 

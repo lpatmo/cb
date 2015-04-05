@@ -24,7 +24,7 @@ p {
 }
 
 %button-noshadow {
-	background: rgba(118, 12, 63, 0.9);
+	background: rgba(255, 183, 50, 0.9);
 	padding: 5px;
 	width: 100%;
 	display: block;
@@ -256,5 +256,12 @@ a.account-link {
 	background: dodgerblue;
 }
 .menu-item:hover, li.menu-item.item-active {background: rgba(255,255,255,0.2);}
+
+/*FIREWORK ANIMATED GIF*/
+.firework { 
+	background-image: url('//codebuddies.org/images/stars.gif');
+	.hangout-button { box-shadow: none;}
+	a.post-title, .icon-share { color: #fff !important;}
+}
 
 
