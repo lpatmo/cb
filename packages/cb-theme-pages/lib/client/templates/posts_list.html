@@ -2,11 +2,13 @@
   <div class="posts-wrapper grid grid-module">
     {{> Template.dynamic template=postsListIncoming data=incoming}}
     <div class="posts list {{postsLayout}}" aria-live="polite">
+      <div class="firework">
       {{#each inProgressPostsCursor}}
         {{> Template.dynamic template=before_post_item}}
         {{> Template.dynamic template=post_item}}
         {{> Template.dynamic template=after_post_item}}
       {{/each}}
+     </div>
       {{#each pastAndFuturePostsCursor}}
         {{> Template.dynamic template=before_post_item}}
         {{> Template.dynamic template=post_item}}

@@ -258,7 +258,7 @@ a.account-link {
 .menu-item:hover, li.menu-item.item-active {background: rgba(255,255,255,0.2);}
 
 /*FIREWORK ANIMATED GIF*/
-.firework { 
+.firework > div { 
 	background-image: url('//codebuddies.org/images/stars.gif');
 	.hangout-button { box-shadow: none;}
 	a.post-title, .icon-share { color: #fff !important;}
