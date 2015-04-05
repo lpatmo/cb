@@ -10,6 +10,11 @@ p {
 	margin: 10px auto;
 	line-height: 1.1;
 }
+p.subtitle { 
+	color: #fff; text-align: center;
+	a:link, a:visited { color: dodgerblue;}
+	a.more-info { color: #ccc !important; text-decoration: underline;}
+}
 
 %regular-button { 
 	-moz-box-shadow:    3px 3px 3px #ccc;
@@ -264,4 +269,6 @@ a.account-link {
 	a.post-title, .icon-share { color: #fff !important;}
 }
 
+/*Override for sidebar category height*/
+.menu-accordion .menu-contents { max-height: 180px !important;}
 
