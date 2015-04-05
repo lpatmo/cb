@@ -23,6 +23,18 @@ p {
 	font-weight: 700;
 }
 
+%button-noshadow {
+	background: rgba(118, 12, 63, 0.9);
+	padding: 5px;
+	width: 100%;
+	display: block;
+	margin-bottom: 3px;
+	text-align: center;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
 .post-list-title { 
 	color: #fff;	
 }
@@ -233,20 +245,16 @@ input, textarea {
 .side-nav .header .header-submodule { 
 	text-transform: uppercase; margin-bottom: 5px;
 	a.nav-button { 
-		background: rgba(255,255,255,0.1);
-		padding: 5px;
-		width: 100%;
-		display: block;
-		margin-bottom: 3px;
-		text-align: center;
-		-moz-border-radius: 3px;
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
+		@extend %button-noshadow;
 	}
 	a.nav-button.schedule { 
 		background: dodgerblue;
 	}
 }
-.menu-item:hover {background: rgba(255,255,255,0.2);}
+a.account-link { 
+	@extend %button-noshadow;
+	background: dodgerblue;
+}
+.menu-item:hover, li.menu-item.item-active {background: rgba(255,255,255,0.2);}
 
 

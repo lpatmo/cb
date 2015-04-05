@@ -19,7 +19,7 @@ Template[getTemplate('menuComponent')].helpers({
     // enable menu if top-nav layout is enabled, if themes supports menus, and if menu isn't empty
     if (count) {
       classes.push("menu-has-items");
-      if (count > 3) {
+      if (count > 4) {
         classes.push("menu-long");
       }
     } else {

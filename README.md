@@ -9,21 +9,22 @@ Below is the list of priority issues that we have. If you're interested in takin
 
 1. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously. [https://github.com/lpatmo/cb/issues/49](https://github.com/lpatmo/cb/issues/49)
 
-2. Create a "leaders" page that features a leaderboard of the top hangout organizers.
+2. Lift up all the "in progress" events.
 
 3. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links.
 
-4. Give titles to each category. Maybe recognize it inside the "Schedule a {{category}} study session" button.
 
 
 ###Non-priority issues (for now):
-1. Add a class "active" to the menu tab label when the users is on that tab's page. DISCUSS HERE: https://github.com/lpatmo/cb/issues/21
-2. BONUS: Allow users to award each other karma points for being helpful during hangouts. :) Also, create a page with a leaderboard of users listing karma points. DISCUSS HERE: https://github.com/lpatmo/cb/issues/25
-3. Maybe use an alternative to Google Hangouts? DISCUSS HERE: https://github.com/lpatmo/cb/issues/27
+1. BONUS: Allow users to award each other karma points for being helpful during hangouts. :) Also, create a page with a leaderboard of users listing karma points. DISCUSS HERE: https://github.com/lpatmo/cb/issues/25
+2. Maybe use an alternative to Google Hangouts? DISCUSS HERE: https://github.com/lpatmo/cb/issues/27
 
 
 ###Closed Issues
 ~~
+1. Add a class "active" to the menu tab label when the users is on that tab's page. DISCUSS HERE: https://github.com/lpatmo/cb/issues/21
+4. Give titles to each category. Maybe recognize it inside the "Schedule a {{category}} study session" button.
+2. Create a "leaders" page that features a leaderboard of the top hangout organizers.
 3. Add support for select option for hangout rooms in form (DONE!)
 2. Differentiate between "previous hangouts" and "upcoming hangouts." DISCUSS HERE:  https://github.com/lpatmo/cb/issues/17 (DONE!)
 4. Redesign home page so there's not so much text, and put up a NUMBER: "165 running partners for learning code..." (DONE!)
