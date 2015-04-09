@@ -193,6 +193,7 @@
   "display_name": "Display Name",
   "email": "Email",
   "bio": "I am proficient at or learning these skills",
+  "city": "City",
   "twitter_username": "Twitter Username",
   "github_username": "GitHub Username",
   "site_url" : "Site URL",

@@ -30,23 +30,16 @@ $mobile-header-height: 50px;
 }
 
 .logo{
-  vertical-align: middle;
-  line-height: 1;
   @include small{
-    margin-right: 0;
+    @include vcenter;
+    font-size: 24px;
+    white-space: nowrap;
     a{
-      font-size: 24px;
-      display: block;
-      position: static;
-      width: 100%;
-      height: $mobile-header-height;
-      line-height: $mobile-header-height;
-      text-align: center;
-      left: 0px;
-      top: 0px;
-      z-index: 10;
-      margin-right: 0;
+      margin: 0 auto;
     }
+  }
+  @include xsmall{
+    font-size: 18px;
   }
   .header &{
     @include small{

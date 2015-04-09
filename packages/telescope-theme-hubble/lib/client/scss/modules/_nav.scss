@@ -10,6 +10,8 @@
 	z-index: 100;
 }
 .logo{
+	line-height: 1;
+	text-align: center;
 	a, a:visited{
 		color:white;
 	}
@@ -38,14 +40,14 @@
 .has-dropdown .user-menu .dropdown-menu{
   left: auto;
   right: 10px;
- }
- .has-dropdown .notifications-menu .dropdown-menu{
+}
+.has-dropdown .notifications-menu .dropdown-menu{
   left: auto;
   right: 10px;
- }
- .newsletter-dismiss{
- 	line-height: 30px !important;
- }
+}
+.newsletter-dismiss{
+	line-height: 30px !important;
+}
 
 // ------------------------------------ Top Nav Layout ------------------------------------ //
 
@@ -109,6 +111,15 @@
 	  	}
 		}
 	}
+	.pages-menu{
+		a{
+			font-weight: normal;
+			margin-right: 20px;
+			&:last-child{
+				margin: 0;
+			}
+		}	
+	}
 }
 // ------------------------------------ Side Nav Layout ------------------------------------ //
 
@@ -133,6 +144,7 @@ $nav-width: 250px;
 			padding-bottom: 30px;
 		}
 		.logo{
+			text-align: left;
 			@include medium-large{
 				margin-bottom: 30px;
 			}
@@ -169,5 +181,15 @@ $nav-width: 250px;
 	}
 	.tagline{
 		margin-top: 10px;
+	}
+	.pages-menu{
+		order: 2;
+		a{
+			display: block;
+			margin-bottom: 10px;
+			&:last-child{
+				margin: 0;
+			}
+		}	
 	}
 }
