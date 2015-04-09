@@ -22,6 +22,21 @@ body{
 .content-wrapper{
   padding:0 10px;
   max-width: 1200px;
+  @include super-large { width: 70%; margin: 0px !important; float: left; }
+}
+
+.content-sidebar-wrapper { 
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  h3, p {color: white;}
+  a { color: dodgerblue;}
+    .herotext { 
+        padding: 15px;
+        h3, p {color: white;}
+        a { color: dodgerblue;}
+        h3 { font-size: 1.4rem;}
+    }
+  @include super-large { width: 28%; float: right; margin-right: 15px; }
 }
 
 .content-wrapper{

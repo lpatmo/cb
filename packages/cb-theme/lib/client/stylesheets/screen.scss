@@ -70,13 +70,7 @@ ul.hero-menu {
 	}
 }
 
-.herotext { 
-	background: rgba(0,0,0,0.8);
-	h3, p {color: white;}
-	a { color: dodgerblue;}
-	font-size: 1.1rem;
-	h3 { font-size: 1.4rem;}
-}
+
 
 .hero-tabs .schedule { 
 	display: inline-block;
@@ -253,7 +247,7 @@ input, textarea {
 		@extend %button-noshadow;
 	}
 	a.nav-button.schedule { 
-		background: dodgerblue;
+		background: rgba(28,160,96,0.8);
 	}
 }
 a.account-link { 

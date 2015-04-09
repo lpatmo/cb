@@ -6,6 +6,7 @@ $break-small:500px;
 $xsmall-break: 300px;
 $small-break: 600px;
 $medium-break: 800px;
+$super-break: 1000px;
 
 @mixin xsmall(){
   @media screen and (max-width: $xsmall-break) {
@@ -35,6 +36,11 @@ $medium-break: 800px;
 }
 @mixin large(){
   @media screen and (min-width: $medium-break) {
+    @content;
+  }
+}
+@mixin super-large(){
+  @media screen and (min-width: $super-break) {
     @content;
   }
 }
