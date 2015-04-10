@@ -7,20 +7,25 @@ The goal of this platform is to help users schedule google hangouts more easily 
 ###Priority Issues
 Below is the list of priority issues that we have. If you're interested in taking a look at one of these as an open-source contributor, leave a message on the issue link! Or leave a note in the [chatroom](https://gitter.im/lpatmo/codebuddies-meteor) if you have questions.
 
-1. Recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously. [https://github.com/lpatmo/cb/issues/49](https://github.com/lpatmo/cb/issues/49)
+1. E-mail participants who RSVPed to a particular hangout a reminder 2 (?) hours before the start of the virtual meetup.
 
-2. Lift up all the "in progress" events. [https://github.com/lpatmo/cb/issues/52](https://github.com/lpatmo/cb/issues/52)
+2. Grab back "# of upcoming meetup" numbers for each of the categories
 
-3. E-mail participants who RSVPed to a particular hangout a reminder 2 (?) hours before the start of the virtual meetup.
+3. Deploy invisible hangout room roulette -- i.e. user won't have to decide which hangout room to select. Any available room will be automatically selected for them on the form.
 
 4. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links.
-
 
 
 
 ###Non-priority issues (for now):
 1. BONUS: Allow users to award each other karma points for being helpful during hangouts. :) Also, create a page with a leaderboard of users listing karma points. DISCUSS HERE: https://github.com/lpatmo/cb/issues/25
 2. Maybe use an alternative to Google Hangouts? DISCUSS HERE: https://github.com/lpatmo/cb/issues/27
+3. Slack chatroom replacement: recognize "active users" and give people a spot where they can write down what they're currently working on so that they can schedule ad-hoc study sessions spontaneously. [https://github.com/lpatmo/cb/issues/49](https://github.com/lpatmo/cb/issues/49)
+
+
+###Recently Resolved Issues thanks to Pull Requests
+1. Lift up all the "in progress" events. [https://github.com/lpatmo/cb/issues/52](https://github.com/lpatmo/cb/issues/52) - thanks, [https://github.com/Slava](https://github.com/Slava)!
+2. Separate event times from titles - thanks, [https://github.com/curioussavage](https://github.com/curioussavage)!
 
 
 ###Closed Issues

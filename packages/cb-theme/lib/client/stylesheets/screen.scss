@@ -1,7 +1,7 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
-h1.logo.header-module { font-size: 2em; text-align: center;}
+h1.logo.header-module { font-size: 2em; text-align: center !important;}
 h2 { font-size: 2.5em;}
 h3 { margin: 10px 0; color: #4e555d; font-weight: light;}
 h3#blurb { color: white; text-align: center; font-weight: 200; color: #fff;}
@@ -26,10 +26,19 @@ p.subtitle {
 	text-transform: uppercase;
 	width: 148px;
 	font-weight: 700;
+	text-align: center;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+%regular-button:hover { 
+	background: rgba(30,144,255,0.9);
 }
 
+
+
 %button-noshadow {
-	background: rgba(255, 183, 50, 0.9);
+	background: #E01563;
 	padding: 5px;
 	width: 100%;
 	display: block;
@@ -38,6 +47,9 @@ p.subtitle {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
+}
+.highlight { 
+	color: rgba(255, 183, 50, 0.9);
 }
 
 .post-list-title { 
@@ -113,7 +125,9 @@ span.message-upvote {
 	font-weight: 700;
 }
 
-.button:hover, a.hangout-button:hover { border: none; box-shadow: none; position: relative; top: 1px; left: -1px;}
+.button:hover, .hangout-button:hover { 
+	border: none; box-shadow: none; position: relative; top: 1px; left: -1px;
+}
 .message-upvote { width: 100px; margin: 0 auto;}
 
 div.inner-wrapper { background: #eee; }
@@ -178,6 +192,7 @@ div.no-posts {
 .account-link.sign-up {margin-right: 10px;}
 
 /*Silent Hangouts*/
+a.post-category.example.category-silent-hangout { color: #444444;}
 span.silent-icons { position: relative; top: 6px;}
 .category-silent-hangout.example { color: #444444;}
 .category-silent-hangout.example:hover { color: #fff;}
@@ -247,8 +262,11 @@ input, textarea {
 		@extend %button-noshadow;
 	}
 	a.nav-button.schedule { 
-		background: rgba(28,160,96,0.8);
+		background: dodgerblue;
+		&:hover { background:rgba(30,144,255,0.9); }
 	}
+	.members { background: rgba(255, 183, 50, 0.9);}
+
 }
 a.account-link { 
 	@extend %button-noshadow;
@@ -264,5 +282,8 @@ a.account-link {
 }
 
 /*Override for sidebar category height*/
-.menu-accordion .menu-contents { max-height: 180px !important;}
+.menu-accordion .menu-contents { max-height: 150px !important;}
+
+/*Herotext*/
+.large-button { @extend %regular-button; font-size: 1.5em; display: block; width: 100%; box-shadow: none;}
 
