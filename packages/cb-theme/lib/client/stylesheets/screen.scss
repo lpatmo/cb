@@ -4,16 +4,38 @@
 h1.logo.header-module { font-size: 2em; text-align: center !important;}
 h2 { font-size: 2.5em;}
 h3 { margin: 10px 0; color: #4e555d; font-weight: light;}
-h3#blurb { color: white; text-align: center; font-weight: 200; color: #fff;}
+h3#blurb { color: white; text-align: center; font-weight: 200; color: #fff; font-size: 2.2em; margin-top: 1em;}
 ol {padding-left: 5%; list-style-type: decimal; margin: 10px 0;}
 p { 
 	margin: 10px auto;
 	line-height: 1.1;
 }
 p.subtitle { 
+	font-size: 1.3em;
 	color: #fff; text-align: center;
 	a:link, a:visited { color: dodgerblue;}
 	a.more-info { color: #ccc !important; text-decoration: underline;}
+}
+
+.post { padding: 10px 0px 20px 10px }
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }
 
 %regular-button { 
@@ -48,6 +70,16 @@ p.subtitle {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
+
+.upcoming, .started { 
+	font-size: .6em;
+	text-transform: uppercase;
+}
+.in-progress-alert { 
+	font-size: .6em;
+	text-transform: uppercase;
+}
+
 .highlight { 
 	color: rgba(255, 183, 50, 0.9);
 }
@@ -58,8 +90,8 @@ p.subtitle {
 .post-heading { 
 	a.post-title:link, a.post-title:visited {
 		color: #000;
-		font-size: 1em;
-		line-height: 1.1;
+		font-size: 1.15em;
+		line-height: 1;
 	}
 	a.post-title:visited {
 		color: #4e555d;
@@ -101,7 +133,8 @@ ul.hero-menu {
 
 a.hangout-button { 
 	background: rgba(28,160,96, 0.8); 
-	padding: 5px 15px; color: white; 
+	padding: 5px 15px; 
+	color: #fff !important; 
 	text-transform: uppercase; 
 	-moz-box-shadow:    3px 3px 3px #ccc;
     -webkit-box-shadow: 3px 3px 3px #ccc;
@@ -192,7 +225,7 @@ div.no-posts {
 .account-link.sign-up {margin-right: 10px;}
 
 /*Silent Hangouts*/
-a.post-category.example.category-silent-hangout { color: #444444;}
+a.post-category.example.category-silent-hangout { color: #444444; &:hover{ color: #fff; }}
 span.silent-icons { position: relative; top: 6px;}
 .category-silent-hangout.example { color: #444444;}
 .category-silent-hangout.example:hover { color: #fff;}
@@ -200,7 +233,7 @@ span.silent-icons { position: relative; top: 6px;}
 
 .share-options { display: block; width: 35px; padding: 0px; top: 2px; position: relative;  }
 
-span.user-count a {color: dodgerblue; line-height: 1; font-size: 2.5em;}
+span.user-count a {color: dodgerblue; line-height: 1; font-size: 1.5em;}
 .highlight { color: yellow;}
 
 // see css.js when "buttonColor" setting is white they glyphicon inherits that style making it invisible
@@ -221,7 +254,7 @@ h2.category-title.post-list-title { margin-top: 20px; text-transform: uppercase;
 	.post-category { background: rgba(30,144,255,0.85); color: #fff !important; font-size: 1.2em;}
 	.post-category:hover { background: #1ca060; color: #fff;}
 }
-.post-category { padding: 3px 5px;}
+.post-category { padding: 3px 5px; color: #444444;}
 
 /*Hide ranking*/
 .post-rank {display: none;}
@@ -255,7 +288,7 @@ input, textarea {
 	padding: 5px;
 }
 
-/*Sidebar*/
+/*Sidebar
 .side-nav .header .header-submodule { 
 	text-transform: uppercase; margin-bottom: 5px;
 	a.nav-button { 
@@ -266,12 +299,13 @@ input, textarea {
 		&:hover { background:rgba(30,144,255,0.9); }
 	}
 	.members { background: rgba(255, 183, 50, 0.9);}
+	a.account-link { 
+		@extend %button-noshadow;
+		background: dodgerblue;
+	}
 
-}
-a.account-link { 
-	@extend %button-noshadow;
-	background: dodgerblue;
-}
+}*/
+
 .menu-item:hover, li.menu-item.item-active {background: rgba(255,255,255,0.2);}
 
 /*FIREWORK ANIMATED GIF*/
@@ -287,3 +321,5 @@ a.account-link {
 /*Herotext*/
 .large-button { @extend %regular-button; font-size: 1.5em; display: block; width: 100%; box-shadow: none;}
 
+/*About page*/
+.template-aboutPage a:link, a:visited { color: dodgerblue;}

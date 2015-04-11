@@ -40,6 +40,7 @@ Package.onUse(function (api) {
     'lib/client/templates/leaderboard.html',
     'lib/client/templates/leaderboard.js',
     'lib/client/templates/leaderboard_link.html',
+    'lib/client/templates/leaderboard_link.js',
     'lib/client/about.js'
   ], ['client']);
 

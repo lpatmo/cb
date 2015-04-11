@@ -22,7 +22,7 @@ body{
 .content-wrapper{
   padding:0 10px;
   max-width: 1200px;
-  @include super-large { width: 70%; margin: 0px !important; float: left; }
+  @include super-large { width: 70%; }
 }
 
 .content-sidebar-wrapper { 

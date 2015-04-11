@@ -21,3 +21,5 @@ Template[getTemplate('heroPage')].rendered = function () {
     });
  };
 
+
+
