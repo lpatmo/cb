@@ -252,9 +252,9 @@ form div.controls {
 h2.category-title.post-list-title { margin-top: 20px; text-transform: uppercase;}
 .hero-menu {
 	.post-category { background: rgba(30,144,255,0.85); color: #fff !important; font-size: 1.2em;}
-	.post-category:hover { background: #1ca060; color: #fff;}
+	.post-category:hover, .post-cate { background: #1ca060; color: #fff;}
 }
-.post-category { padding: 3px 5px; color: #444444;}
+.post-category { padding: 3px 5px; color: #444444 !important;}
 
 /*Hide ranking*/
 .post-rank {display: none;}
@@ -319,7 +319,9 @@ input, textarea {
 .menu-accordion .menu-contents { max-height: 150px !important;}
 
 /*Herotext*/
-.large-button { @extend %regular-button; font-size: 1.5em; display: block; width: 100%; box-shadow: none;}
+.large-button { @extend %regular-button; font-size: 1.5em; display: block; width: 100%; box-shadow: none; margin-bottom: 5px;}
+a.chatroom { background: #E01563; color: #fff; &:hover {background: rgba(224,21,99, 0.8); };}
+a.chatroom:visited { color: #fff;}
 
 /*About page*/
 .template-aboutPage a:link, a:visited { color: dodgerblue;}
