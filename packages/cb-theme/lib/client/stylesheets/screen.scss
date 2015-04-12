@@ -75,11 +75,13 @@ blockquote p {
 }
 
 .upcoming, .started { 
-	font-size: .6em;
+	font-size: .8em;
 	text-transform: uppercase;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 5px;
 }
 .in-progress-alert { 
-	font-size: .6em;
+	font-size: .8em;
 	text-transform: uppercase;
 }
 
@@ -93,7 +95,7 @@ blockquote p {
 .post-heading { 
 	a.post-title:link, a.post-title:visited {
 		color: #000;
-		font-size: 1.15em;
+		font-size: 1.2em;
 		line-height: 1;
 	}
 	a.post-title:visited {
