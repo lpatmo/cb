@@ -7,13 +7,13 @@ The goal of this platform is to help users schedule google hangouts more easily 
 ###Priority Issues
 Below is the list of priority issues that we have. If you're interested in taking a look at one of these as an open-source contributor, leave a message on the issue link! Or leave a note in the [chatroom](https://gitter.im/lpatmo/codebuddies-meteor) if you have questions.
 
-1. E-mail participants who RSVPed to a particular hangout a reminder 2 (?) hours before the start of the virtual meetup.
+1. E-mail participants who RSVPed to a particular hangout a reminder 2 (?) hours before the start of the virtual meetup. [https://github.com/lpatmo/cb/issues/53](https://github.com/lpatmo/cb/issues/53)
 
-2. Grab back "# of upcoming meetup" numbers for each of the categories
+2. Grab from the google hangout API the # of actual participants in a google hangout room. [https://github.com/lpatmo/cb/issues/46](https://github.com/lpatmo/cb/issues/46)
 
-3. Deploy invisible hangout room roulette -- i.e. user won't have to decide which hangout room to select. Any available room will be automatically selected for them on the form.
+3. Deploy invisible hangout room roulette -- i.e. user won't have to decide which hangout room to select. Any available room will be automatically selected for them on the form. [https://github.com/lpatmo/cb/issues/57](https://github.com/lpatmo/cb/issues/57)
 
-4. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links.
+4. Create a "resources" page where users can submit links to tutorials or resources that they recommend. Also would be great if others could upvote and comment on the links. [https://github.com/lpatmo/cb/issues/40](https://github.com/lpatmo/cb/issues/40)
 
 
 
