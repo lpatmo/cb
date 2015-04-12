@@ -10,12 +10,15 @@ p {
 	margin: 10px auto;
 	line-height: 1.1;
 }
+h3.subtitle { text-align: center; color: #fff; font-weight: 200;}
 p.subtitle { 
 	font-size: 1.3em;
 	color: #fff; text-align: center;
 	a:link, a:visited { color: dodgerblue;}
 	a.more-info { color: #ccc !important; text-decoration: underline;}
 }
+
+.inner-wrapper.template-aboutPage > * { font-size: 1.4em;}
 
 .post { padding: 10px 0px 20px 10px }
 
