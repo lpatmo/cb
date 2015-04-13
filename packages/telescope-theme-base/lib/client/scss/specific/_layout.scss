@@ -52,32 +52,8 @@ body{
   margin-bottom: $grid-margin;
 }
 
-.large-button.hidden-mobile { 
+.hidden-mobile { 
   @include small { display: none;; }
 }
 
 
-.footer-pop { 
-  position: fixed;
-  display: block;
-  bottom: 5px;
-  right: 14%;
-  z-index: 9999;
-  a.submit, a.chatroom { padding: 10px;}
-  a.submit { background: dodgerblue;}
-    @include small { 
-      width: 100%;
-      right: 0px;
-    }
-  a {
-    @include small {
-      display: block;
-      width: 100%;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 1.3em;
-    }
-  a:visited { color: #fff;}
-
-  }
-}
