@@ -3,7 +3,7 @@
 		{{# if formattedHangoutDate}}
 			{{#if endHangoutDate }}
 				{{# if upcomingEvent}}
-					<div class="upcoming">Upcoming <span class="scheduled-for">{{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span></div>
+					<div class="upcoming"><i class="fa fa-calendar"></i> <span class="scheduled-for">{{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span></div>
 				{{/if}}
 				{{#if inProgress}}
 					<div class="in-progress-alert">in progress</div>
@@ -14,7 +14,7 @@
 				{{/if}}
 			{{else}}
 				{{# if upcomingEvent}}
-					<div class="upcoming">Upcoming <span class="scheduled-for">{{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span></div>
+					<div class="upcoming"><i class="fa fa-calendar"></i> <span class="scheduled-for">{{formattedHangoutDate}}{{#if endHangoutDate }}-{{endHangoutDate }} {{/if}}</span></div>
 				{{/if}}
 				{{# if probablyNotExpired}}
 					<div class="started">Started <span class="scheduled-for">{{formattedHangoutDate}} (No End Time Set) </span></div>

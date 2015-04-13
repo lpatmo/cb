@@ -8,7 +8,8 @@ h3#blurb { color: white; text-align: center; font-weight: 200; color: #fff; font
 ol {padding-left: 5%; list-style-type: decimal; margin: 10px 0;}
 p { 
 	margin: 10px auto;
-	line-height: 1.1;
+	line-height: 1;
+	font-size: 1.3em;
 }
 h3.subtitle { text-align: center; color: #fff; font-weight: 200;}
 a.more-info:visited { color: dodgerblue;}
@@ -19,7 +20,6 @@ p.subtitle {
 	a.more-info { color: #ccc !important; text-decoration: underline;}
 }
 
-.inner-wrapper.template-aboutPage > * { font-size: 1.4em;}
 
 .post { padding: 10px 0px 20px 10px }
 
@@ -78,8 +78,6 @@ blockquote p {
 .upcoming, .started { 
 	font-size: .8em;
 	text-transform: uppercase;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 5px;
 }
 .in-progress-alert { 
 	font-size: .8em;
@@ -196,7 +194,7 @@ span.message-joined { color: rgba(122,192,228,0.8);}
   bottom: 5px;
   right: 14%;
   z-index: 9999;
-  a.submit, a.chatroom { padding: 10px;}
+  a.submit, a.chatroom { padding: 10px; font-size: 1.3em;}
   a.submit { background: dodgerblue;}
 }
 
