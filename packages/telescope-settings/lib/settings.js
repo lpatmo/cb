@@ -114,12 +114,14 @@ Settings.schema = new SimpleSchema({
     autoform: {
       group: 'posts',
       instructions: 'The view used for the front page',
-      options: _.map(viewsMenu, function (view) {
-        return {
-          value: camelCaseify(view.label),
-          label: view.label
-        };
-      })
+      options: function () {
+        return _.map(viewsMenu, function (view) {
+          return {
+            value: camelCaseify(view.label),
+            label: view.label
+          };
+        });
+      }
     }
   },
   postsLayout: {
@@ -142,12 +144,14 @@ Settings.schema = new SimpleSchema({
       instructions: 'Posts views showed in the views menu',
       editable: true,
       noselect: true,
-      options: _.map(viewsMenu, function (item){
-        return {
-          value: item.route,
-          label: item.label
-        }
-      })
+      options: function () {
+        return _.map(viewsMenu, function (item){
+          return {
+            value: item.route,
+            label: item.label
+          }
+        });
+      }
     }
   },
   postInterval: {
