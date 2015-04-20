@@ -1,3 +1,5 @@
+Meteor.startup(function () {
+
 Template[getTemplate('leaderboard')].helpers({
   settings: function() {
     return {
@@ -19,5 +21,5 @@ Template[getTemplate('leaderboard')].helpers({
 
 });
 
-
+});
 
