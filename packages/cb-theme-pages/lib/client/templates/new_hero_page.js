@@ -1,3 +1,5 @@
+Meteor.startup(function () {
+
 Template[getTemplate('heroPage')].helpers({
 		showTabs: function() {
 			var r = Router.current().location.get().path;
@@ -22,4 +24,4 @@ Template[getTemplate('heroPage')].rendered = function () {
  };
 
 
-
+});

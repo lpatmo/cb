@@ -1,3 +1,5 @@
+Meteor.startup(function () {
+
 Template[getTemplate('leaderboardLink')].helpers({
   userCount: function() {
       var totalUsers = Session.get('userCount');
@@ -11,3 +13,5 @@ Template[getTemplate('leaderboardLink')].rendered = function () {
       Session.set('userCount', result);
     });
  };
+
+});
