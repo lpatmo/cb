@@ -1,5 +1,6 @@
 // ----------------------------------- Post List -----------------------------------//
 
+Meteor.startup(function () {
 Template[getTemplate('newPostsList')].created = function() {
   Session.set('listPopulatedAt', new Date());
 };
@@ -74,4 +75,5 @@ Template[getTemplate('postsLoadMore')].events({
       this.loadMoreHandler();
     }
   }
+});
 });
