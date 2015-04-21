@@ -7,9 +7,15 @@ Template[getTemplate('newPostTitle')].helpers({
     return !!this.url ? '_blank' : '';
   },
   formattedHangoutDate: function() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone ? Intl.DateTimeFormat().resolvedOptions().timeZone : ''
     if (this.scheduledFor) {
       // Don't bother to show time for past hangouts. Cuz who cares yo.
-      return moment(this.scheduledFor).format('dddd, MMMM Do @ h:mma'); 
+        if (tz.length===0) {
+          return moment(this.scheduledFor).format('dddd, MMMM Do @ h:mma');
+        }
+        else {
+          return moment(this.scheduledFor).tz(tz).format('dddd, MMMM Do @ h:mma z');
+        }
     } else {
       return '';
     }
@@ -20,10 +26,14 @@ Template[getTemplate('newPostTitle')].helpers({
     }
   },
   endHangoutDate: function() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone ? Intl.DateTimeFormat().resolvedOptions().timeZone : ''
     if (this.scheduledEnd) {
       // Time for when the hangout ends.
-      return (this.scheduledEnd > Date.now()) ? moment(this.scheduledEnd).format('h:mma') :
-                                                ''
+      if (tz.length===0) {
+        return (this.scheduledEnd > Date.now()) ? moment(this.scheduledEnd).format('h:mma z') : ''
+      } else {
+        return (this.scheduledEnd > Date.now()) ? moment(this.scheduledEnd).tz(tz).format('h:mma z'): ''
+      }
     } else {
       return '';
     }
@@ -45,8 +55,7 @@ Template[getTemplate('newPostTitle')].helpers({
       var probablyNotExpired = (Date.now() > this.scheduledFor || Date.now() < this.scheduledFor + 7200000)  ? true: false;
       return probablyNotExpired;
       }
-      
-
+    
 
   }
 });
