@@ -2,6 +2,14 @@ inProgress = function (post) {
   return reactiveDate.nowMinutes.get() > post.scheduledFor && reactiveDate.nowMinutes.get() < post.scheduledEnd;
 };
 
+completedEvent = function(post) {
+	return reactiveDate.nowMinutes.get() > post.scheduledEnd && reactiveDate.nowMinutes.get() > post.scheduledFor;
+}
+
+upcomingEvent = function(post) {
+	return reactiveDate.nowMinutes.get() < post.scheduledFor;
+}
+
 reactiveDate = {
   nowMinutes: new ReactiveVar(new Date)
 };

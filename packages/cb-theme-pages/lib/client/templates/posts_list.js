@@ -7,9 +7,13 @@ Meteor.startup(function () {
       var allItems = this.postsCursor.fetch();
       return _.filter(allItems, inProgress);
     },
-    pastAndFuturePostsCursor: function () {
+    futurePostsCursor: function () {
+      var allItems = this.postsCursor.fetch().reverse();
+      return _.filter(allItems, upcomingEvent);
+    },
+    pastPostsCursor: function () {
       var allItems = this.postsCursor.fetch();
-      return _.reject(allItems, inProgress);
+      return _.filter(allItems, completedEvent);
     }
   });
 

@@ -9,7 +9,12 @@
         {{> after_post_item}}
       {{/each}}
      </div>
-      {{#each pastAndFuturePostsCursor}}
+      {{#each futurePostsCursor}}
+        {{> before_post_item}}
+        {{> post_item}}
+        {{> after_post_item}}
+      {{/each}}
+      {{#each pastPostsCursor}}
         {{> before_post_item}}
         {{> post_item}}
         {{> after_post_item}}
