@@ -1,6 +1,6 @@
 // ----------------------------------- Post List -----------------------------------//
 
-Meteor.startup(function () {
+Meteor.startup(function() {
 Template[getTemplate('newPostsList')].created = function() {
   Session.set('listPopulatedAt', new Date());
 };
@@ -45,6 +45,8 @@ Template[getTemplate('newPostsList')].helpers({
   }
 });
 
+});
+
 // ----------------------------------- Incoming -----------------------------------//
 
 Template[getTemplate('postsListIncoming')].events({
@@ -55,25 +57,3 @@ Template[getTemplate('postsListIncoming')].events({
 
 // ----------------------------------- Load More -----------------------------------//
 
-Template[getTemplate('postsLoadMore')].helpers({
-  postsReady: function () {
-    return this.postsReady;
-  },
-  hasPosts: function () {
-    return !!this.postsCursor.count();
-  }  
-});
-
-Template[getTemplate('postsLoadMore')].events({
-  'click .more-button': function (event, instance) {
-    event.preventDefault();
-    if (this.controllerInstance) {
-      // controller is a template
-      this.loadMoreHandler(this.controllerInstance);
-    } else {
-      // controller is router
-      this.loadMoreHandler();
-    }
-  }
-});
-});

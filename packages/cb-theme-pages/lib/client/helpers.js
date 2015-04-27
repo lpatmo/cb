@@ -10,6 +10,10 @@ upcomingEvent = function(post) {
 	return reactiveDate.nowMinutes.get() < post.scheduledFor;
 }
 
+allOtherPosts = function(post) {
+	 return reactiveDate.nowMinutes.get() > post.scheduledEnd && reactiveDate.nowMinutes.get() > post.scheduledFor || reactiveDate.nowMinutes.get() < post.scheduledFor && reactiveDate.nowMinutes.get() < post.scheduledEnd; 
+}
+
 reactiveDate = {
   nowMinutes: new ReactiveVar(new Date)
 };

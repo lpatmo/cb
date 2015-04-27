@@ -7,14 +7,29 @@ Meteor.startup(function () {
       var allItems = this.postsCursor.fetch();
       return _.filter(allItems, inProgress);
     },
+    pastAndFuturePostsCursor: function() {
+      var allItems = this.postsCursor.fetch();
+      return _.reject(allItems, inProgress);
+    },
     futurePostsCursor: function () {
       var allItems = this.postsCursor.fetch().reverse();
-      return _.filter(allItems, upcomingEvent);
+         return _.reject(allItems, inProgress);
     },
     pastPostsCursor: function () {
       var allItems = this.postsCursor.fetch();
-      return _.filter(allItems, completedEvent);
+         return _.filter(allItems, completedEvent);
+    },
+    postsLoadMore: function () {
+    return getTemplate('postsLoadMore');
+    },
+    postsListIncoming: function () {
+      return getTemplate('postsListIncoming');
+    },
+    postsListSort: function () {
+      return getTemplate('postsListSort');
     }
   });
 
 });
+
+

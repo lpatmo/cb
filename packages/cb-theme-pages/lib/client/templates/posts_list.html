@@ -1,3 +1,17 @@
+<template name="postsLoadMore">
+  {{#if postsReady}}
+    {{#if hasPosts}}
+      {{#if hasMorePosts}}
+        <a class="more-button" href="#"><span>{{_ "load_more"}}</span></a>
+      {{/if}}
+    {{else}}
+      <div class="no-posts">{{_ "sorry_we_couldnt_find_any_posts"}}</div>
+    {{/if}}
+  {{else}}
+    <div class="loading-module">{{> spinner}}</div>
+  {{/if}}
+</template>
+
 <template name="cb_posts_list">
   <div class="posts-wrapper grid grid-module">
     {{> Template.dynamic template=postsListIncoming data=incoming}}
@@ -9,12 +23,7 @@
         {{> after_post_item}}
       {{/each}}
      </div>
-      {{#each futurePostsCursor}}
-        {{> before_post_item}}
-        {{> post_item}}
-        {{> after_post_item}}
-      {{/each}}
-      {{#each pastPostsCursor}}
+      {{#each pastAndFuturePostsCursor}}
         {{> before_post_item}}
         {{> post_item}}
         {{> after_post_item}}
@@ -23,3 +32,5 @@
     {{> Template.dynamic template=postsLoadMore}}
   </div>
 </template>
+
+

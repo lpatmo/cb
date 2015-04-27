@@ -11,8 +11,6 @@ Meteor.startup(function() {
 
 
 
-
-
 heroModules.push({
  				 template: 'heroPage'
 });
