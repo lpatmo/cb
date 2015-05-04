@@ -92,6 +92,7 @@ telescope-settings
 telescope-sitemap
 telescope-messages
 telescope-pages
+
 # Custom Packages
 cb-theme-pages
 cb-theme
@@ -101,4 +102,4 @@ mizzao:user-status
 mrt:moment-timezone
 mrt:mediaqueries
 meteorhacks:kadira@2.20.1
-
+joshowens:timezone-picker
