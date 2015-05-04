@@ -7,7 +7,7 @@ Template[getTemplate('newPostTitle')].helpers({
     return !!this.url ? '_blank' : '';
   },
   formattedHangoutDate: function() {
-    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone ? Intl.DateTimeFormat().resolvedOptions().timeZone : ''
+    var tz = TimezonePicker.detectedZone();
     if (this.scheduledFor) {
       // Don't bother to show time for past hangouts. Cuz who cares yo.
         if (tz.length===0) {
@@ -26,7 +26,7 @@ Template[getTemplate('newPostTitle')].helpers({
     }
   },
   endHangoutDate: function() {
-    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone ? Intl.DateTimeFormat().resolvedOptions().timeZone : ''
+    var tz = TimezonePicker.detectedZone();
     if (this.scheduledEnd) {
       // Time for when the hangout ends.
       if (tz.length===0) {
