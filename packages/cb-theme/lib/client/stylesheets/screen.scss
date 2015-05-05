@@ -6,12 +6,14 @@ h2 { font-size: 2.5em;}
 h3 { margin: 10px 0; color: #4e555d; font-weight: light;}
 h3#blurb { color: white; text-align: center; font-weight: 200; color: #fff; font-size: 2.5em; margin-top: .7em;}
 ol {padding-left: 5%; list-style-type: decimal; margin: 10px 0;}
+ol li { font-size: 1.2em;}
 p { 
 	margin: 10px auto;
 	line-height: 1;
 	font-size: 1.3em;
 }
 h3.subtitle { text-align: center; color: #fff; font-weight: 200;}
+.grid a:link, a:visited { color: dodgerblue;}
 a.more-info, a.more-info:visited { color: #fff; text-decoration: underline;}
 p.subtitle { 
 	font-size: 1.3em;
@@ -29,6 +31,7 @@ blockquote {
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
+  font-size: 1.5em;
 }
 blockquote:before {
   color: #ccc;
