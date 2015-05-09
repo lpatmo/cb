@@ -1,0 +1,23 @@
+{
+  "name": "telescope-module-share",
+  "summary": "Telescope share module package",
+  "version": "0.0.0+62662a13cbf79f6fbb5b073ada71a4fee1c94068",
+  "earliestCompatibleVersion": "0.0.0",
+  "isTest": false,
+  "plugins": [],
+  "unibuilds": [
+    {
+      "arch": "os",
+      "path": "os.json"
+    },
+    {
+      "arch": "web.browser",
+      "path": "web.browser.json"
+    },
+    {
+      "arch": "web.cordova",
+      "path": "web.cordova.json"
+    }
+  ],
+  "format": "unipackage-pre2"
+}

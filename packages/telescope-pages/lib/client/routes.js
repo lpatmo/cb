@@ -1,17 +1,20 @@
-adminMenu.push({
+Telescope.menus.register("adminMenu", {
   route: 'pages',
   label: 'Pages',
   description: 'manage_static_pages'
 });
 
-preloadSubscriptions.push('pages');
+Telescope.subscriptions.preload('pages');
 
-PageController = RouteController.extend({
+var PageController = RouteController.extend({
+  currentPage: function () {
+    return Pages.collection.findOne({slug: this.params.slug});
+  },
   getTitle: function () {
-    return Pages.collection.findOne({slug: this.params.slug}).title;
+    return this.currentPage() && this.currentPage().title;
   },
   data: function () {
-    return Pages.collection.findOne({slug: this.params.slug});
+    return this.currentPage();
   }
 });
 
@@ -26,7 +29,7 @@ Meteor.startup(function () {
 
   Router.route('/pages', {
     name: 'pages',
-    controller: AdminController
+    controller: Telescope.controllers.admin
   });
 
 });

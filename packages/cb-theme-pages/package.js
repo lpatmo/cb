@@ -7,8 +7,6 @@ Package.describe({
 Package.onUse(function (api) {
 
   api.use([
-    'telescope-lib', 
-    'telescope-base',
     'iron:router'
   ], ['client', 'server']);
 

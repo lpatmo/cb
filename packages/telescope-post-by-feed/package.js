@@ -1,7 +1,8 @@
 Package.describe({
-  summary: 'Auto post via RSS to Telescope',
-  version: '0.0.1',
-  name: 'telescope-post-by-feed'
+  name: "telescope:post-by-feed",
+  summary: "Auto post via RSS to Telescope",
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-post-by-feed.git"
 });
 
 Npm.depends({
@@ -13,26 +14,21 @@ Npm.depends({
 
 Package.onUse(function(api) {
 
-  api.use([
-    'telescope-base',
-    'telescope-tags',
-    'aldeed:simple-schema',
-    'aldeed:autoform',
-    'tap:i18n',
-    'fourseven:scss',
-  ], ['client', 'server']);
+  api.versionsFrom("METEOR@1.0");
+
+  api.use(['telescope:core@0.1.0']);
 
   api.use([
-    'iron:router',
+    'iron:router@1.0.5',
     'templating',
-    'telescope-messages'
+    'telescope:messages@0.1.0'
   ], 'client');
 
   api.use([
     'http',
     'aldeed:http@0.2.2',
-    'momentjs:moment',
-    'percolatestudio:synced-cron'
+    'momentjs:moment@2.10.0',
+    'percolatestudio:synced-cron@1.1.0'
   ], 'server');
 
   api.addFiles([

@@ -1,7 +1,7 @@
 Package.describe({
+  name: 'telescope:singleday',
   summary: 'Telescope Single Day package',
-  version: '0.1.0',
-  name: 'telescope-singleday'
+  version: '0.1.1'
 });
 
 Npm.depends({
@@ -10,50 +10,30 @@ Npm.depends({
 
 Package.onUse(function (api) {
 
+  api.versionsFrom(['METEOR@1.0']);
+
   // --------------------------- 1. Meteor packages dependencies ---------------------------
 
-  // automatic (let the package specify where it's needed)
-
-  api.use([
-    'telescope-base',
-    'telescope-lib',
-    'telescope-i18n',
-    'tap:i18n',
-    'iron:router'
-  ]);
-
-  // client
-
-  api.use([
-    'jquery',
-    'underscore',
-    'templating' 
-  ], ['client']);
-
-  // server
-
-  api.use([
-    //
-  ], ['server']);
+  api.use(['telescope:core@0.1.0']);
 
   // ---------------------------------- 2. Files to include ----------------------------------
 
   // i18n config (must come first)
 
-  api.add_files([
+  api.addFiles([
     'package-tap.i18n'
   ], ['client', 'server']);
 
   // both
 
-  api.add_files([
+  api.addFiles([
     'lib/routes.js',
     'lib/singleday.js'
   ], ['client', 'server']);
 
   // client
 
-  api.add_files([
+  api.addFiles([
     'lib/client/templates/single_day.html',
     'lib/client/templates/single_day.js',
     'lib/client/templates/single_day_nav.html',
@@ -62,12 +42,12 @@ Package.onUse(function (api) {
 
   // server
 
-  api.add_files([
-  ], ['server']);    
+  api.addFiles([
+  ], ['server']);
 
   // i18n languages (must come last)
 
-  api.add_files([
+  api.addFiles([
     'i18n/bg.i18n.json',
     'i18n/de.i18n.json',
     'i18n/en.i18n.json',

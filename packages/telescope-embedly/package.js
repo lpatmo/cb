@@ -1,39 +1,30 @@
 Package.describe({
+  name: "telescope:embedly",
   summary: "Telescope Embedly module package",
-  version: '0.2.9',
-  name: "telescope-embedly",
-  git: 'https://github.com/TelescopeJS/Telescope-Module-Embedly.git'
+  version: "0.3.1",
+  git: 'https://github.com/TelescopeJS/telescope-embedly.git'
 });
 
 Package.onUse( function(api) {
 
-  api.versionsFrom("METEOR@0.9.0");
+  api.versionsFrom("METEOR@1.0");
+
+  api.use(['telescope:core@0.1.0']);
 
   api.use([
-    'telescope-lib',
-    'telescope-base',
-    'telescope-settings',
-    'aldeed:autoform',
-    'tap:i18n',
-    'fourseven:scss',
-    'templating',
-    'http'
-  ]);
-
-  api.use([
-    'telescope-messages'
+    'telescope:messages@0.1.0'
   ], 'client');
 
-  api.add_files([
+  api.addFiles([
     'package-tap.i18n',
     'lib/embedly.js'
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/server/get_embedly_data.js'
   ], ['server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/client/autoform-postthumbnail.html',
     'lib/client/autoform-postthumbnail.js',
     'lib/client/post_thumbnail.html',
@@ -43,7 +34,7 @@ Package.onUse( function(api) {
     'lib/client/post_video.js'
   ], ['client']);
 
-  api.add_files([
+  api.addFiles([
     "i18n/en.i18n.json",
     "i18n/fr.i18n.json"
   ], ["client", "server"]);

@@ -1,9 +1,0 @@
-<template name="post_item">
-  <div class="post {{#if sticky}}sticky{{/if}} {{inactiveClass}} {{postClass}}" id="{{_id}}">
-      {{#each postModules}}
-        <div class="{{moduleClass}}">
-          {{> Template.dynamic template=template data=..}}
-        </div>
-      {{/each}}
-  </div>
-</template>

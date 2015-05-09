@@ -1,0 +1,13 @@
+<template name="modules">
+  {{#if hasWrapper}}
+    {{#each getModules}}
+      <div class="{{wrapperClass}}">
+        {{> Template.dynamic template=template data=../..}}
+      </div>
+    {{/each}}
+  {{else}}
+    {{#each getModules}}
+      {{> Template.dynamic template=template data=../..}}
+    {{/each}}
+  {{/if}}
+</template>

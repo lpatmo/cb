@@ -1,0 +1,221 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [
+    {
+      "name": "postStatuses",
+      "export": true
+    },
+    {
+      "name": "STATUS_PENDING",
+      "export": true
+    },
+    {
+      "name": "STATUS_APPROVED",
+      "export": true
+    },
+    {
+      "name": "STATUS_REJECTED",
+      "export": true
+    },
+    {
+      "name": "adminNav",
+      "export": true
+    },
+    {
+      "name": "viewNav",
+      "export": true
+    },
+    {
+      "name": "addToPostSchema",
+      "export": true
+    },
+    {
+      "name": "addToCommentsSchema",
+      "export": true
+    },
+    {
+      "name": "addToSettingsSchema",
+      "export": true
+    },
+    {
+      "name": "addToUserSchema",
+      "export": true
+    },
+    {
+      "name": "preloadSubscriptions",
+      "export": true
+    },
+    {
+      "name": "primaryNav",
+      "export": true
+    },
+    {
+      "name": "secondaryNav",
+      "export": true
+    },
+    {
+      "name": "viewParameters",
+      "export": true
+    },
+    {
+      "name": "footerModules",
+      "export": true
+    },
+    {
+      "name": "heroModules",
+      "export": true
+    },
+    {
+      "name": "postModules",
+      "export": true
+    },
+    {
+      "name": "postThumbnail",
+      "export": true
+    },
+    {
+      "name": "postHeading",
+      "export": true
+    },
+    {
+      "name": "postMeta",
+      "export": true
+    },
+    {
+      "name": "modulePositions",
+      "export": true
+    },
+    {
+      "name": "postSubmitRenderedCallbacks",
+      "export": true
+    },
+    {
+      "name": "postSubmitClientCallbacks",
+      "export": true
+    },
+    {
+      "name": "postSubmitMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "postAfterSubmitMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "postEditRenderedCallbacks",
+      "export": true
+    },
+    {
+      "name": "postEditClientCallbacks",
+      "export": true
+    },
+    {
+      "name": "postEditMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "postAfterEditMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentSubmitRenderedCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentSubmitClientCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentSubmitMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentAfterSubmitMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentEditRenderedCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentEditClientCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentEditMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "commentAfterEditMethodCallbacks",
+      "export": true
+    },
+    {
+      "name": "userEditRenderedCallbacks",
+      "export": true
+    },
+    {
+      "name": "userEditClientCallbacks",
+      "export": true
+    },
+    {
+      "name": "userProfileCompleteChecks",
+      "export": true
+    },
+    {
+      "name": "userProfileDisplay",
+      "export": true
+    },
+    {
+      "name": "userProfileEdit",
+      "export": true
+    },
+    {
+      "name": "userCreatedCallbacks",
+      "export": true
+    },
+    {
+      "name": "getTemplate",
+      "export": true
+    },
+    {
+      "name": "templates",
+      "export": true
+    },
+    {
+      "name": "themeSettings",
+      "export": true
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "telescope-i18n"
+    },
+    {
+      "package": "telescope-lib"
+    },
+    {
+      "package": "aldeed:simple-schema"
+    },
+    {
+      "package": "check"
+    }
+  ],
+  "implies": [
+    {
+      "package": "aldeed:simple-schema"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "os/packages/telescope-base.js",
+      "length": 37812,
+      "offset": 0,
+      "servePath": "/packages/telescope-base.js",
+      "sourceMap": "os/packages/telescope-base.js.map"
+    }
+  ]
+}

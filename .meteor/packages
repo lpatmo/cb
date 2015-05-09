@@ -3,100 +3,45 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-# Meteor Packages
 
-standard-app-packages
-backbone
-accounts-base
-accounts-password
-spiderable
-email
-accounts-facebook
-service-configuration
-accounts-ui
-reactive-var
-http
+############ Telescope Core ############
 
-# Atmosphere Packages
+telescope:core
 
-iron:router
+############ Telescope Packages (Optional) ############
 
-meteorhacks:fast-render
-meteorhacks:subs-manager
-meteorhacks:npm
+# Note: all following packages depend on telescope:core; Additional internal dependencies are mentioned
 
-aldeed:autoform@5.1.2
-aldeed:collection2
-aldeed:simple-schema@1.3.2
-aldeed:template-extension
+telescope:api
+telescope:daily # singleday
+telescope:datetimepicker
+telescope:email
+telescope:embedly
+telescope:getting-started
+telescope:invites
+telescope:kadira
+telescope:migrations
+telescope:newsletter
+telescope:notifications
+telescope:pages
+telescope:post-by-feed
+telescope:releases
+telescope:rss
+telescope:scoring
+telescope:search
+telescope:share
+telescope:singleday
+# telescope:sitemap
+telescope:subscribe-to-posts # notifications
+telescope:tagline-banner
+telescope:tags
+telescope:theme-base
+telescope:theme-hubble
+telescope:update-prompt
 
-mrt:cookies
-
-ccan:cssreset # CSS reset (Must come before any other css)
-cmather:handlebars-server
-sacha:spin
-sacha:juice
-chuangbo:marked
-percolatestudio:synced-cron
-npm-container
-matb33:collection-hooks
-djedi:sanitize-html
-rajit:bootstrap3-datepicker
-bengott:avatar@0.7.6
-jparker:gravatar
-tap:i18n
-useraccounts:unstyled@1.8.1
-tsega:bootstrap3-datetimepicker@3.1.3_1
-momentjs:moment
-aslagle:reactive-table
-aramk:tinycolor
-fortawesome:fontawesome
-fourseven:scss
-manuelschoebel:ms-seo
-
-# Testing
-
-# sanjo:jasmine
-# velocity:html-reporter
-
-# Telescope Packages (Required)
-
-telescope-lib
-telescope-i18n
-
-# Telescope Packages (Optional)
-
-telescope-datetimepicker
-telescope-theme-base
-telescope-module-share
-telescope-api
-telescope-rss
-telescope-search
-telescope-tags
-telescope-theme-hubble
-telescope-email
-telescope-embedly
-telescope-newsletter
-telescope-daily
-telescope-update-prompt
-telescope-kadira
-telescope-notifications
-telescope-singleday
-telescope-invites
-telescope-post-by-feed
-telescope-releases
-telescope-getting-started
-telescope-subscribe-to-posts
-telescope-tagline-banner
-telescope-settings
-telescope-sitemap
-telescope-messages
-telescope-pages
-
-# Custom Packages
+############ Your Custom Packages ############
 cb-theme-pages
 cb-theme
-telescope-base
 accounts-twitter
 mizzao:user-status
 mrt:moment-timezone

@@ -1,15 +1,15 @@
 Releases = new Meteor.Collection('releases');
 
-heroModules.push({
+Telescope.modules.register("hero", {
   template: 'currentRelease'
 });
 
-preloadSubscriptions.push('currentRelease');
+Telescope.subscriptions.preload('currentRelease');
 
 Meteor.startup(function () {
   Releases.allow({
-    insert: isAdminById,
-    update: isAdminById,
-    remove: isAdminById
+    insert: Users.is.adminById,
+    update: Users.is.adminById,
+    remove: Users.is.adminById
   });
 });

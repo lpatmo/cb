@@ -1,18 +1,20 @@
-var feedSchema = new SimpleSchema({
+Telescope.schemas.feeds = new SimpleSchema({
   url: {
     type: String,
-    regEx: SimpleSchema.RegEx.Url
+    regEx: SimpleSchema.RegEx.Url,
+    editableBy: ["admin"]
   },
   userId: {
     type: String,
     label: 'feedUser',
+    editableBy: ["admin"],
     autoform: {
       instructions: 'Posts will be assigned to this user.',
       options: function () {
         var users = Meteor.users.find().map(function (user) {
           return {
             value: user._id,
-            label: getDisplayName(user)
+            label: Users.getDisplayName(user)
           };
         });
         return users;
@@ -23,6 +25,7 @@ var feedSchema = new SimpleSchema({
     type: [String],
     label: 'categories',
     optional: true,
+    editableBy: ["admin"],
     autoform: {
       instructions: 'Posts will be assigned to this category.',
       noselect: true,
@@ -41,7 +44,10 @@ var feedSchema = new SimpleSchema({
 });
 
 Feeds = new Meteor.Collection('feeds');
-Feeds.attachSchema(feedSchema);
+
+Telescope.schemas.feeds.internationalize();
+
+Feeds.attachSchema(Telescope.schemas.feeds);
 
 // used to keep track of which feed a post was imported from
 var feedIdProperty = {
@@ -54,8 +60,8 @@ var feedIdProperty = {
       omit: true
     }
   }
-}
-addToPostSchema.push(feedIdProperty);
+};
+Posts.registerField(feedIdProperty);
 
 // the RSS ID of the post in its original feed
 var feedItemIdProperty = {
@@ -68,24 +74,24 @@ var feedItemIdProperty = {
       omit: true
     }
   }
-}
-addToPostSchema.push(feedItemIdProperty);
+};
+Posts.registerField(feedItemIdProperty);
 
 Meteor.startup(function () {
   Feeds.allow({
-    insert: isAdminById,
-    update: isAdminById,
-    remove: isAdminById
+    insert: Users.is.adminById,
+    update: Users.is.adminById,
+    remove: Users.is.adminById
   });
 
   Meteor.methods({
     insertFeed: function(feedUrl){
-      check(feedUrl, feedSchema);
+      check(feedUrl, Telescope.schemas.feeds);
 
-      if (Feeds.findOne({url: feedSchema.url}))
+      if (Feeds.findOne({url: feedUrl.url}))
         throw new Meteor.Error('already-exists', i18n.t('feed_already_exists'));
 
-      if (!Meteor.user() || !isAdmin(Meteor.user()))
+      if (!Meteor.user() || !Users.is.admin(Meteor.user()))
         throw new Meteor.Error('login-required', i18n.t('you_need_to_login_and_be_an_admin_to_add_a_new_feed'));
 
       return Feeds.insert(feedUrl);

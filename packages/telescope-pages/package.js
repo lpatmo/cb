@@ -1,23 +1,15 @@
 Package.describe({
+  name: "telescope:pages",
   summary: "Telescope static pages package",
-  version: '0.0.1',
-  name: "telescope-pages"
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-pages.git"
 });
 
 Package.onUse(function(api) {
 
-  api.use([
-    'telescope-base',
-    'aldeed:simple-schema',
-    'aldeed:autoform',
-    'tap:i18n',
-    'fourseven:scss',
-    'iron:router',
-    'templating',
-    'telescope-messages',
-    'matb33:collection-hooks',
-    'chuangbo:marked'
-  ]);
+  api.versionsFrom("METEOR@1.0");
+  
+  api.use(['telescope:core@0.1.0']);
 
   api.addFiles([
     'lib/pages.js'

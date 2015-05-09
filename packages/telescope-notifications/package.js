@@ -1,40 +1,28 @@
 Package.describe({
+  name: "telescope:notifications",
   summary: "Telescope notifications package",
-  version: '0.1.0',
-  name: "telescope-notifications"
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-notifications.git"
 });
 
 Package.onUse(function (api) {
 
+  api.versionsFrom("METEOR@1.0");
+
   api.use([
-    'telescope-lib',
-    'telescope-base',
-    'telescope-settings',
-    'telescope-email',
-    'iron:router',
+    'telescope:core@0.1.0',
     'kestanous:herald@1.3.0',
-    'kestanous:herald-email',
-    'tap:i18n'
-  ], ['client', 'server']);
+    'kestanous:herald-email@0.5.0',
+    'cmather:handlebars-server@0.2.0'
+  ]);
 
-  api.use([
-    'jquery',
-    'underscore',
-    'templating',
-    'tracker'
-  ], ['client']);
-
-  api.use([
-    'cmather:handlebars-server'
-  ], ['server']);
-
-  api.add_files([
+  api.addFiles([
     'lib/notifications.js',
     'lib/herald.js',
     'package-tap.i18n'
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/client/templates/notification_item.html',
     'lib/client/templates/notification_item.js',
     'lib/client/templates/notifications_mark_as_read.html',
@@ -48,12 +36,12 @@ Package.onUse(function (api) {
     'lib/client/templates/unsubscribe.js',
   ], ['client']);
 
-  api.add_files([
+  api.addFiles([
     'lib/server/notifications-server.js',
     'lib/server/routes.js'
   ], ['server']);
 
-  api.add_files([
+  api.addFiles([
     "i18n/de.i18n.json",
     "i18n/en.i18n.json",
     "i18n/es.i18n.json",

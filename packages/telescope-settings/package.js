@@ -1,22 +1,18 @@
-Package.describe({summary: "Telescope settings package"});
+Package.describe({
+  name: "telescope:settings",
+  summary: "Telescope settings package",
+  version: "0.1.0"
+});
 
 Package.onUse(function(api) {
   var both = ['server', 'client'];
 
-  api.use([
-    'mongo',
-    'underscore',
-
-    'aldeed:simple-schema',
-
-    'telescope-base',
-    'telescope-lib'
-  ], both);
+  api.versionsFrom(['METEOR@1.0']);
 
   api.use([
-    'templating',
-    'aldeed:autoform'
-  ], 'client');
+    'telescope:lib@0.3.1', 
+    'telescope:i18n@0.1.0'
+  ]);
 
   api.addFiles([
     'lib/settings.js',

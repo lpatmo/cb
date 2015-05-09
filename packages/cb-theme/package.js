@@ -6,7 +6,7 @@ Package.describe({
 
 Package.onUse(function (api) {
 
-  api.use(['fourseven:scss', 'telescope-theme-hubble'], ['client']);
+  api.use(['fourseven:scss'], ['client']);
 
   api.addFiles([
     'lib/client/stylesheets/screen.scss',

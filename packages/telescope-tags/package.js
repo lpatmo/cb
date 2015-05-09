@@ -1,23 +1,15 @@
-Package.describe({summary: "Telescope tags package"});
+Package.describe({
+  name: "telescope:tags",
+  summary: "Telescope tags package",
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-tags.git"
+});
 
 Package.onUse(function (api) {
 
-  api.use([
-    'telescope-lib',
-    'telescope-base',
-    'aldeed:simple-schema',
-    'aldeed:autoform',
-    'tap:i18n',
-    'fourseven:scss',
-    'matb33:collection-hooks'
-  ], ['client', 'server']);
+  api.versionsFrom("METEOR@1.0");
 
-  api.use([
-    'jquery',
-    'underscore',
-    'iron:router',
-    'templating'
-  ], 'client');
+  api.use(['telescope:core@0.1.0']);
 
   api.addFiles([
     'lib/categories.js',
@@ -37,6 +29,7 @@ Package.onUse(function (api) {
     'lib/client/templates/category_title.js',
     'lib/client/templates/categories_menu.html',
     'lib/client/templates/categories_menu.js',
+    'lib/client/templates/posts_category.html',
     'lib/client/templates/post_categories.html',
     'lib/client/templates/post_categories.js'
     ], ['client']);
@@ -57,12 +50,7 @@ Package.onUse(function (api) {
   ], ["client", "server"]);
 
   api.export([
-    'preloadSubscriptions',
-    'adminMenu',
     'Categories',
-    'addToPostSchema',
-    'primaryNav',
-    'postModules',
     'getPostCategories'
   ]);
 });

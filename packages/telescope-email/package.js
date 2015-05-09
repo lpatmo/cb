@@ -1,7 +1,8 @@
 Package.describe({
+  name: "telescope:email",
   summary: "Telescope email package",
-  version: '0.2.9',
-  name: "telescope-email"
+  version: "0.3.0",
+  git: "https://github.com/TelescopeJS/telescope-email.git"
 });
 
 Npm.depends({
@@ -10,25 +11,20 @@ Npm.depends({
 
 Package.onUse(function (api) {
 
-  api.use([
-    'iron:router',
-    'telescope-base',
-    'telescope-settings',
-    'telescope-lib',
-    'telescope-i18n',
-    'tap:i18n'
-  ], ['client', 'server']);
+  api.versionsFrom(['METEOR@1.0']);
 
   api.use([
-    'cmather:handlebars-server'
-  ], ['server']);
+    'telescope:core@0.1.0',
+    'sacha:juice@0.1.4',
+    'cmather:handlebars-server@0.2.0'
+  ]);
 
   // do not use for now since tap:i18n doesn't support server-side templates yet
-  // api.add_files([
+  // api.addFiles([
   //   'package-tap.i18n'
   // ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/server/email.js',
     'lib/server/routes.js',
     'lib/server/templates/emailAccountApproved.handlebars',
@@ -43,7 +39,7 @@ Package.onUse(function (api) {
     'lib/server/templates/emailWrapper.handlebars',
   ], ['server']);
 
-  api.add_files([
+  api.addFiles([
     "i18n/de.i18n.json",
     "i18n/en.i18n.json",
     "i18n/es.i18n.json",

@@ -1,0 +1,25 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "telescope-lib"
+    },
+    {
+      "package": "telescope-base"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "os/packages/telescope-module-share.js",
+      "length": 832,
+      "offset": 0,
+      "servePath": "/packages/telescope-module-share.js",
+      "sourceMap": "os/packages/telescope-module-share.js.map"
+    }
+  ]
+}

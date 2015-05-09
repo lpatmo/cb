@@ -1,5 +1,5 @@
 // add new post notification callback on post submit
-postAfterSubmitMethodCallbacks.push(function (post) {
+function postSubmitNotification (post) {
 
   var adminIds = _.pluck(Meteor.users.find({'isAdmin': true}, {fields: {_id:1}}).fetch(), '_id');
   var notifiedUserIds = _.pluck(Meteor.users.find({'profile.notifications.posts': 1}, {fields: {_id:1}}).fetch(), '_id');
@@ -8,7 +8,7 @@ postAfterSubmitMethodCallbacks.push(function (post) {
   var adminIds = _.without(adminIds, post.userId);
   var notifiedUserIds = _.without(notifiedUserIds, post.userId);
 
-  if (post.status === STATUS_PENDING && !!adminIds.length) {
+  if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
     // if post is pending, only notify admins
     Herald.createNotification(adminIds, {courier: 'newPendingPost', data: post});
   } else if (!!notifiedUserIds.length) {
@@ -17,16 +17,18 @@ postAfterSubmitMethodCallbacks.push(function (post) {
   }
   return post;
 
-});
+}
+Telescope.callbacks.register("postSubmitAsync", postSubmitNotification);
 
-// notify users that their pending post has been approved
-postApproveCallbacks.push(function (post) {
+function postApprovedNotification (post) {
   Herald.createNotification(post.userId, {courier: 'postApproved', data: post});
   return post;
-});
+}
+Telescope.callbacks.register("postApprovedAsync", postApprovedNotification);
 
 // add new comment notification callback on comment submit
-commentAfterSubmitMethodCallbacks.push(function (comment) {
+function addCommentNotification (comment) {
+
   if(Meteor.isServer && !comment.disableNotifications){
 
     var post = Posts.findOne(comment.postId),
@@ -81,7 +83,9 @@ commentAfterSubmitMethodCallbacks.push(function (comment) {
 
   return comment;
 
-});
+}
+
+Telescope.callbacks.register("commentSubmitAsync", addCommentNotification);
 
 var emailNotifications = {
   propertyName: 'emailNotifications',
@@ -90,15 +94,15 @@ var emailNotifications = {
     optional: true,
     defaultValue: true,
     autoform: {
-      group: 'notifications_fieldset',
+      group: 'notifications',
       instructions: 'Enable email notifications for new posts and new comments (requires restart).'
     }
   }
 };
-Settings.addToSchema(emailNotifications);
+Settings.registerField(emailNotifications);
 
 // make it possible to disable notifications on a per-comment basis
-addToCommentsSchema.push(
+Comments.registerField(
   {
     propertyName: 'disableNotifications',
     propertySchema: {
@@ -113,7 +117,7 @@ addToCommentsSchema.push(
 
 function setNotificationDefaults (user) {
   // set notifications default preferences
-  user.profile.notifications = {
+  user.telescope.notifications = {
     users: false,
     posts: false,
     comments: true,
@@ -121,4 +125,4 @@ function setNotificationDefaults (user) {
   };
   return user;
 }
-userCreatedCallbacks.push(setNotificationDefaults);
+Telescope.callbacks.register("onCreateUser", setNotificationDefaults);

@@ -1,10 +1,17 @@
-Package.describe({summary: "Telescope API package"});
+Package.describe({
+  name: "telescope:api",
+  summary: "Telescope API package",
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-api.git"
+});
 
 Package.onUse(function (api) {
 
-  api.use(['telescope-base', 'telescope-lib'], ['server']);
+  api.versionsFrom(['METEOR@1.0']);
 
-  api.add_files(['lib/server/api.js', 'lib/server/routes.js'], ['server']);
+  api.use(['telescope:core@0.1.0']);
+
+  api.addFiles(['lib/server/api.js', 'lib/server/routes.js'], ['server']);
 
   api.export(['serveAPI']);
 

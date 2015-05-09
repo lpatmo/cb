@@ -1,0 +1,47 @@
+{
+  "builtBy": "meteor/14",
+  "buildDependencies": {
+    "os.json": {
+      "files": {
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/package.js": "0c799e49945643b65d6cd750eae4e810ea5f53e8",
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/lib/share.js": "d15ca9d74958067963134aad725d466e6edafc0a"
+      },
+      "directories": []
+    },
+    "web.browser.json": {
+      "files": {
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/package.js": "0c799e49945643b65d6cd750eae4e810ea5f53e8",
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/lib/share.js": "d15ca9d74958067963134aad725d466e6edafc0a",
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/lib/client/post_share.html": "f348b9a54522a63db44b0f6228de9488c9797979",
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/lib/client/post_share.js": "f6f5079cde8077d93721faa86f03eaad0f842e8f"
+      },
+      "directories": []
+    },
+    "web.cordova.json": {
+      "files": {
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/package.js": "0c799e49945643b65d6cd750eae4e810ea5f53e8",
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/lib/share.js": "d15ca9d74958067963134aad725d466e6edafc0a",
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/lib/client/post_share.html": "f348b9a54522a63db44b0f6228de9488c9797979",
+        "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/lib/client/post_share.js": "f6f5079cde8077d93721faa86f03eaad0f842e8f"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share/package.js": "0c799e49945643b65d6cd750eae4e810ea5f53e8"
+    },
+    "directories": []
+  },
+  "source": "/Users/lindapeng/Desktop/lindaprojects/codebuddies-meteor/cb/packages/telescope-module-share",
+  "buildTimeDirectDependencies": {
+    "telescope-lib": "0.2.9+3c5fc781baa945505183378ea284deac3068520b",
+    "templating": "1.0.9",
+    "underscore": "1.0.1",
+    "jquery": "1.0.1",
+    "meteor": "1.1.3",
+    "telescope-base": "0.0.0+3e2f18826559d00f98feb77e814f2c90cef1b071"
+  },
+  "buildTimePluginDependencies": {},
+  "cordovaDependencies": null
+}

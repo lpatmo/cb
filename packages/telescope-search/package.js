@@ -1,29 +1,22 @@
-Package.describe({summary: "Telescope search package"});
+Package.describe({
+  name: "telescope:search",
+  summary: "Telescope search package",
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-pages.git"
+});
 
 Package.onUse(function (api) {
 
-  api.use([
-    'telescope-lib',
-    'telescope-base',
-    'telescope-settings',
-    'aldeed:simple-schema'
-  ], ['client', 'server']);
+  api.versionsFrom("METEOR@1.0");
 
-  api.use([
-    'jquery',
-    'underscore',
-    'iron:router',
-    'templating',
-    'tap:i18n',
-    'fourseven:scss'
-  ], 'client');
+  api.use(['telescope:core@0.1.0']);
 
-  api.add_files([
+  api.addFiles([
     'lib/search.js',
     'package-tap.i18n'
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/client/routes.js',
     'lib/client/templates/search.html',
     'lib/client/templates/search.js',
@@ -32,12 +25,12 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/search.scss'
     ], ['client']);
 
-  api.add_files([
+  api.addFiles([
     'lib/server/log_search.js',
     'lib/server/publications.js'
     ], ['server']);
 
-  api.add_files([
+  api.addFiles([
     "i18n/de.i18n.json",
     "i18n/en.i18n.json",
     "i18n/es.i18n.json",
@@ -46,5 +39,4 @@ Package.onUse(function (api) {
     "i18n/zh-CN.i18n.json",
   ], ["client", "server"]);
 
-  api.export(['adminMenu', 'viewParameters']);
 });

@@ -1,59 +1,35 @@
 Package.describe({
-  summary: 'Show Telescope release notes.',
-  version: '0.1.0',
-  name: 'telescope-releases'
-});
-
-Npm.depends({
-  // NPM package dependencies
+  name: "telescope:releases",
+  summary: "Show Telescope release notes and phone home with some stats.",
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-releases.git"
 });
 
 Package.onUse(function (api) {
 
+  api.versionsFrom(['METEOR@1.0']);
+
   // --------------------------- 1. Meteor packages dependencies ---------------------------
 
-  // automatic (let the package specify where it's needed)
-
-  api.use([
-    'tap:i18n',                   // internationalization package
-    'iron:router',                // routing package
-    'telescope-base',             // basic Telescope hooks and objects
-    'telescope-lib',              // useful functions
-    'telescope-i18n',             // internationalization wrapper
-    'fourseven:scss'              // SCSS compilation package
-  ]);
-
-  // client
-
-  api.use([
-    'jquery',                     // useful for DOM interactions
-    'underscore',                 // JavaScript swiss army knife library
-    'templating'                  // required for client-side templates
-  ], ['client']);
-
-  // server
-
-  api.use([
-    //
-  ], ['server']);
+  api.use(['telescope:core@0.1.0']);
 
   // ---------------------------------- 2. Files to include ----------------------------------
 
   // i18n config (must come first)
 
-  api.add_files([
+  api.addFiles([
     'package-tap.i18n'
   ], ['client', 'server']);
 
   // both
 
-  api.add_files([
+  api.addFiles([
     'lib/releases.js',
   ], ['client', 'server']);
 
   // client
 
-  api.add_files([
+  api.addFiles([
     'lib/client/templates/current_release.html',
     'lib/client/templates/current_release.js',
     'lib/client/scss/releases.scss'
@@ -61,10 +37,10 @@ Package.onUse(function (api) {
 
   // server
 
-  api.add_files([
+  api.addFiles([
     'lib/server/publications.js',
     'lib/server/import_releases.js'
-  ], ['server']);    
+  ], ['server']);
 
   api.addFiles('releases/0.11.0.md', 'server', { isAsset: true });
   api.addFiles('releases/0.11.1.md', 'server', { isAsset: true });
@@ -79,7 +55,7 @@ Package.onUse(function (api) {
 
   // i18n languages (must come last)
 
-  api.add_files([
+  api.addFiles([
     'i18n/en.i18n.json'
   ], ['client', 'server']);
 

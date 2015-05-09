@@ -1,65 +1,74 @@
 // category schema
-categorySchema = new SimpleSchema({
+Telescope.schemas.categories = new SimpleSchema({
   name: {
-    type: String
+    type: String,
+    editableBy: ["admin"]
   },
   description: {
     type: String,
     optional: true,
+    editableBy: ["admin"],
     autoform: {
       rows: 3
     }
   },
   order: {
     type: Number,
-    optional: true
+    optional: true,
+    editableBy: ["admin"]
   },
   slug: {
     type: String,
-    optional: true
+    optional: true,
+    editableBy: ["admin"]
   },
   image: {
     type: String,
-    optional: true
+    optional: true,
+    editableBy: ["admin"]
   }
 });
 
 Categories = new Meteor.Collection("categories");
-Categories.attachSchema(categorySchema);
+
+Telescope.schemas.categories.internationalize();
+
+Categories.attachSchema(Telescope.schemas.categories);
 
 Categories.before.insert(function (userId, doc) {
   // if no slug has been provided, generate one
   if (!doc.slug)
-    doc.slug = slugify(doc.name);
+    doc.slug = Telescope.utils.slugify(doc.name);
 });
 
 // category post list parameters
-viewParameters.category = function (terms) {
+Posts.views.register("category", function (terms) {
   var categoryId = Categories.findOne({slug: terms.category})._id;
   return {
     find: {'categories': {$in: [categoryId]}} ,
     options: {sort: {sticky: -1, score: -1}} // for now categories views default to the "top" view
   };
-}
+});
 
 Meteor.startup(function () {
   Categories.allow({
-    insert: isAdminById,
-    update: isAdminById,
-    remove: isAdminById
+    insert: Users.is.adminById,
+    update: Users.is.adminById,
+    remove: Users.is.adminById
   });
 });
 
 getPostCategories = function (post) {
   return !!post.categories ? Categories.find({_id: {$in: post.categories}}).fetch() : [];
-}
+};
 
 getCategoryUrl = function(slug){
-  return getSiteUrl()+'category/'+slug;
+  return Telescope.utils.getSiteUrl()+'category/'+slug;
 };
 
 // add callback that adds categories CSS classes
-postClassCallbacks.push(function (post, postClass){
-  var classArray = _.map(getPostCategories(post), function (category){return "category-"+category.slug});
+function addCategoryClass (post, postClass){
+  var classArray = _.map(getPostCategories(post), function (category){return "category-"+category.slug;});
   return postClass + " " + classArray.join(' ');
-});
+}
+Telescope.callbacks.register("postClass", addCategoryClass);

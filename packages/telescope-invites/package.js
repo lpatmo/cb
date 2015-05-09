@@ -1,7 +1,8 @@
 Package.describe({
-  summary: 'Telescope invites package',
-  version: '0.1.0',
-  name: 'telescope-invites'
+  name: "telescope:invites",
+  summary: "Telescope invites package",
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-invites.git"
 });
 
 Npm.depends({
@@ -10,20 +11,13 @@ Npm.depends({
 
 Package.onUse(function (api) {
 
+  api.versionsFrom("METEOR@1.0");
+
   // --------------------------- 1. Meteor packages dependencies ---------------------------
 
   // automatic (let the package specify where it's needed)
 
-  api.use([
-    'tap:i18n',
-    'iron:router',
-    'telescope-base',
-    'telescope-settings',
-    'telescope-lib',
-    'telescope-i18n',
-    'aldeed:simple-schema',
-    'aldeed:autoform'
-  ]);
+  api.use(['telescope:core@0.1.0']);
 
   // client
 
@@ -31,7 +25,7 @@ Package.onUse(function (api) {
     'jquery',
     'underscore',
     'templating',
-    'telescope-messages'
+    'telescope:messages@0.1.0'
   ], ['client']);
 
   // server
@@ -44,33 +38,33 @@ Package.onUse(function (api) {
 
   // i18n config (must come first)
 
-  api.add_files([
+  api.addFiles([
     'package-tap.i18n'
   ], ['client', 'server']);
 
   // both
 
-  api.add_files([
+  api.addFiles([
     'lib/invites.js'
   ], ['client', 'server']);
 
   // client
 
-  api.add_files([
+  api.addFiles([
     'lib/client/templates/user_invites.html',
     'lib/client/templates/user_invites.js'
   ], ['client']);
 
   // server
 
-  api.add_files([
+  api.addFiles([
     'lib/server/invites.js',
     'lib/server/publications.js'
   ], ['server']);
 
   // i18n languages (must come last)
 
-  api.add_files([
+  api.addFiles([
     'i18n/de.i18n.json',
     'i18n/en.i18n.json',
     'i18n/es.i18n.json',

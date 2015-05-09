@@ -1,29 +1,24 @@
 Package.describe({
+  name: "telescope:update-prompt",
   summary: "Telescope update prompt package.",
-  version: '0.1.0',
-  name: "telescope-update-prompt"
+  version: "0.1.0",
+  git: "https://github.com/TelescopeJS/telescope-update-prompt.git"
 });
 
 Package.onUse(function (api) {
 
-  api.use(['telescope-lib', 'telescope-base', 'http'], ['client', 'server']);
+  api.versionsFrom("METEOR@1.0");
 
-  api.use([
-    'jquery',
-    'underscore',
-    'iron:router',
-    'templating'
-  ], 'client');
+  api.use(['telescope:core@0.1.0']);
 
-
-  api.add_files([
+  api.addFiles([
     'lib/client/update.js',
     'lib/client/templates/update_banner.html',
     'lib/client/templates/update_banner.js',
     'lib/client/templates/update_banner.css'
   ], ['client']);
 
-  api.add_files([
+  api.addFiles([
     'lib/server/phone_home.js'
   ], ['server']);
 

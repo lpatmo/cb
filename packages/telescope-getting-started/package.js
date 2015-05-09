@@ -1,7 +1,8 @@
 Package.describe({
-  summary: 'Getting started posts',
+  name: "telescope:getting-started",
+  summary: "Getting started posts",
   version: '0.1.0',
-  name: 'telescope-getting-started'
+  git: "https://github.com/TelescopeJS/telescope-getting-started.git"
 });
 
 Npm.depends({
@@ -10,18 +11,13 @@ Npm.depends({
 
 Package.onUse(function (api) {
 
+  api.versionsFrom(['METEOR@1.0']);
+
   // --------------------------- 1. Meteor packages dependencies ---------------------------
 
   // automatic (let the package specify where it's needed)
 
-  api.use([
-    'tap:i18n',                   // internationalization package
-    'iron:router',                // routing package
-    'telescope-base',             // basic Telescope hooks and objects
-    'telescope-lib',              // useful functions
-    'telescope-i18n',             // internationalization wrapper
-    'momentjs:moment'
-  ]);
+  api.use(['telescope:core@0.1.0']);
 
   // client
 
@@ -41,28 +37,28 @@ Package.onUse(function (api) {
 
   // i18n config (must come first)
 
-  api.add_files([
+  api.addFiles([
     'package-tap.i18n'
   ], ['client', 'server']);
 
   // both
 
-  api.add_files([
+  api.addFiles([
     'lib/getting_started.js'
   ], ['client', 'server']);
 
   // client
 
-  api.add_files([
+  api.addFiles([
     'content/images/stackoverflow.png',
     'content/images/telescope.png'
   ], ['client']);
 
   // server
 
-  api.add_files([
+  api.addFiles([
     'lib/server/dummy_content.js'
-  ], ['server']);    
+  ], ['server']);
 
   api.addFiles('content/read_this_first.md', 'server', { isAsset: true });
   api.addFiles('content/deploying_telescope.md', 'server', { isAsset: true });
@@ -72,7 +68,7 @@ Package.onUse(function (api) {
 
   // i18n languages (must come last)
 
-  api.add_files([
+  api.addFiles([
     'i18n/en.i18n.json',
   ], ['client', 'server']);
 

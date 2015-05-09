@@ -3,22 +3,20 @@ defaultPosts = 5;
 
 getCampaignPosts = function (postsCount) {
 
-  var newsletterFrequency = Settings.get('newsletterFrequency', defaultFrequency);
-
   // look for last scheduled campaign in the database
   var lastCampaign = SyncedCron._collection.findOne({name: 'Schedule newsletter'}, {sort: {finishedAt: -1}, limit: 1});
 
   // if there is a last campaign use its date, else default to posts from the last 7 days
   var lastWeek = moment().subtract(7, 'days').toDate();
-  var after = (typeof lastCampaign != 'undefined') ? lastCampaign.finishedAt : lastWeek
+  var after = (typeof lastCampaign !== 'undefined') ? lastCampaign.finishedAt : lastWeek
 
-  var params = getPostsParameters({
+  var params = Posts.getSubParams({
     view: 'campaign',
     limit: postsCount,
     after: after
   });
   return Posts.find(params.find, params.options).fetch();
-}
+};
 
 buildCampaign = function (postsArray) {
   var postsHTML = '', subject = '';
@@ -34,18 +32,18 @@ buildCampaign = function (postsArray) {
 
     // the naked post object as stored in the database is missing a few properties, so let's add them
     var properties = _.extend(post, {
-      authorName: getAuthorName(post),
-      postLink: getPostLink(post),
-      profileUrl: getProfileUrl(postUser),
-      postPageLink: getPostPageUrl(post),
+      authorName: Users.getAuthorName(post),
+      postLink: Posts.getLink(post),
+      profileUrl: Users.getProfileUrl(postUser),
+      postPageLink: Posts.getPageUrl(post),
       date: moment(post.postedAt).format("MMMM D YYYY")
     });
 
     if (post.body)
-      properties.body = marked(trimWords(post.body, 20)).replace('<p>', '').replace('</p>', ''); // remove p tags
+      properties.body = marked(Telescope.utils.trimWords(post.body, 20)).replace('<p>', '').replace('</p>', ''); // remove p tags
 
     if(post.url)
-      properties.domain = getDomain(post.url)
+      properties.domain = Telescope.utils.getDomain(post.url);
 
     postsHTML += getEmailTemplate('emailPostItem')(properties);
   });
@@ -62,31 +60,31 @@ buildCampaign = function (postsArray) {
 
   var campaign = {
     postIds: _.pluck(postsArray, '_id'),
-    subject: trimWords(subject, 15),
+    subject: Telescope.utils.trimWords(subject, 15),
     html: emailHTML
-  }
+  };
 
-  return campaign
-}
+  return campaign;
+};
 
 scheduleNextCampaign = function (isTest) {
-  var isTest = typeof isTest === 'undefined' ? false : isTest;
+  isTest = !! isTest;
   var posts = getCampaignPosts(Settings.get('postsPerNewsletter', defaultPosts));
   if(!!posts.length){
     return scheduleCampaign(buildCampaign(posts), isTest);
   }else{
     var result = 'No posts to schedule today…';
-    return result
+    return result;
   }
-}
+};
 
 Meteor.methods({
   sendCampaign: function () {
-    if(isAdminById(this.userId))
+    if(Users.is.adminById(this.userId))
       return scheduleNextCampaign(false);
   },
   testCampaign: function () {
-    if(isAdminById(this.userId))
+    if(Users.is.adminById(this.userId))
       return scheduleNextCampaign(true);
   }
 });

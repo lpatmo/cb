@@ -1,0 +1,8 @@
+<template name="footer">
+  {{#if footerCode}}
+    <div class="footer grid {{footerClass}}">
+      {{#markdown}}{{footerCode}}{{/markdown}}
+    </div>
+  {{/if}}
+  {{> modules "footer"}}
+</template>

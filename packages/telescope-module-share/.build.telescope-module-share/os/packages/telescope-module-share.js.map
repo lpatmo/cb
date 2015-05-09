@@ -1,0 +1,1 @@
+{"version":3,"file":"/packages/telescope-module-share.js","sources":["telescope-module-share/lib/share.js"],"names":[],"mappings":";;;;;;;;AAAA,kB;AACA,yB;AACA,W;AACA,G","sourcesContent":["postModules.push({\n  template: 'postShare', \n  order: 25\n});"]}

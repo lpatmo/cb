@@ -4,8 +4,8 @@ Meteor.startup(function() {
    */
   sitemaps.add("/sitemap.xml", function() {
     var _getLatest = function(viewParamKey, terms) {
-      var params = getPostsParameters(
-        viewParameters[viewParamKey.toLowerCase()](terms)
+      var params = Posts.getSubParams(
+        Posts.views[viewParamKey.toLowerCase()](terms)
       );
       var post = Posts.findOne(params.find, {
         'fields': {'postedAt': 1},
@@ -31,7 +31,7 @@ Meteor.startup(function() {
             page: "/category/" + category.slug,
             lastmod: lastMod,
             changefreq: "hourly"
-          })
+          });
         }
       });
     }
@@ -40,8 +40,8 @@ Meteor.startup(function() {
     // "best". Aggregate them to avoid duplication.
     var postPages = {};
     _.each(["top", "new", "best"], function(key) {
-      var siteUrl = getSiteUrl();
-      var params = getPostsParameters(viewParameters[key]());
+      var siteUrl = Telescope.utils.getSiteUrl();
+      var params = Posts.getSubParams(Posts.views[key]());
       var posts = Posts.find(params.find, {
         fields: {postedAt: 1, title: 1, _id: 1},
         limit: 100,
@@ -54,7 +54,7 @@ Meteor.startup(function() {
     });
 
     paths = paths.concat(_.values(postPages));
-    paths = _.reject(paths, function(p) { return p.lastmod === null });
+    paths = _.reject(paths, function(p) { return p.lastmod === null; });
     return paths;
   });
 });

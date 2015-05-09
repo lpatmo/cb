@@ -2,15 +2,28 @@ Meteor.startup(function () {
 
   Router.onBeforeAction(Router._filters.isAdmin, {only: ['categories']});
 
-  PostsCategoryController = PostsListController.extend({
+  Posts.controllers.category = Posts.controllers.list.extend({
 
     view: 'category',
 
     showViewsNav: false,
 
     onBeforeAction: function () {
-      this.render('categoryTitle', {to: 'postListTop'});
+      this.render('category_title', {to: 'postListTop'});
       this.next();
+    },
+
+    data: function () {
+      var terms = {
+        view: "category",
+        limit: this.params.limit || Settings.get('postsPerPage', 10),
+        category: this.params.slug
+      };
+
+      // note: the post list controller template will handle all subscriptions, so we just need to pass in the terms
+      return {
+        terms: terms
+      };
     },
 
     getCurrentCategory: function () {
@@ -31,7 +44,7 @@ Meteor.startup(function () {
 
   Router.route('/category/:slug/:limit?', {
     name: 'posts_category',
-    controller: PostsCategoryController,
+    controller: Posts.controllers.category,
     onAfterAction: function() {
       this.slug = this.params.slug;
       Session.set('categorySlug', this.params.slug);
@@ -41,9 +54,8 @@ Meteor.startup(function () {
   // Categories Admin
 
   Router.route('/categories', {
-    controller: AdminController,
+    controller: Telescope.controllers.admin,
     name: 'categories'
   });
-
 
 });

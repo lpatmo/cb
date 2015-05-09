@@ -1,11 +1,20 @@
-Package.describe({summary: "Telescope i18n package"});
+Package.describe({
+  name: "telescope:i18n",
+  summary: "Telescope i18n package",
+  version: "0.1.0"
+});
 
 Package.onUse(function (api) {
-  api.use(["tap:i18n"], ["client", "server"]);
+
+  api.versionsFrom(['METEOR@1.0']);
+
+  api.use(['telescope:lib@0.3.1']);
+
   api.use(["session"], "client");
-  api.add_files(['i18n.js'], ['client', 'server']);
+
+  api.addFiles(['i18n.js'], ['client', 'server']);
+
   api.export([
-    'i18n',
-    'setLanguage'
+    'i18n'
   ]);
 });

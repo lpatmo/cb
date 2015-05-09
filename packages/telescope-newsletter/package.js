@@ -1,7 +1,8 @@
 Package.describe({
+  name: "telescope:newsletter",
   summary: "Telescope email newsletter package",
-  version: '0.1.0',
-  name: "telescope-newsletter"
+  version: "0.1.1",
+  git: "https://github.com/TelescopeJS/telescope-newsletter.git"
 });
 
 Npm.depends({
@@ -10,43 +11,38 @@ Npm.depends({
 
 Package.onUse(function (api) {
 
+  api.versionsFrom("METEOR@1.0");
+
   api.use([
-    'telescope-lib',
-    'telescope-base',
-    'telescope-settings',
-    'aldeed:simple-schema',
-    'iron:router',
-    'miro:mailchimp',
-    'tap:i18n',
-    'fourseven:scss'
+    'telescope:core@0.1.0',
+    'miro:mailchimp@1.0.4',
   ], ['client', 'server']);
 
   api.use([
     'jquery',
     'underscore',
     'templating',
-    'telescope-messages',
-    'mrt:cookies'
+    'telescope:messages@0.1.0',
+    'mrt:cookies@0.3.0'
   ], 'client');
 
   api.use([
-    'percolatestudio:synced-cron',
-    'cmather:handlebars-server',
-    'meteorhacks:npm'
+    'percolatestudio:synced-cron@1.1.0',
+    'cmather:handlebars-server@0.2.0'
   ], ['server']);
 
-  api.add_files([
+  api.addFiles([
     'package-tap.i18n',
     'lib/newsletter.js'
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/client/templates/newsletter_banner.html',
     'lib/client/templates/newsletter_banner.js',
     'lib/client/stylesheets/newsletter_banner.scss'
   ], ['client']);
 
-  api.add_files([
+  api.addFiles([
     'lib/server/campaign.js',
     'lib/server/cron.js',
     'lib/server/mailchimp.js',
@@ -56,7 +52,7 @@ Package.onUse(function (api) {
     'lib/server/templates/emailPostItem.handlebars'
   ], ['server']);
 
-  api.add_files([
+  api.addFiles([
     "i18n/de.i18n.json",
     "i18n/en.i18n.json",
     "i18n/es.i18n.json",

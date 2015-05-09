@@ -1,20 +1,18 @@
-Settings = {
-  collection: new Meteor.Collection("settings")
-};
+Settings = new Meteor.Collection("settings");
 
-Settings.schema = new SimpleSchema({
+Telescope.schemas.settings = new SimpleSchema({
   title: {
     type: String,
     optional: true,
     autoform: {
-      group: 'general'
+      group: "01_general"
     }
   },
   siteUrl: {
     type: String,
     optional: true,
     autoform: {
-      group: 'general',
+      group: "01_general",
       instructions: 'Your site\'s URL (with trailing "/"). Will default to Meteor.absoluteUrl()'
     }
   },
@@ -22,14 +20,14 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'general'
+      group: "01_general"
     }
   },
   description: {
     type: String,
     optional: true,
     autoform: {
-      group: 'general',
+      group: "01_general",
       rows: 5,
       instructions: 'A short description used for SEO purposes.'
     }
@@ -39,7 +37,7 @@ Settings.schema = new SimpleSchema({
     optional: true,
     regEx: SimpleSchema.RegEx.Url,
     autoform: {
-      group: "general",
+      group: "01_general",
       instructions: "URL to an image for the open graph image tag for all pages"
     }
   },
@@ -47,7 +45,7 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'general',
+      group: "01_general",
       instructions: 'The layout used for the main menu',
       options: [
         {value: 'top-nav', label: 'Top'},
@@ -75,7 +73,7 @@ Settings.schema = new SimpleSchema({
     type: Boolean,
     optional: true,
     autoform: {
-      group: 'general',
+      group: "01_general",
       instructions: "Posts must be approved by admin",
       leftLabel: "Require Posts Approval"
     }
@@ -83,41 +81,44 @@ Settings.schema = new SimpleSchema({
   defaultEmail: {
     type: String,
     optional: true,
+    private: true,
     autoform: {
-      group: 'email',
+      group: "06_email",
       instructions: 'The address all outgoing emails will be sent from.',
-      private: true
+      class: "private-field"
     }
   },
   mailUrl: {
     type: String,
     optional: true,
+    private: true,
     autoform: {
-      group: 'email',
+      group: "06_email",
       instructions: 'MAIL_URL environment variable (requires restart).',
-      private: true
+      class: "private-field"
     }
   },
   scoreUpdateInterval: {
     type: Number,
     optional: true,
     defaultValue: 30,
+    private: true,
     autoform: {
       group: 'scoring',
       instructions: 'How often to recalculate scores, in seconds (default to 30)',
-      private: true
+      class: "private-field"
     }
   },
   defaultView: {
     type: String,
     optional: true,
     autoform: {
-      group: 'posts',
+      group: "02_posts",
       instructions: 'The view used for the front page',
       options: function () {
-        return _.map(viewsMenu, function (view) {
+        return _.map(Telescope.menus.get("viewsMenu"), function (view) {
           return {
-            value: camelCaseify(view.label),
+            value: Telescope.utils.camelCaseify(view.label),
             label: view.label
           };
         });
@@ -128,7 +129,7 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'posts',
+      group: "02_posts",
       instructions: 'The layout used for post lists',
       options: [
         {value: 'posts-list', label: 'List'},
@@ -140,16 +141,16 @@ Settings.schema = new SimpleSchema({
     type: [String],
     optional: true,
     autoform: {
-      group: 'posts',
+      group: "02_posts",
       instructions: 'Posts views showed in the views menu',
       editable: true,
       noselect: true,
       options: function () {
-        return _.map(viewsMenu, function (item){
+        return _.map(Telescope.menus.get("viewsMenu"), function (item){
           return {
             value: item.route,
             label: item.label
-          }
+          };
         });
       }
     }
@@ -159,7 +160,7 @@ Settings.schema = new SimpleSchema({
     optional: true,
     defaultValue: 30,
     autoform: {
-      group: 'posts',
+      group: "02_posts",
       instructions: 'Minimum time between posts, in seconds (defaults to 30)'
     }
   },
@@ -168,7 +169,7 @@ Settings.schema = new SimpleSchema({
     optional: true,
     defaultValue: 15,
     autoform: {
-      group: 'comments',
+      group: "03_comments",
       instructions: 'Minimum time between comments, in seconds (defaults to 15)'
     }
   },
@@ -177,7 +178,7 @@ Settings.schema = new SimpleSchema({
     optional: true,
     defaultValue: 30,
     autoform: {
-      group: 'posts',
+      group: "02_posts",
       instructions: 'Maximum number of posts a user can post in a day (default to 30).'
     }
   },
@@ -194,35 +195,35 @@ Settings.schema = new SimpleSchema({
     defaultValue: 10,
     optional: true,
     autoform: {
-      group: 'posts'
+      group: "02_posts"
     }
   },
   logoUrl: {
     type: String,
     optional: true,
     autoform: {
-      group: 'logo'
+      group: "04_logo"
     }
   },
   logoHeight: {
     type: Number,
     optional: true,
     autoform: {
-      group: 'logo'
+      group: "04_logo"
     }
   },
   logoWidth: {
     type: Number,
     optional: true,
     autoform: {
-      group: 'logo'
+      group: "04_logo"
     }
   },
   faviconUrl: {
     type: String,
     optional: true,
     autoform: {
-      group: 'logo'
+      group: "04_logo"
     }
   },
   language: {
@@ -230,16 +231,16 @@ Settings.schema = new SimpleSchema({
     defaultValue: 'en',
     optional: true,
     autoform: {
-      group: 'general',
+      group: "01_general",
       instructions: 'The app\'s language. Defaults to English.',
       options: function () {
         var languages = _.map(TAPi18n.getLanguages(), function (item, key) {
           return {
             value: key,
             label: item.name
-          }
+          };
         });
-        return languages
+        return languages;
       }
     }
   },
@@ -256,7 +257,7 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'colors',
+      group: "05_colors",
       instructions: 'Used for button backgrounds.'
     }
   },
@@ -264,7 +265,7 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'colors',
+      group: "05_colors",
       instructions: 'Used for button text.'
     }
   },
@@ -272,7 +273,7 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'colors',
+      group: "05_colors",
       instructions: 'Used for the navigation background.'
     }
   },
@@ -280,7 +281,7 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'colors',
+      group: "05_colors",
       instructions: 'Used for header text.'
     }
   },
@@ -304,28 +305,28 @@ Settings.schema = new SimpleSchema({
     type: String,
     optional: true,
     autoform: {
-      group: 'integrations'
+      group: "07_integrations"
     }
   },
   googleAnalyticsId: {
     type: String,
     optional: true,
     autoform: {
-      group: 'integrations'
+      group: "07_integrations"
     }
   },
   mixpanelId: {
     type: String,
     optional: true,
     autoform: {
-      group: 'integrations'
+      group: "07_integrations"
     }
   },
   clickyId: {
     type: String,
     optional: true,
     autoform: {
-      group: 'integrations'
+      group: "07_integrations"
     }
   },
   footerCode: {
@@ -349,21 +350,23 @@ Settings.schema = new SimpleSchema({
   emailFooter: {
     type: String,
     optional: true,
+    private: true,
     autoform: {
-      group: 'email',
+      group: "06_email",
       instructions: 'Content that will appear at the bottom of outgoing emails (accepts HTML).',
       rows: 5,
-      private: true
+      class: "private-field"
     }
   },
   notes: {
     type: String,
     optional: true,
+    private: true,
     autoform: {
       group: 'extras',
       instructions: 'You can store any notes or extra information here.',
       rows: 5,
-      private: true
+      class: "private-field"
     }
   },
   debug: {
@@ -400,18 +403,13 @@ Settings.schema = new SimpleSchema({
   }
 });
 
-Settings.collection.attachSchema(Settings.schema);
 
-Settings.addToSchema = function(item) {
-  var itemSchema = {};
-  itemSchema[item.propertyName] = item.propertySchema;
+Telescope.schemas.settings.internationalize();
 
-  Settings.collection.attachSchema(itemSchema);
-  Settings.schema = new SimpleSchema(Settings.schema, itemSchema);
-};
+Settings.attachSchema(Telescope.schemas.settings);
 
 Settings.get = function(setting, defaultValue) {
-  var settings = Settings.collection.find().fetch()[0];
+  var settings = Settings.find().fetch()[0];
 
   if (Meteor.isServer && Meteor.settings && !!Meteor.settings[setting]) { // if on the server, look in Meteor.settings
     return Meteor.settings[setting];
@@ -436,10 +434,10 @@ Settings.get = function(setting, defaultValue) {
 // }
 
 Meteor.startup(function () {
-  Settings.collection.allow({
-    insert: isAdminById,
-    update: isAdminById,
-    remove: isAdminById
+  Settings.allow({
+    insert: Users.is.adminById,
+    update: Users.is.adminById,
+    remove: Users.is.adminById
   });
 });
 

@@ -1,62 +1,66 @@
-threadModules.push(
-  {
-    template: 'postSubscribe',
-    order: 10
-  }
-);
-
-addToPostSchema.push(
-  {
-    propertyName: 'subscribers',
-    propertySchema: {
-      type: [String],
-      optional: true,
-      autoform: {
-        omit: true
-      }
+Users.registerField({
+  propertyName: 'telescope.subscribedItems',
+  propertySchema: {
+    type: Object,
+    optional: true,
+    blackbox: true,
+    autoform: {
+      omit: true
     }
   }
-);
+});
 
-addToPostSchema.push(
-  {
-    propertyName: 'subscriberCount',
-    propertySchema: {
-      type: Number,
-      optional: true,
-      autoform: {
-        omit: true
-      }
+Posts.registerField({
+  propertyName: 'subscribers',
+  propertySchema: {
+    type: [String],
+    optional: true,
+    autoform: {
+      omit: true
     }
   }
-);
+});
 
-userProfileEdit.push(
-  {
-    template: 'userSubscribedPosts',
-    order: 5
+Posts.registerField({
+  propertyName: 'subscriberCount',
+  propertySchema: {
+    type: Number,
+    optional: true,
+    autoform: {
+      omit: true
+    }
   }
-);
+});
 
-viewParameters.userSubscribedPosts = function (terms) {
+Telescope.modules.register("profileEdit", {
+  template: 'user_subscribed_posts',
+  order: 5
+});
+
+Telescope.modules.register("commentThreadBottom", {
+  template: 'postSubscribe',
+  order: 10
+});
+
+Posts.views.register("userSubscribedPosts", function (terms) {
   var user = Meteor.users.findOne(terms.userId),
       postsIds = [];
 
-  if (user.subscribedItems && user.subscribedItems.Posts)
-    postsIds = _.pluck(user.subscribedItems.Posts, "itemId");
+  if (user.telescope.subscribedItems && user.telescope.subscribedItems.Posts)
+    postsIds = _.pluck(user.telescope.subscribedItems.Posts, "itemId");
 
   return {
     find: {_id: {$in: postsIds}},
     options: {limit: 5, sort: {postedAt: -1}}
   };
-}
+});
 
 var hasSubscribedItem = function (item, user) {
   return item.subscribers && item.subscribers.indexOf(user._id) != -1;
 };
 
-var addSubscribedItem = function (userId, item, collection) {
-  var field = 'subscribedItems.' + collection;
+var addSubscribedItem = function (userId, item, collectionName) {
+  var field = 'telescope.subscribedItems.' + collectionName;
   var add = {};
   add[field] = item;
   Meteor.users.update({_id: userId}, {
@@ -64,8 +68,8 @@ var addSubscribedItem = function (userId, item, collection) {
   });
 };
 
-var removeSubscribedItem = function (userId, itemId, collection) {
-  var field = 'subscribedItems.' + collection;
+var removeSubscribedItem = function (userId, itemId, collectionName) {
+  var field = 'telescope.subscribedItems.' + collectionName;
   var remove = {};
   remove[field] = {itemId: itemId};
   Meteor.users.update({_id: userId}, {
@@ -76,7 +80,7 @@ var removeSubscribedItem = function (userId, itemId, collection) {
 subscribeItem = function (collection, itemId, user) {
   var item = collection.findOne(itemId),
       collectionName = collection._name.slice(0,1).toUpperCase() + collection._name.slice(1);
-      
+
   if (!user || !item || hasSubscribedItem(item, user))
     return false;
 

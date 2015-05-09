@@ -1,0 +1,7 @@
+<template name="user_account">
+  <div class="grid-small grid-module dialog user-edit">
+
+  {{> quickForm collection="Meteor.users" doc=user id="editUserForm" template="bootstrap3-horizontal" input-col-class="controls" type="update" fields=userFields}}
+
+  </div>
+</template>

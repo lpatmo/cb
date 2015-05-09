@@ -1,5 +1,7 @@
+i18n = {};
+
 // do this better:
-setLanguage = function (language) {
+i18n.setLanguage = function (language) {
   // Session.set('i18nReady', false);
   // console.log('i18n loading… '+language)
 
@@ -28,35 +30,37 @@ setLanguage = function (language) {
 
   // T9n
   T9n.setLanguage(language);
-}
+};
 
-i18n = {
-  t: function (str, options) {
-    if (Meteor.isServer) {
-      return TAPi18n.__(str, options, Settings.get('language', 'en'));
-    } else {
-      return TAPi18n.__(str, options);
-    }
+i18n.t = function (str, options) {
+  if (Meteor.isServer) {
+    return TAPi18n.__(str, options, Settings.get('language', 'en'));
+  } else {
+    return TAPi18n.__(str, options);
   }
+};
+
+SimpleSchema.prototype.internationalize = function () {
+  var schema = this._schema;
+
+  _.each(schema, function (property, key) {
+    if (!property.label) {
+      schema[key].label = function () {
+        // if property is nested ("telescope.email"), only consider the last part ("email")
+        if (key.indexOf(".") !== -1) {
+          key = _.last(key.split("."));
+        }
+        return i18n.t(key);
+      };
+    }
+  });
+  return this;
 };
 
 Meteor.startup(function () {
 
   if (Meteor.isClient) {
-
-    // doesn't quite work yet
-    // Tracker.autorun(function (c) {
-    //   console.log('momentReady',Session.get('momentReady'))
-    //   console.log('i18nReady',Session.get('i18nReady'))
-    //   var ready = Session.get('momentReady') && Session.get('i18nReady');
-    //   if (ready) {
-    //     Session.set('i18nReady', true);
-    //     Session.set('locale', language);
-    //     console.log('i18n ready! '+language)
-    //   }
-    // });
-
-    setLanguage(Settings.get('language', 'en'));
+    i18n.setLanguage(Settings.get('language', 'en'));
   }
 
 });
