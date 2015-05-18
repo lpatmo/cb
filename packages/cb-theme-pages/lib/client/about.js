@@ -39,13 +39,21 @@ getCategoryUrl = function(slug){
 };
 
 /*Template Overrides*/
-templates["postDomain"] = "newPostDomain";
-templates["postUpvote"] = "newPostUpvote";
-templates["post_page"] = "new_post_page";
-templates["postTitle"] = "newPostTitle";
-templates["postAuthor"] = "newPostAuthor";
-templates["postInfo"] = "newPostInfo";
-templates["submitButton"] = "newSubmitButton";
+// templates["postDomain"] = "newPostDomain";
+// templates["postUpvote"] = "newPostUpvote";
+// templates["post_page"] = "new_post_page";
+// templates["postTitle"] = "newPostTitle";
+// templates["postAuthor"] = "newPostAuthor";
+// templates["postInfo"] = "newPostInfo";
+// templates["submitButton"] = "newSubmitButton";
+
+Template.newPostDomain.replaces("post_domain");
+Template.newPostUpvote.replaces("postUpvote");
+Template.new_post_page.replaces("post_page");
+Template.newPostTitle.replaces("postTitle");
+Template.newPostAuthor.replaces("postAuthor");
+Template.newPostInfo.replaces("postInfo");
+Template.newSubmitButton.replaces("submitButton");
 
 // var i = primaryNav.indexOf("viewsMenu");
 // if(i != -1) {

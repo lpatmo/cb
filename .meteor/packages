@@ -3,7 +3,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-
 ############ Telescope Core ############
 
 telescope:core
@@ -12,6 +11,7 @@ telescope:core
 
 # Note: all following packages depend on telescope:core; Additional internal dependencies are mentioned
 
+telescope:migrations
 telescope:api
 telescope:daily # singleday
 telescope:datetimepicker
@@ -20,7 +20,6 @@ telescope:embedly
 telescope:getting-started
 telescope:invites
 telescope:kadira
-telescope:migrations
 telescope:newsletter
 telescope:notifications
 telescope:pages
